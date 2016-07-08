@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'odp.wsgi.application'
 
 if os.environ.get('DATABASE_URL'):
     DATABASES = {
-        'default': dj_database_url.config(int(os.environ.get('DATABASE_CONN_MAX_AGE', 600))),
+        'default': dj_database_url.config(conn_max_age=int(os.environ.get('DATABASE_CONN_MAX_AGE', 600))),
     }
 else:
     DATABASES = {
