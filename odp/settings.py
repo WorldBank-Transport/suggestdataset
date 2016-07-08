@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'import_export',
-    'compressor',
     'el_pagination',
     'datasets',
     'debug_toolbar',
@@ -148,7 +147,6 @@ USE_TZ = True
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
@@ -160,6 +158,8 @@ STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(BASE_DIR, 'static_root'
 MEDIA_ROOT = os.environ.get('MEDIA_ROOT', os.path.join(BASE_DIR, 'media'))
 
 MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
+
+STATICFILES_STORAGE = os.environ.get('STATICFILES_STORAGE', 'whitenoise.django.GzipManifestStaticFilesStorage')
 
 # Site
 
