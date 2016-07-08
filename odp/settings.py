@@ -86,20 +86,22 @@ WSGI_APPLICATION = 'odp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.postgresql_psycopg2'),
-        'NAME': os.environ.get('DATABASE_NAME', 'odp'),
-        'USER': os.environ.get('DATABASE_USER', 'odp'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'odp'),
-        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
-        'PORT': os.environ.get('DATABASE_PORT', '5432'),
-        'CONN_MAX_AGE': int(os.environ.get('DATABASE_CONN_MAX_AGE', 0))
+if os.environ.get('DATABASE_URL'):
+    DATABASES = {
+        'default': dj_database_url.config(int(os.environ.get('DATABASE_CONN_MAX_AGE', 600))),
     }
-}
-
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.postgresql_psycopg2'),
+            'NAME': os.environ.get('DATABASE_NAME', 'odp'),
+            'USER': os.environ.get('DATABASE_USER', 'odp'),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'odp'),
+            'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
+            'PORT': os.environ.get('DATABASE_PORT', '5432'),
+            'CONN_MAX_AGE': int(os.environ.get('DATABASE_CONN_MAX_AGE', 600))
+        }
+    }
 
 
 # Password validation
