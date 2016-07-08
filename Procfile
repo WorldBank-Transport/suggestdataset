@@ -1,1 +1,1 @@
-web: gunicorn odp.wsgi --log-file -
+web: gunicorn odp.wsgi
