@@ -1,0 +1,40 @@
+# Nginx configuration for '{{ project_name }}' with gunicorn
+
+upstream {{ project_name }}_servers {
+    server 127.0.0.1:{{ gunicorn_port }};
+}
+
+server {
+
+    server_name {{ project_domain }};
+    client_max_body_size 50M;
+    keepalive_timeout    15;
+
+    location / {
+        proxy_redirect      off;
+        proxy_set_header    Host                    $host;
+        proxy_set_header    X-Real-IP               $remote_addr;
+        proxy_set_header    X-Forwarded-For         $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Protocol    $scheme;
+        proxy_pass          http://{{ project_name }}_servers;
+    }
+
+    location {{ static_endpoint }} {
+        root            {{ static_root }};
+        access_log      off;
+        log_not_found   off;
+    }
+
+    location {{ media_endpoint }} {
+        root            {{ media_root }};
+        access_log      off;
+        log_not_found   off;
+    }
+
+    location /favicon.ico {
+        alias           {{ static_root }}/favicon.ico;
+        access_log      off;
+        log_not_found   off;
+    }
+
+}

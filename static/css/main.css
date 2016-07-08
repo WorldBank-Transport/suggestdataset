@@ -1,0 +1,10 @@
+body{
+    padding-top: 50px;
+}
+.filter-select{
+    max-width: 100%;
+}
+.navbar-brand>img {
+    max-height: 100%;
+
+}

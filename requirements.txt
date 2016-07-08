@@ -1,0 +1,12 @@
+django
+pytz
+psycopg2
+django-dotenv
+django_compressor
+django-debug-toolbar
+django-import-export
+django-filter
+django-el-pagination
+django-crispy-forms
+django-modeltranslation
+ipython

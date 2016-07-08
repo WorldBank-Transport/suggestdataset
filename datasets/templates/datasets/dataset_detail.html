@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+
+{% block head_title %}
+    {{ dataset.name }}
+{% endblock %}
+
+{% block page_title %}
+    <h1><small class="text-primary">{{ dataset.name }}</small></h1>
+{% endblock %}
+
+{% block breadcumb %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'dataset-list' %}">{% trans "Suggest dataset" %}</a></li>
+        <li class="active">
+          {{ dataset.name }}
+        </li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-1">
+            {% include 'includes/datasets/datasetlike_button.html' %}
+        </div>
+
+        <div class="col-sm-11">
+            <p>
+                <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
+                {% for category in dataset.categories.all %}
+                    <a class="text-muted">{{ category.name }}</a>
+                    {% if not forloop.last %}, {% endif %}
+                {% empty %}
+                    -
+                {% endfor %}
+            </p>
+
+            {% if dataset.description %}
+                {{ dataset.description | linebreaks }}
+            {% endif %}
+
+            <p>
+                <label class="text-muted"><strong>{% trans "Organization" %}</strong></label>:
+                    <span class="text-primary">{{ dataset.organization }}</span>
+                </span>
+            </p>
+
+            <hr>
+            <div class="well text-muted">
+                <label><strong>{% trans "Index timestamp" %}</strong></label>: {{ dataset.date_created }}<br>
+                <label><strong>{% trans "Index last modified" %}</strong></label>: {{ dataset.date_updated }}
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

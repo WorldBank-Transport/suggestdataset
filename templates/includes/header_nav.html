@@ -1,0 +1,39 @@
+{% load i18n %}
+{% load static %}
+
+<nav class="navbar navbar-default navbar-fixed-top" id="main-nav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">{{ SITE_NAME }}</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <form action="{% url 'set_language' %}" method="post" class="navbar-form navbar-right">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+                <select name="language" class="form-control" onchange="this.form.submit();">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated and user.is_staff %}
+                    <li><a href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-unlock-alt"></i> {% trans 'Management' %}</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

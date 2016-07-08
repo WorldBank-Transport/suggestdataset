@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% block header %}
+        {% include 'includes/header_nav.html' %}
+    {% endblock header %}
+
+    <div class="container" id="content-wrapper">
+        <div class="page-header">
+            {% block page_header %}{% endblock %}
+            {% block breadcumb %}{% endblock %}
+            {% block page_title %}{% endblock %}
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+{% endblock body %}

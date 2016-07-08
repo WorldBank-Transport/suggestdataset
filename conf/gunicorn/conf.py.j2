@@ -1,0 +1,7 @@
+command = '{{ virtualenv_dir }}/bin/gunicorn'
+pythonpath = '{{ project_dir }}'
+bind = "127.0.0.1:{{ gunicorn_port }}"
+workers = {{ gunicorn_workers }}
+worker_class = '{{ gunicorn_worker_class }}'
+max_requests = {{ gunicorn_max_requests }}
+proc_name = '{{ project_name }}'

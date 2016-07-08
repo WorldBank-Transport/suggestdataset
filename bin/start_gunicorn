@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source /var/virtualenvs/odp/bin/activate
+cd /apps/odp
+/var/virtualenvs/odp/bin/gunicorn -c conf/gunicorn/conf.py odp.wsgi:application

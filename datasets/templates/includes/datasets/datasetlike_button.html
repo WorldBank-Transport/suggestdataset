@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<div class="lead text-muted text-right">
+    <form
+            method="POST"
+            action="{% url 'datasetlike-create' dataset.id %}"
+            id="dataset-like-form-{{ dataset.id }}"
+            style="display: inline">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{ dataset.id }}">
+        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+        <button type="submit"
+                class="btn btn-link"
+                data-toggle="tooltip" data-placement="bottom"
+                title="{% trans 'Interested' %}?">
+            <i class="fa fa-thumbs-up text-muted"></i>
+        </button>
+    </form>
+</div>
