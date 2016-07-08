@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import dotenv
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +31,6 @@ SECRET_KEY = os.environ.get(
 DEBUG = bool(os.environ.get('DEBUG', False))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(' ')
-
 
 # Application definition
 
@@ -98,6 +98,9 @@ DATABASES = {
         'CONN_MAX_AGE': int(os.environ.get('DATABASE_CONN_MAX_AGE', 0))
     }
 }
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
@@ -179,3 +182,7 @@ LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
 # Forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# extras
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+

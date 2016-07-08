@@ -9,4 +9,7 @@ django-filter
 django-el-pagination
 django-crispy-forms
 django-modeltranslation
+dj-database-url
+gunicorn
+whitenoise
 ipython
