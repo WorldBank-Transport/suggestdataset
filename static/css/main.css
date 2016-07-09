@@ -6,5 +6,14 @@ body{
 }
 .navbar-brand>img {
     max-height: 100%;
+}
+#main-nav{
+    background: url('../img/odp-banner.png');
+    background-size: 100% 70px;
+}
 
+@media (max-width: 768px){
+    #main-nav .navbar-collapse{
+        background: #fff;
+    }
 }
