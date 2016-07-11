@@ -1,6 +1,7 @@
 {% load i18n %}
 
 <div class="lead text-muted text-right">
+    <strong>{{ dataset.likes }}</strong>
     <form
             method="POST"
             action="{% url 'datasetlike-create' dataset.id %}"
