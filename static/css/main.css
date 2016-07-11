@@ -17,3 +17,7 @@ body{
         background: #fff;
     }
 }
+
+.messages .alert-info {
+    background-color: #4B95B1;
+}

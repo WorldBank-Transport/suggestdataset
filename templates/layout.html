@@ -6,12 +6,26 @@
     {% endblock header %}
 
     <div class="container" id="content-wrapper">
+
         <div class="page-header">
             {% block page_header %}{% endblock %}
             {% block breadcumb %}{% endblock %}
             {% block page_title %}{% endblock %}
         </div>
         <div class="content">
+            {% block messages %}
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                {{ message | safe }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+
             {% block content %}
             {% endblock content %}
         </div>

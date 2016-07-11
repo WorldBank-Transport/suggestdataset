@@ -6,6 +6,8 @@ from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_http_methods
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
+from django.contrib import messages
+from django.utils.translation import ugettext_lazy as _
 
 from django_filters.views import FilterView
 
@@ -53,12 +55,21 @@ class DatasetLikeCreate(UpdateView):
             liked_datasets = []
         if form.instance.id in liked_datasets:
             print 'Already liked'
+            messages.info(
+                self.request,
+                _('Thanks, we already received your suggestion: '
+                '<a href="%s" class="alert-link">%s</a>'
+                %(form.instance.get_absolute_url(), form.instance.name)))
         else:
             form.instance.likes += 1
             form.save()
             liked_datasets.append(form.instance.id)
             self.request.session['liked_datasets'] = liked_datasets
-            print 'Thanks liked'
+            messages.info(
+                self.request,
+                _('Thanks for your suggestion: <a class="alert-link"'
+                'href="%s">%s</a>'
+                %(form.instance.get_absolute_url(), form.instance.name)))
         return super(DatasetLikeCreate, self).form_valid(form)
 
     def get_success_url(self):
