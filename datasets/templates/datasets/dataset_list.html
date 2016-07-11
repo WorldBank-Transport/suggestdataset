@@ -41,8 +41,8 @@
             <div class="form-group col-sm-2">
                 <label>{% trans "Sort by" %}:</label>
                 <select class="form-control input-sm filter-select" name="o">
-                    <option value='-likes' default>{% trans 'Likes' %}</option>
-                    <option value="-date_created" {% if filter.form.o.value == '-date_created' %}selected{% endif %}>{% trans 'Date created' %}</option>
+                    <option value='-likes' default>{% trans 'Most liked' %}</option>
+                    <option value="-date_created" {% if filter.form.o.value == '-date_created' %}selected{% endif %}>{% trans 'Latest' %}</option>
                 </select>
             </div>
             <div class="form-group col-sm-2">
