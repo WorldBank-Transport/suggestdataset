@@ -48,8 +48,17 @@ class DatasetLikeCreate(UpdateView):
         return super(DatasetLikeCreate, self).dispatch(*args, **kwargs)
 
     def form_valid(self, form):
-        form.instance.likes += 1
-        form.save()
+        liked_datasets = self.request.session.get('liked_datasets')
+        if not type(liked_datasets) is list:
+            liked_datasets = []
+        if form.instance.id in liked_datasets:
+            print 'Already liked'
+        else:
+            form.instance.likes += 1
+            form.save()
+            liked_datasets.append(form.instance.id)
+            self.request.session['liked_datasets'] = liked_datasets
+            print 'Thanks liked'
         return super(DatasetLikeCreate, self).form_valid(form)
 
     def get_success_url(self):
