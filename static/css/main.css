@@ -12,6 +12,12 @@ body{
     background-size: 100% 70px;
 }
 
+@media (min-width: 768px){
+    .list-title {
+        padding-left: 80px;
+    }
+}
+
 @media (max-width: 768px){
     #main-nav .navbar-collapse{
         background: #fff;

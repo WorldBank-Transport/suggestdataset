@@ -14,3 +14,4 @@ class DatasetFilter(django_filters.FilterSet):
     class Meta:
         model = Dataset
         fields = ['categories', 'organization']
+        order_by = ['-likes', '-date_created']

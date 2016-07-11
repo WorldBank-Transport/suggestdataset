@@ -22,7 +22,7 @@ Dataset = apps.get_registered_model('datasets', 'Dataset')
 class DatasetList(FilterView):
     queryset = Dataset.objects\
         .prefetch_related('categories', 'organization')\
-        .order_by('-date_created')
+        .order_by('-likes')
     template_name = 'datasets/dataset_list.html'
     context_object_name = 'datasets'
     filterset_class = DatasetFilter
