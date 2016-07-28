@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-28 15:14+0300\n"
+"POT-Creation-Date: 2016-07-28 16:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,15 +24,15 @@ msgstr "Jina"
 
 #: datasets/models.py:14 datasets/models.py:32 datasets/models.py:50
 msgid "Desciption"
-msgstr ""
+msgstr "Ufafanuzi"
 
 #: datasets/models.py:16 datasets/models.py:34 datasets/models.py:60
 msgid "Date created"
-msgstr ""
+msgstr "Tarehe iliporekodiwa"
 
 #: datasets/models.py:18 datasets/models.py:36 datasets/models.py:62
 msgid "Date updated"
-msgstr ""
+msgstr "Tarehe iliposasishwa"
 
 #: datasets/models.py:21 datasets/models.py:55
 #: datasets/templates/datasets/dataset_detail.html:29
@@ -117,11 +117,13 @@ msgstr "Mpya zaidi"
 
 #: datasets/templates/datasets/dataset_list.html:49
 msgid "Go"
-msgstr ""
+msgstr "Tafuta"
 
 #: datasets/templates/datasets/dataset_list.html:58
 msgid "Select a Datasets that you wish to see on Tanzania's Open Data Portal"
-msgstr "Chagua takwimu ambayo ungependa ipatakane kipiti tovuti ya takwimu huria Tanzania"
+msgstr ""
+"Chagua takwimu ambayo ungependa ipatakane kipiti tovuti ya takwimu huria "
+"Tanzania"
 
 #: datasets/templates/includes/datasets/datasetlike_button.html:16
 msgid "Interested"
@@ -132,20 +134,30 @@ msgstr "Umeipenda"
 msgid ""
 "Thanks, we already received your suggestion: <a href=\"%s\" class=\"alert-"
 "link\">%s</a>"
-msgstr "Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</a>"
+msgstr ""
+"Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</"
+"a>"
 
 #: datasets/views.py:70
 #, python-format
 msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
 
-#: odp/settings.py:135
+#: odp/settings.py:136
 msgid "Kiswahili"
 msgstr ""
 
-#: odp/settings.py:136
+#: odp/settings.py:137
 msgid "English"
 msgstr ""
+
+#: odp/settings.py:177 odp/settings.py:179
+msgid "Suggest Dataset"
+msgstr "Pendekeza Kanzidata"
+
+#: odp/settings.py:181 templates/includes/header_nav.html:38
+msgid "Management"
+msgstr "Utawala"
 
 #: templates/home.html:5
 msgid "Home"
@@ -154,7 +166,3 @@ msgstr "Mwanzo"
 #: templates/includes/header_nav.html:8
 msgid "Toggle navigation"
 msgstr "Togoa urambazaji"
-
-#: templates/includes/header_nav.html:38
-msgid "Management"
-msgstr "Utawala"

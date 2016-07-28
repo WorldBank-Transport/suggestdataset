@@ -14,6 +14,7 @@ import os
 import dotenv
 import dj_database_url
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -130,10 +131,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = os.environ.get('LANGUAGE_CODE', 'sw')
 
-gettext = lambda s: s
+ugettext = lambda s: s
 LANGUAGES = (
-    ('sw', gettext('Kiswahili')),
-    ('en', gettext('English')),
+    ('sw', ugettext('Kiswahili')),
+    ('en', ugettext('English')),
 )
 
 LOCALE_PATHS = [
@@ -173,11 +174,11 @@ MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
 
 SITE_ID = 1
 
-SITE_NAME = os.environ.get('SITE_NAME', 'Suggest Dataset')
+SITE_NAME = os.environ.get('SITE_NAME', ugettext('Suggest Dataset'))
 
-ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', 'Suggest Dataset')
+ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', ugettext('Suggest Dataset'))
 
-ADMIN_INDEX_TITLE = os.environ.get('ADMIN_INDEX_TITLE', 'Management')
+ADMIN_INDEX_TITLE = os.environ.get('ADMIN_INDEX_TITLE', ugettext('Management'))
 
 # Auth
 
