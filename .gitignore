@@ -42,6 +42,8 @@ coverage.xml
 
 # Translations
 *.pot
+# NOTE: heruko doesn't have gettext by default
+# *.mo
 
 # Django stuff:
 *.log
@@ -67,5 +69,3 @@ target/
 static_root/
 media_root/
 
-# compiled language files
-*.mo
