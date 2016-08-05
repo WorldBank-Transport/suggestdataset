@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 13:18+0300\n"
+"POT-Creation-Date: 2016-08-05 15:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Jina la taasisi"
 
 #: datasets/models.py:39 datasets/models.py:58
 #: datasets/templates/datasets/dataset_detail.html:43
-#: datasets/templates/datasets/dataset_list.html:44
+#: datasets/templates/datasets/dataset_list.html:51
 msgid "Organization"
 msgstr "Taasisi"
 
@@ -103,41 +103,52 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Karibu utufahamishe kama kuna takwimu yoyote ambayo ungependa kuiona kwenye tovuti ya Takwimu huria Tanzania.\n"
-"Tafadhali cheki orodha ifuatayo na bonyeza kitufe cha 'like' kwa takwimu yoyote unayoipendelea.\n"
-"Ikiwa takwimu unayoipendelea haijaorodheshwa tafadhali tumia "
-"<a href=\"http://opendata.go.tz/sw/feedback\" target=\"_blank\">"
-"fomu ya kupendekeza takwimu</a> kutufikishia mapendekezo yako.\n"
+"Karibu utufahamishe kama kuna takwimu yoyote ambayo ungependa kuiona kwenye "
+"tovuti ya Takwimu huria Tanzania.\n"
+"Tafadhali cheki orodha ifuatayo na bonyeza kitufe cha 'like' kwa takwimu "
+"yoyote unayoipendelea.\n"
+"Ikiwa takwimu unayoipendelea haijaorodheshwa tafadhali tumia <a href="
+"\"http://opendata.go.tz/sw/feedback\" target=\"_blank\">fomu ya kupendekeza "
+"takwimu</a> kutufikishia mapendekezo yako.\n"
 "        "
 
 #: datasets/templates/datasets/dataset_list.html:32
+#: datasets/templates/datasets/dataset_list.html:119
+msgid "Show filters"
+msgstr "Onesha chujio"
+
+#: datasets/templates/datasets/dataset_list.html:39
 msgid "name"
 msgstr "jina"
 
-#: datasets/templates/datasets/dataset_list.html:35
-#: datasets/templates/datasets/dataset_list.html:37
+#: datasets/templates/datasets/dataset_list.html:42
+#: datasets/templates/datasets/dataset_list.html:44
 msgid "All datasets"
 msgstr "Takwimu zote"
 
-#: datasets/templates/datasets/dataset_list.html:46
+#: datasets/templates/datasets/dataset_list.html:53
 msgid "Collection Entity"
 msgstr "Mkusanyaji wa takwimu"
 
-#: datasets/templates/datasets/dataset_list.html:53
+#: datasets/templates/datasets/dataset_list.html:60
 msgid "Sort by"
 msgstr "Kuanzia"
 
-#: datasets/templates/datasets/dataset_list.html:55
+#: datasets/templates/datasets/dataset_list.html:62
 msgid "Most liked"
 msgstr "Zilizopendwa zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:56
+#: datasets/templates/datasets/dataset_list.html:63
 msgid "Latest"
 msgstr "Mpya zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:60
+#: datasets/templates/datasets/dataset_list.html:67
 msgid "Go"
 msgstr "Tafuta"
+
+#: datasets/templates/datasets/dataset_list.html:116
+msgid "Hide filters"
+msgstr "Ficha chujio"
 
 #: datasets/templates/includes/datasets/datasetlike_button.html:12
 #: datasets/templates/includes/datasets/datasetlike_button.html:23
