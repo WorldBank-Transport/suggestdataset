@@ -25,7 +25,14 @@
 {% endblock %}
 
 {% block page_header %}
-    <div class="row">
+    <div class="container text-right hidden-lg hidden-sm">
+        <button class="btn btn-default btn-xs" id="list-filters-toggle"
+                type="button" data-toggle="collapse"
+                data-target="#list-filters-container">
+            {% trans 'Show filters' %} <i class="fa fa-filter"></i>
+        </button>
+    </div>
+    <div class="row collapse" id="list-filters-container">
         <form class="form-inline">
             <div class="form-group col-sm-3">
                 <label class="sr-only">{{ filter.form.name.label }}</label>
@@ -96,3 +103,24 @@
     </div>
 
 {% endblock content %}
+
+{% block extra_js %}
+    <script>
+        function configureFilterVisibility(){
+            if ($(document).width() < 768 ) {
+                $('#list-filters-container').addClass('collapse');
+            } else {
+                $('#list-filters-container').removeClass('collapse in');
+            }
+            $('#list-filters-container').on('shown.bs.collapse', function () {
+                $('#list-filters-toggle').text("{% trans 'Hide filters' %}")
+            })
+            $('#list-filters-container').on('hidden.bs.collapse', function () {
+                $('#list-filters-toggle').text("{% trans 'Show filters' %}")
+            })
+        };
+
+        $(window).on("resize", configureFilterVisibility);
+        $(document).on("ready", configureFilterVisibility);
+    </script>
+{% endblock %}
