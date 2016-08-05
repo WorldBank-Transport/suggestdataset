@@ -1,7 +1,6 @@
 {% load i18n %}
 
 <div class="lead text-muted text-right">
-    <strong>{{ dataset.likes }}</strong>
     <form
             method="POST"
             action="{% url 'datasetlike-create' dataset.id %}"
@@ -10,11 +9,26 @@
         {% csrf_token %}
         <input type="hidden" name="id" value="{{ dataset.id }}">
         <input type="hidden" name="next" value="{{ request.get_full_path }}">
-        <button type="submit"
-                class="btn btn-link"
-                data-toggle="tooltip" data-placement="bottom"
-                title="{% trans 'Interested' %}?">
-            <i class="fa fa-thumbs-up text-muted"></i>
-        </button>
+        <div class="btn-group hidden-xs" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Interested' %}?">
+            <button type="submit"
+                    class="btn btn-success">
+                <strong>{{ dataset.likes }}</strong>
+            </button>
+            <button type="submit"
+                    class="btn btn-default">
+                <i class="fa fa-thumbs-up text-success"></i>
+            </button>
+        </div>
+
+        <div class="btn-group hidden-sm hidden-lg" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Interested' %}?">
+            <button type="submit"
+                    class="btn btn-success btn-block">
+                <strong>{{ dataset.likes }}</strong>
+            </button>
+            <button type="submit"
+                    class="btn btn-default">
+                <i class="fa fa-thumbs-up text-success"></i>
+            </button>
+        </div>
     </form>
 </div>

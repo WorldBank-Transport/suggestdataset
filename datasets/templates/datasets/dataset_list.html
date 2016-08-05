@@ -72,13 +72,13 @@
                     </a>
                 </p>
                 {% for category in dataset.categories.all %}
-                    <a class="text-muted">{{ category.name }}</a>
+                    <a href="{% url 'dataset-list' %}?category={{ category.id }}">{{ category.name }}</a>
                     {% if not forloop.last %}, {% endif %}
                 {% endfor %}
                 {% if dataset.description %}
                     <br>{{ dataset.description|truncatechars:100 |linebreaks }}
                 {% endif %}
-                <div class="text-muted">{{ dataset.organization }}</div>
+                <div class="">{{ dataset.organization }}</div>
                 <hr>
             </div>
         </div>

@@ -28,7 +28,7 @@
             <p>
                 <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
                 {% for category in dataset.categories.all %}
-                    <a class="text-muted">{{ category.name }}</a>
+                    <a href="{% url 'dataset-list' %}?category={{ category.id }}">{{ category.name }}</a>
                     {% if not forloop.last %}, {% endif %}
                 {% empty %}
                     -
@@ -41,8 +41,7 @@
 
             <p>
                 <label class="text-muted"><strong>{% trans "Organization" %}</strong></label>:
-                    <span class="text-primary">{{ dataset.organization }}</span>
-                </span>
+                <a href="{% url 'dataset-list' %}?organization={{ dataset.organization.id }}">{{ dataset.organization.name }}</a>
             </p>
 
             <hr>
