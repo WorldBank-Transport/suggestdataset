@@ -8,9 +8,9 @@
     <div class="container" id="content-wrapper">
 
         <div class="page-header">
+            {% block page_title %}{% endblock %}
             {% block page_header %}{% endblock %}
             {% block breadcumb %}{% endblock %}
-            {% block page_title %}{% endblock %}
         </div>
         <div class="content">
             {% block messages %}

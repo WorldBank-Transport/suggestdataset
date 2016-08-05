@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-28 16:21+0300\n"
+"POT-Creation-Date: 2016-08-05 13:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr "Jina la taasisi"
 
 #: datasets/models.py:39 datasets/models.py:58
 #: datasets/templates/datasets/dataset_detail.html:43
-#: datasets/templates/datasets/dataset_list.html:33
+#: datasets/templates/datasets/dataset_list.html:44
 msgid "Organization"
 msgstr "Taasisi"
 
@@ -73,12 +73,12 @@ msgstr "Kanzidata"
 msgid "Suggest dataset"
 msgstr "Pendekeza seti ya takwimu"
 
-#: datasets/templates/datasets/dataset_detail.html:50
-msgid "Index timestamp"
-msgstr "Imeingizwa kwenye orodha"
+#: datasets/templates/datasets/dataset_detail.html:49
+msgid "Timestamp"
+msgstr "Mhuri wa muda"
 
-#: datasets/templates/datasets/dataset_detail.html:51
-msgid "Index last modified"
+#: datasets/templates/datasets/dataset_detail.html:50
+msgid "Last modified"
 msgstr "Mara ya mwisho kusasishwa"
 
 #: datasets/templates/datasets/dataset_list.html:6
@@ -90,42 +90,57 @@ msgstr "chagua seti ya takwimu"
 msgid " %(datasets_count)s datasets found"
 msgstr " Kanzidata %(datasets_count)s zimepatikana"
 
-#: datasets/templates/datasets/dataset_list.html:21
+#: datasets/templates/datasets/dataset_list.html:18
+msgid ""
+"\n"
+"            Let us know if there is any dataset you wish to see on "
+"Tanzania's Open Data Portal.\n"
+"            Please check the below list of datasets and 'like' any dataset "
+"which interests you.\n"
+"            If the dataset you are interested in isn't listed yet please use "
+"our <a href=\"http://opendata.go.tz/feedback\" target=\"_blank\">suggest "
+"dataset form</a> to request it.\n"
+"        "
+msgstr ""
+"\n"
+"Karibu utufahamishe kama kuna takwimu yoyote ambayo ungependa kuiona kwenye tovuti ya Takwimu huria Tanzania.\n"
+"Tafadhali cheki orodha ifuatayo na bonyeza kitufe cha 'like' kwa takwimu yoyote unayoipendelea.\n"
+"Ikiwa takwimu unayoipendelea haijaorodheshwa tafadhali tumia "
+"<a href=\"http://opendata.go.tz/sw/feedback\" target=\"_blank\">"
+"fomu ya kupendekeza takwimu</a> kutufikishia mapendekezo yako.\n"
+"        "
+
+#: datasets/templates/datasets/dataset_list.html:32
 msgid "name"
 msgstr "jina"
 
-#: datasets/templates/datasets/dataset_list.html:24
-#: datasets/templates/datasets/dataset_list.html:26
+#: datasets/templates/datasets/dataset_list.html:35
+#: datasets/templates/datasets/dataset_list.html:37
 msgid "All datasets"
 msgstr "Takwimu zote"
 
-#: datasets/templates/datasets/dataset_list.html:35
+#: datasets/templates/datasets/dataset_list.html:46
 msgid "Collection Entity"
 msgstr "Mkusanyaji wa takwimu"
 
-#: datasets/templates/datasets/dataset_list.html:42
+#: datasets/templates/datasets/dataset_list.html:53
 msgid "Sort by"
 msgstr "Kuanzia"
 
-#: datasets/templates/datasets/dataset_list.html:44
+#: datasets/templates/datasets/dataset_list.html:55
 msgid "Most liked"
 msgstr "Zilizopendwa zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:45
+#: datasets/templates/datasets/dataset_list.html:56
 msgid "Latest"
 msgstr "Mpya zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:49
+#: datasets/templates/datasets/dataset_list.html:60
 msgid "Go"
 msgstr "Tafuta"
 
-#: datasets/templates/datasets/dataset_list.html:58
-msgid "Select a Datasets that you wish to see on Tanzania's Open Data Portal"
-msgstr ""
-"Chagua takwimu ambayo ungependa ipatakane kipiti tovuti ya takwimu huria "
-"Tanzania"
-
-#: datasets/templates/includes/datasets/datasetlike_button.html:16
+#: datasets/templates/includes/datasets/datasetlike_button.html:12
+#: datasets/templates/includes/datasets/datasetlike_button.html:23
 msgid "Interested"
 msgstr "Umeipenda"
 
