@@ -43,10 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'whitenoise.runserver_nostatic',
     'crispy_forms',
     'import_export',
     'el_pagination',
+    'django_comments',
+    'widget_tweaks',
     'datasets',
     'debug_toolbar',
 ]
@@ -191,6 +194,10 @@ LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
 # Forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Comments
+
+COMMENTS_HIDE_REMOVED = True
 
 # extras
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

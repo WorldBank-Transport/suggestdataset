@@ -1,0 +1,14 @@
+{% load i18n %}
+
+{% for comment in comment_list %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <i class="fa fa-user text-muted"></i>
+          {{ comment.name }} -
+          <span class="text-muted">{% blocktrans with timesince=comment.submit_date|timesince %}{{ timesince }} Ago{% endblocktrans %}</span>
+        </div>
+      <div class="panel-body">
+        {{ comment.comment|linebreaks }}
+      </div>
+    </div>
+{% endfor %}

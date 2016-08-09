@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load i18n %}
+{% load comments %}
 
 {% block head_title %}
     {{ dataset.name }}
@@ -20,11 +21,11 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-sm-1">
+        <div class="col-sm-2">
             {% include 'includes/datasets/datasetlike_button.html' %}
         </div>
 
-        <div class="col-sm-11">
+        <div class="col-sm-10">
             <p>
                 <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
                 {% for category in dataset.categories.all %}
@@ -44,12 +45,27 @@
                 <a href="{% url 'dataset-list' %}?organization={{ dataset.organization.id }}">{{ dataset.organization.name }}</a>
             </p>
 
-            <hr>
-            <div class="well text-muted">
+            <div class="text-muted text-right">
                 <label><strong>{% trans "Timestamp" %}</strong></label>: {{ dataset.date_created }}<br>
                 <label><strong>{% trans "Last modified" %}</strong></label>: {{ dataset.date_updated }}
             </div>
-        </div>
+            <hr>
 
+            <div>
+                <h2><small>{% trans "Comments" %}</small></h2>
+                {% render_comment_list for dataset %}
+                <div class="well">
+                    <h4>
+                        <small class="text-primary">
+                            {% trans "We would like to hear from you, please add your comments" %}
+                        </small>
+                    </h4>
+                    {% with next=dataset.get_absolute_url %}
+                        {% render_comment_form for dataset %}
+                    {% endwith %}
+                </div>
+            </div>
+
+        </div>
     </div>
 {% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "comments/base.html" %}
+{% load i18n %}
+{% load comments %}
+
+{% block head_title %}{% trans "Preview your comment" %}{% endblock %}
+
+{% block page_title %}
+    <h1><small class="text-primary">{% trans "Comment preview" %}</small></h1>
+{% endblock %}
+
+{% block content %}
+
+    <form action="{% comment_form_target %}" method="post" class="form-horizontal">{% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                {% blocktrans count counter=form.errors|length %}Please correct the error below{% plural %}Please correct the errors below{% endblocktrans %}
+            </div>
+        {% else %}
+            <div class="alert alert-success">
+                {% trans "Make changes or" %}
+                <input type="submit" name="submit" class="btn btn-success" value="{% trans "Post your comment" %}"
+                        id="submit"/> 
+            </div>
+        {% endif %}
+
+        {% if next %}
+            <div><input type="hidden" name="next" value="{{ next }}"/></div>
+        {% endif %}
+
+        {% include "comments/form_fields.html" %}
+
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <input type="submit" name="post" class="btn btn-primary" value="{% trans 'Post' %}"/>
+          </div>
+        </div>
+
+    </form>
+
+{% endblock %}

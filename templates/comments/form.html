@@ -1,0 +1,17 @@
+{% load comments i18n %}
+
+<form action="{% comment_form_target %}" method="post" class="form-horizontal">{% csrf_token %}
+    {% if next %}
+        <div><input type="hidden" name="next" value="{{ next }}"/></div>
+    {% endif %}
+
+    {% include "comments/form_fields.html" %}
+
+    <div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2">
+        <input type="submit" name="post" class="btn btn-primary" value="{% trans 'Post' %}"/>
+        <input type="submit" name="preview" class="btn btn-warning" value="{% trans 'Preview' %}"/>
+      </div>
+    </div>
+
+</form>

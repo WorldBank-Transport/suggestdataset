@@ -11,4 +11,6 @@ django-modeltranslation
 dj-database-url
 gunicorn
 whitenoise
+django-contrib-comments
+django-widget-tweaks
 ipython

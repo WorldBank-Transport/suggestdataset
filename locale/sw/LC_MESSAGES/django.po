@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-05 15:21+0300\n"
+"POT-Creation-Date: 2016-08-09 17:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgid "Date updated"
 msgstr "Tarehe iliposasishwa"
 
 #: datasets/models.py:21 datasets/models.py:55
-#: datasets/templates/datasets/dataset_detail.html:29
+#: datasets/templates/datasets/dataset_detail.html:30
 msgid "Category"
 msgstr "Kundi"
 
@@ -48,7 +48,7 @@ msgid "Organization name"
 msgstr "Jina la taasisi"
 
 #: datasets/models.py:39 datasets/models.py:58
-#: datasets/templates/datasets/dataset_detail.html:43
+#: datasets/templates/datasets/dataset_detail.html:44
 #: datasets/templates/datasets/dataset_list.html:51
 msgid "Organization"
 msgstr "Taasisi"
@@ -69,7 +69,7 @@ msgstr "Kanzidata"
 msgid "Datasets"
 msgstr "Kanzidata"
 
-#: datasets/templates/datasets/dataset_detail.html:14
+#: datasets/templates/datasets/dataset_detail.html:15
 msgid "Suggest dataset"
 msgstr "Pendekeza seti ya takwimu"
 
@@ -80,6 +80,14 @@ msgstr "Mhuri wa muda"
 #: datasets/templates/datasets/dataset_detail.html:50
 msgid "Last modified"
 msgstr "Mara ya mwisho kusasishwa"
+
+#: datasets/templates/datasets/dataset_detail.html:55
+msgid "Comments"
+msgstr "Maoni"
+
+#: datasets/templates/datasets/dataset_detail.html:60
+msgid "We would like to hear from you, please add your comments"
+msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
 
 #: datasets/templates/datasets/dataset_list.html:6
 msgid "select dataset"
@@ -169,21 +177,56 @@ msgstr ""
 msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
 
-#: odp/settings.py:136
+#: odp/settings.py:139
 msgid "Kiswahili"
 msgstr ""
 
-#: odp/settings.py:137
+#: odp/settings.py:140
 msgid "English"
 msgstr ""
 
-#: odp/settings.py:177 odp/settings.py:179
+#: odp/settings.py:180 odp/settings.py:182
 msgid "Suggest Dataset"
 msgstr "Pendekeza Kanzidata"
 
-#: odp/settings.py:181 templates/includes/header_nav.html:38
+#: odp/settings.py:184 templates/includes/header_nav.html:38
 msgid "Management"
 msgstr "Utawala"
+
+#: templates/comments/form.html:12 templates/comments/preview.html:34
+msgid "Post"
+msgstr "Tuma"
+
+#: templates/comments/form.html:13
+msgid "Preview"
+msgstr "Hakiki"
+
+#: templates/comments/list.html:8
+#, python-format
+msgid "%(timesince)s Ago"
+msgstr "%(timesince)s Zilizopita"
+
+#: templates/comments/preview.html:5
+msgid "Preview your comment"
+msgstr "Hakiki"
+
+#: templates/comments/preview.html:8
+msgid "Comment preview"
+msgstr "Hakiki maoni"
+
+#: templates/comments/preview.html:16
+msgid "Please correct the error below"
+msgid_plural "Please correct the errors below"
+msgstr[0] "Tafadhali sahihisha kosa lifuatalo"
+msgstr[1] "Tafadhali sahihisha makosa yafuatayo"
+
+#: templates/comments/preview.html:20
+msgid "Make changes or"
+msgstr "Fanya mabadiliko au"
+
+#: templates/comments/preview.html:21
+msgid "Post your comment"
+msgstr "Tuma maoni yako"
 
 #: templates/home.html:5
 msgid "Home"

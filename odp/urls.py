@@ -28,6 +28,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'^', include('datasets.urls')),
+    url(r'^comments/', include('django_comments.urls')),
     url(r'^admin/', admin.site.urls),
 )
 
