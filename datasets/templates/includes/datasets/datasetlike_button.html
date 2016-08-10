@@ -22,7 +22,7 @@
 
         <div class="btn-group hidden-sm hidden-lg" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Interested' %}?">
             <button type="submit"
-                    class="btn btn-success btn-block">
+                    class="btn btn-success {% if not_responsive %}btn-block{% endif %}">
                 <strong>{{ dataset.likes }}</strong>
             </button>
             <button type="submit"
