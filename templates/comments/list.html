@@ -4,8 +4,9 @@
     <div class="panel panel-default">
       <div class="panel-heading">
           <i class="fa fa-user text-muted"></i>
-          {{ comment.name }} -
-          <span class="text-muted">{% blocktrans with timesince=comment.submit_date|timesince %}{{ timesince }} Ago{% endblocktrans %}</span>
+            {% if comment.user.is_staff %}<i class="fa fa-check-circle-o text-success"></i>{% endif %}
+            {{ comment.name }} -
+            <span class="text-muted">{% blocktrans with timesince=comment.submit_date|timesince %}{{ timesince }} Ago{% endblocktrans %}</span>
         </div>
       <div class="panel-body">
         {{ comment.comment|linebreaks }}
