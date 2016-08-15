@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 17:28+0300\n"
+"POT-Creation-Date: 2016-08-15 10:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: datasets/models.py:13 datasets/models.py:49
+#: datasets/models.py:13 datasets/models.py:61
 msgid "Name"
 msgstr "Jina"
 
-#: datasets/models.py:14 datasets/models.py:32 datasets/models.py:50
+#: datasets/models.py:14 datasets/models.py:32 datasets/models.py:62
 msgid "Desciption"
 msgstr "Ufafanuzi"
 
-#: datasets/models.py:16 datasets/models.py:34 datasets/models.py:60
+#: datasets/models.py:16 datasets/models.py:34 datasets/models.py:77
 msgid "Date created"
 msgstr "Tarehe iliporekodiwa"
 
-#: datasets/models.py:18 datasets/models.py:36 datasets/models.py:62
+#: datasets/models.py:18 datasets/models.py:36 datasets/models.py:79
 msgid "Date updated"
 msgstr "Tarehe iliposasishwa"
 
-#: datasets/models.py:21 datasets/models.py:55
+#: datasets/models.py:21 datasets/models.py:67
 #: datasets/templates/datasets/dataset_detail.html:30
 msgid "Category"
 msgstr "Kundi"
@@ -47,9 +47,9 @@ msgstr "makundi"
 msgid "Organization name"
 msgstr "Jina la taasisi"
 
-#: datasets/models.py:39 datasets/models.py:58
+#: datasets/models.py:39 datasets/models.py:70
 #: datasets/templates/datasets/dataset_detail.html:44
-#: datasets/templates/datasets/dataset_list.html:51
+#: datasets/templates/datasets/dataset_list.html:55
 msgid "Organization"
 msgstr "Taasisi"
 
@@ -57,15 +57,41 @@ msgstr "Taasisi"
 msgid "Organizations"
 msgstr "Taasisi"
 
-#: datasets/models.py:51
+#: datasets/models.py:55
+#| msgid "Preview"
+msgid "Under review"
+msgstr "Hakiki"
+
+#: datasets/models.py:56
+msgid "In progress"
+msgstr "Iko kwenye mchakato"
+
+#: datasets/models.py:57
+msgid "Published on Open Data Portal"
+msgstr "Imewekwa kwenye tovuti ya takwimu huria"
+
+#: datasets/models.py:58
+msgid "Not for public"
+msgstr "Si kwa ajili ya umma"
+
+#: datasets/models.py:63
 msgid "likes"
 msgstr "waliopendekeza"
 
-#: datasets/models.py:65
+#: datasets/models.py:72 datasets/templates/datasets/dataset_detail.html:49
+#: datasets/templates/datasets/dataset_list.html:101
+msgid "Status"
+msgstr "Hali/Hatua"
+
+#: datasets/models.py:75
+msgid "The issue is open"
+msgstr "Suala halijamalizika (The issue is open)"
+
+#: datasets/models.py:82
 msgid "Dataset"
 msgstr "Kanzidata"
 
-#: datasets/models.py:66
+#: datasets/models.py:83
 msgid "Datasets"
 msgstr "Kanzidata"
 
@@ -73,19 +99,19 @@ msgstr "Kanzidata"
 msgid "Suggest dataset"
 msgstr "Pendekeza seti ya takwimu"
 
-#: datasets/templates/datasets/dataset_detail.html:49
+#: datasets/templates/datasets/dataset_detail.html:55
 msgid "Timestamp"
 msgstr "Mhuri wa muda"
 
-#: datasets/templates/datasets/dataset_detail.html:50
+#: datasets/templates/datasets/dataset_detail.html:56
 msgid "Last modified"
 msgstr "Mara ya mwisho kusasishwa"
 
-#: datasets/templates/datasets/dataset_detail.html:55
+#: datasets/templates/datasets/dataset_detail.html:62
 msgid "Comments"
 msgstr "Maoni"
 
-#: datasets/templates/datasets/dataset_detail.html:60
+#: datasets/templates/datasets/dataset_detail.html:67
 msgid "We would like to hear from you, please add your comments"
 msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
 
@@ -98,7 +124,7 @@ msgstr "chagua seti ya takwimu"
 msgid " %(datasets_count)s datasets found"
 msgstr " Kanzidata %(datasets_count)s zimepatikana"
 
-#: datasets/templates/datasets/dataset_list.html:18
+#: datasets/templates/datasets/dataset_list.html:21
 msgid ""
 "\n"
 "            Let us know if there is any dataset you wish to see on "
@@ -120,41 +146,41 @@ msgstr ""
 "takwimu</a> kutufikishia mapendekezo yako.\n"
 "        "
 
-#: datasets/templates/datasets/dataset_list.html:32
-#: datasets/templates/datasets/dataset_list.html:119
+#: datasets/templates/datasets/dataset_list.html:36
+#: datasets/templates/datasets/dataset_list.html:128
 msgid "Show filters"
 msgstr "Onesha chujio"
 
-#: datasets/templates/datasets/dataset_list.html:39
+#: datasets/templates/datasets/dataset_list.html:43
 msgid "name"
 msgstr "jina"
 
-#: datasets/templates/datasets/dataset_list.html:42
-#: datasets/templates/datasets/dataset_list.html:44
+#: datasets/templates/datasets/dataset_list.html:46
+#: datasets/templates/datasets/dataset_list.html:48
 msgid "All datasets"
 msgstr "Takwimu zote"
 
-#: datasets/templates/datasets/dataset_list.html:53
+#: datasets/templates/datasets/dataset_list.html:57
 msgid "Collection Entity"
 msgstr "Mkusanyaji wa takwimu"
 
-#: datasets/templates/datasets/dataset_list.html:60
+#: datasets/templates/datasets/dataset_list.html:64
 msgid "Sort by"
 msgstr "Kuanzia"
 
-#: datasets/templates/datasets/dataset_list.html:62
+#: datasets/templates/datasets/dataset_list.html:66
 msgid "Most liked"
 msgstr "Zilizopendwa zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:63
+#: datasets/templates/datasets/dataset_list.html:67
 msgid "Latest"
 msgstr "Mpya zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:67
+#: datasets/templates/datasets/dataset_list.html:71
 msgid "Go"
 msgstr "Tafuta"
 
-#: datasets/templates/datasets/dataset_list.html:116
+#: datasets/templates/datasets/dataset_list.html:125
 msgid "Hide filters"
 msgstr "Ficha chujio"
 
@@ -163,7 +189,7 @@ msgstr "Ficha chujio"
 msgid "Interested"
 msgstr "Umeipenda"
 
-#: datasets/views.py:60
+#: datasets/views.py:61
 #, python-format
 msgid ""
 "Thanks, we already received your suggestion: <a href=\"%s\" class=\"alert-"
@@ -172,7 +198,7 @@ msgstr ""
 "Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</"
 "a>"
 
-#: datasets/views.py:70
+#: datasets/views.py:71
 #, python-format
 msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
@@ -201,7 +227,7 @@ msgstr "Tuma"
 msgid "Preview"
 msgstr "Hakiki"
 
-#: templates/comments/list.html:8
+#: templates/comments/list.html:9
 #, python-format
 msgid "%(timesince)s Ago"
 msgstr "%(timesince)s Zilizopita"
