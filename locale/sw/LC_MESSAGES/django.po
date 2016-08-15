@@ -60,7 +60,7 @@ msgstr "Taasisi"
 #: datasets/models.py:55
 #| msgid "Preview"
 msgid "Under review"
-msgstr "Hakiki"
+msgstr "Suala linapitiwa"
 
 #: datasets/models.py:56
 msgid "In progress"
