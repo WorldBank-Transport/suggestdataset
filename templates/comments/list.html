@@ -12,4 +12,10 @@
         {{ comment.comment|linebreaks|urlizetrunc:15 }}
       </div>
     </div>
+{% empty %}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <span class="text-muted">{% trans 'No comments yet' %}</span>
+      </div>
+    </div>
 {% endfor %}

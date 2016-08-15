@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 10:54+0300\n"
+"POT-Creation-Date: 2016-08-15 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,6 @@ msgid "Organizations"
 msgstr "Taasisi"
 
 #: datasets/models.py:55
-#| msgid "Preview"
 msgid "Under review"
 msgstr "Suala linapitiwa"
 
@@ -111,7 +110,7 @@ msgstr "Mara ya mwisho kusasishwa"
 msgid "Comments"
 msgstr "Maoni"
 
-#: datasets/templates/datasets/dataset_detail.html:67
+#: datasets/templates/datasets/dataset_detail.html:68
 msgid "We would like to hear from you, please add your comments"
 msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
 
@@ -231,6 +230,10 @@ msgstr "Hakiki"
 #, python-format
 msgid "%(timesince)s Ago"
 msgstr "%(timesince)s Zilizopita"
+
+#: templates/comments/list.html:18
+msgid "No comments yet"
+msgstr "Hakuna aliyetuma maoni"
 
 #: templates/comments/preview.html:5
 msgid "Preview your comment"
