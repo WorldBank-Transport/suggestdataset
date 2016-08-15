@@ -46,6 +46,18 @@ class Organization(models.Model):
 @python_2_unicode_compatible
 class Dataset(models.Model):
     """A Dataset."""
+    UNDER_REVIEW = 'under review'
+    IN_PROGRESS = 'in progress'
+    PUBLISHED = 'published'
+    NOT_PUBLIC = 'not public'
+
+    STATUSES = (
+        (UNDER_REVIEW, _('Under review')),
+        (IN_PROGRESS, _('In progress')),
+        (PUBLISHED, _('Published on Open Data Portal')),
+        (NOT_PUBLIC, _('Not for public')),
+    )
+
     name = models.CharField(_('Name'), max_length=255)
     description = models.TextField(_('Desciption'), blank=True)
     likes = models.PositiveIntegerField(_('likes'), default=0,
@@ -56,6 +68,11 @@ class Dataset(models.Model):
     organization = models.ForeignKey(
         'datasets.Organization', blank=True, null=True,
         verbose_name=_('Organization'))
+    status = models.CharField(
+        _('Status'), max_length=255, blank=True, choices=STATUSES,
+        default=UNDER_REVIEW)
+    is_open_issue = models.BooleanField(
+        _('The issue is open'), blank=True, default=True)
     date_created = models.DateTimeField(
         _('Date created'), auto_now_add=True)
     date_updated = models.DateTimeField(

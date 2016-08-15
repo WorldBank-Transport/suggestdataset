@@ -21,6 +21,7 @@ Dataset = apps.get_registered_model('datasets', 'Dataset')
 
 class DatasetList(FilterView):
     queryset = Dataset.objects\
+        .filter(is_open_issue=True)\
         .prefetch_related('categories', 'organization')\
         .order_by('-likes')
     template_name = 'datasets/dataset_list.html'

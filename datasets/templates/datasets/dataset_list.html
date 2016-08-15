@@ -97,6 +97,11 @@
                     <br>{{ dataset.description|truncatechars:100 |linebreaks }}
                 {% endif %}
                 <div class="">{{ dataset.organization }}</div>
+                <p>
+                    <label class="text-muted"><strong>{% trans "Status" %}</strong></label>:
+                    <span class="text-{{ dataset.is_open_issue|yesno:'success,danger' }}">{{ dataset.is_open_issue|yesno:'Open,Closed' }}</span>,
+                    <span class="text-warning">{{ dataset.get_status_display }}</span>
+                </p>
                 <hr>
             </div>
         </div>
