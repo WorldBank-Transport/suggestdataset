@@ -37,7 +37,7 @@
             </p>
 
             {% if dataset.description %}
-                <div>{{ dataset.description | linebreaks }}</div>
+                <div>{{ dataset.description|linebreaks|urlizetrunc:25 }}</div>
             {% endif %}
 
             <p>

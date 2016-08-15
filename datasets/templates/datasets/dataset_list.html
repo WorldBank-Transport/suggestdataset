@@ -94,7 +94,7 @@
                     {% if not forloop.last %}, {% endif %}
                 {% endfor %}
                 {% if dataset.description %}
-                    <br>{{ dataset.description|truncatechars:100 |linebreaks }}
+                    <br>{{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
                 {% endif %}
                 <div class="">{{ dataset.organization }}</div>
                 <p>
