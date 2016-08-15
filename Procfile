@@ -1,1 +1,1 @@
-web: gunicorn odp.wsgi
+web: gunicorn suggestdataset.wsgi

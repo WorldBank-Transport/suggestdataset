@@ -203,19 +203,19 @@ msgstr ""
 msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
 
-#: odp/settings.py:139
+#: suggestdataset/settings.py:139
 msgid "Kiswahili"
 msgstr ""
 
-#: odp/settings.py:140
+#: suggestdataset/settings.py:140
 msgid "English"
 msgstr ""
 
-#: odp/settings.py:180 odp/settings.py:182
+#: suggestdataset/settings.py:180 suggestdataset/settings.py:182
 msgid "Suggest Dataset"
 msgstr "Pendekeza Kanzidata"
 
-#: odp/settings.py:184 templates/includes/header_nav.html:38
+#: suggestdataset/settings.py:184 templates/includes/header_nav.html:38
 msgid "Management"
 msgstr "Utawala"
 
