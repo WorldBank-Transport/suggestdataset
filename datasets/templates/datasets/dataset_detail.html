@@ -61,16 +61,18 @@
             <div>
                 <h2><small>{% trans "Comments" %}</small></h2>
                 {% render_comment_list for dataset %}
-                <div class="well">
-                    <h4>
-                        <small class="text-primary">
-                            {% trans "We would like to hear from you, please add your comments" %}
-                        </small>
-                    </h4>
-                    {% with next=dataset.get_absolute_url %}
-                        {% render_comment_form for dataset %}
-                    {% endwith %}
-                </div>
+                {% if dataset.is_open_issue %}
+                    <div class="well">
+                        <h4>
+                            <small class="text-primary">
+                                {% trans "We would like to hear from you, please add your comments" %}
+                            </small>
+                        </h4>
+                        {% with next=dataset.get_absolute_url %}
+                            {% render_comment_form for dataset %}
+                        {% endwith %}
+                    </div>
+                {% endif %}
             </div>
 
         </div>
