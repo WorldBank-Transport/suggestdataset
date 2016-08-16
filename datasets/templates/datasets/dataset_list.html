@@ -11,9 +11,10 @@
           {% blocktrans with datasets_count=datasets.count %} {{ datasets_count }} datasets found{% endblocktrans %}
         </li>
     </ol>
-    <div class="pull-right">
+    <div>
         {% include 'includes/page_share_buttons.html' %}
     </div>
+
 {% endblock %}
 
 {% block page_title %}
