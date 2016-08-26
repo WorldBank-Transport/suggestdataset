@@ -1,5 +1,5 @@
 from django.views.generic import DetailView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, CreateView
 from django.apps import apps
 from django.db.models import F
 from django.utils.decorators import method_decorator
@@ -12,6 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 from django_filters.views import FilterView
 
 from .filters import DatasetFilter
+from .forms import DatasetSuggestForm
 
 
 Category = apps.get_registered_model('datasets', 'Category')
@@ -32,6 +33,7 @@ class DatasetList(FilterView):
         ctx = super(DatasetList, self).get_context_data(**kwargs)
         ctx['categories'] = Category.objects.values()
         ctx['organizations'] = Organization.objects.values()
+        ctx['suggest_form'] = DatasetSuggestForm()
         return ctx
 
 
@@ -78,3 +80,9 @@ class DatasetLikeCreate(UpdateView):
         if not next_url:
             next_url = reverse(self.object)
         return next_url
+
+
+class DatasetSuggest(CreateView):
+    model = Dataset
+    form_class = DatasetSuggestForm
+    template_name = 'datasets/dataset_suggest.html'

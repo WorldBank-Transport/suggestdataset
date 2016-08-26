@@ -58,8 +58,14 @@ class Dataset(models.Model):
         (NOT_PUBLIC, _('Not for public')),
     )
 
-    name = models.CharField(_('Name'), max_length=255)
-    description = models.TextField(_('Desciption'), blank=True)
+    suggester_name = models.CharField(_('Suggester name'),
+                                      max_length=128, blank=True)
+    suggester_email = models.EmailField(_('Suggester email'),
+                                        blank=True)
+    suggester_organization = models.CharField(
+        _('Suggester organization'), max_length=128, blank=True)
+    name = models.CharField(_('Dataset name'), max_length=128)
+    description = models.TextField(_('Dataset desciption'), blank=True)
     likes = models.PositiveIntegerField(_('likes'), default=0,
                                         blank=True, null=True)
     categories = models.ManyToManyField(

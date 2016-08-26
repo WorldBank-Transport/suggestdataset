@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load el_pagination_tags %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans 'select dataset' %}{% endblock %}
 
@@ -14,7 +15,6 @@
     <div>
         {% include 'includes/page_share_buttons.html' %}
     </div>
-
 {% endblock %}
 
 {% block page_title %}
@@ -22,7 +22,7 @@
         {% blocktrans %}
             Let us know if there is any dataset you wish to see on Tanzania's Open Data Portal.
             Please check the below list of datasets and 'like' any dataset which interests you.
-            If the dataset you are interested in isn't listed yet please use our <a href="http://opendata.go.tz/feedback" target="_blank">suggest dataset form</a> to request it.
+            If the dataset you are interested in isn't listed yet please use our <a href="#suggest-form">suggest dataset form</a> to request it.
         {% endblocktrans %}
     </small>
 
@@ -97,7 +97,7 @@
                 {% if dataset.description %}
                     <br>{{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
                 {% endif %}
-                <div class="">{{ dataset.organization }}</div>
+                {% if dataset.organization %}<div class="">{{ dataset.organization }}</div>{% endif %}
                 <p>
                     <label class="text-muted"><strong>{% trans "Status" %}</strong></label>:
                     <span class="text-{{ dataset.is_open_issue|yesno:'success,danger' }}">{{ dataset.is_open_issue|yesno:'Open,Closed' }}</span>,
@@ -112,6 +112,30 @@
         {% show_pages %}
     </div>
 
+    <hr id="suggest-form">
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+            <div class="well">
+                <h4>
+                    <small class="text-primary">
+                        {% trans 'Add a new suggestion for a dataset to upload to the <a href="http://opendata.go.tz">Open Data Portal</a>' %}
+                    </small>
+                </h4>
+                <form class="form" method="POST" action="{% url 'dataset-suggest' %}">
+                    {% csrf_token %}
+                    {{ suggest_form|crispy }}
+                    <div class="form-group text-right">
+                        <input type="reset" value="Cancel" class="btn btn-default">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <hr>
 {% endblock content %}
 
 {% block extra_js %}

@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% load i18n %}
+{% load el_pagination_tags %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans 'Add suggestion' %}{% endblock %}
+
+{% block breadcumb %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'dataset-list' %}">{% trans "Suggest dataset" %}</a></li>
+        <li class="active">
+          {% trans 'Add suggestion' %}
+        </li>
+    </ol>
+{% endblock %}
+
+{% block page_title %}
+    <small class="">
+        {% blocktrans %}
+            Add a new suggestion for a dataset to upload to the <a href="http://opendata.go.tz">Open Data Portal</a>.
+        {% endblocktrans %}
+    </small>
+
+    <hr>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="well">
+            <h4>
+                <small class="text-primary">
+                    {% trans "Submit a your suggestion" %}
+                </small>
+            </h4>
+            <form class="form" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="form-group text-right">
+                    <a href="{% url 'dataset-list' %}" class="btn btn-default">{% trans "Cancel" %}</a>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div>
+    {% include 'includes/page_share_buttons.html' %}
+</div>
+
+{% endblock content %}
