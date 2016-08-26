@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-26 12:55+0300\n"
+"POT-Creation-Date: 2016-08-26 20:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,8 +177,8 @@ msgstr ""
 "Tafadhali cheki orodha ifuatayo na bonyeza kitufe cha 'like' kwa takwimu "
 "yoyote unayoipendelea.\n"
 "Ikiwa takwimu unayoipendelea haijaorodheshwa tafadhali tumia <a href="
-"\"#suggest-form\">fomu ya kupendekeza "
-"takwimu</a> kutufikishia mapendekezo yako.\n"
+"\"#suggest-form\">fomu ya kupendekeza takwimu</a> kutufikishia mapendekezo "
+"yako.\n"
 "        "
 
 #: datasets/templates/datasets/dataset_list.html:37
@@ -217,11 +217,11 @@ msgstr "Tafuta"
 
 #: datasets/templates/datasets/dataset_list.html:123
 msgid ""
-"Add a new suggestion for a dataset to upload to the <a href=\"http://"
-"opendata.go.tz\">Open Data Portal</a>"
+"Which other dataset would you like to see on <a href=\"http://opendata.go.tz"
+"\">Tanzanias Open Data Portal</a>?"
 msgstr ""
-"Toa mapendekezo kuhusu takwimu za kuongezwa kwenye<a href="
-"\"http://opendata.go.tz\">Tovuti ya Takwimu huria</a>"
+"Ni seti nyingine gani ya takwaimu ambayo ungependa ipatikane kupitia<a href="
+"\"http://opendata.go.tz\">Tovuti ya Takwimu huria Tanzania</a>."
 
 #: datasets/templates/datasets/dataset_list.html:150
 msgid "Hide filters"
@@ -235,13 +235,13 @@ msgstr "Tuma mapendekezo"
 #: datasets/templates/datasets/dataset_suggest.html:20
 msgid ""
 "\n"
-"            Add a new suggestion for a dataset to upload to the <a href="
-"\"http://opendata.go.tz\">Open Data Portal</a>.\n"
+"            Which other dataset would you like to see on <a href=\"http://"
+"opendata.go.tz\">Tanzanias Open Data Portal</a>?\n"
 "        "
 msgstr ""
 "\n"
-"            Toa mapendekezo kuhusu takwimu za kuongezwa kwenye<a href="
-"\"http://opendata.go.tz\">Tovuti ya Takwimu huria</a>.\n"
+"            Ni seti nyingine gani ya takwaimu ambayo ungependa ipatikane kupitia<a href="
+"\"http://opendata.go.tz\">Tovuti ya Takwimu huria Tanzania</a>.\n"
 "        "
 
 #: datasets/templates/datasets/dataset_suggest.html:33
@@ -257,7 +257,7 @@ msgstr "Sitisha"
 msgid "Interested"
 msgstr "Umeipenda"
 
-#: datasets/views.py:63
+#: datasets/views.py:62
 #, python-format
 msgid ""
 "Thanks, we already received your suggestion: <a href=\"%s\" class=\"alert-"
@@ -266,7 +266,7 @@ msgstr ""
 "Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</"
 "a>"
 
-#: datasets/views.py:73
+#: datasets/views.py:72
 #, python-format
 msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
