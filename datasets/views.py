@@ -1,7 +1,6 @@
 from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView, CreateView
 from django.apps import apps
-from django.db.models import F
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_http_methods
 from django.core.urlresolvers import reverse
