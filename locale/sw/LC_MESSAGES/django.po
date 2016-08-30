@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-30 10:40+0300\n"
+"POT-Creation-Date: 2016-08-30 10:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,7 +132,7 @@ msgstr "Seti za Takwimu"
 
 #: datasets/templates/datasets/dataset_detail.html:15
 #: datasets/templates/datasets/dataset_suggest.html:11
-msgid "Suggest dataset"
+msgid "Request dataset"
 msgstr "Pendekeza seti ya takwimu"
 
 #: datasets/templates/datasets/dataset_detail.html:55
@@ -172,7 +172,7 @@ msgid ""
 "            Please check the below list of datasets and 'like' any dataset "
 "which interests you.\n"
 "            If the dataset you are interested in isn't listed yet please use "
-"our <a href=\"#suggest-form\">suggest dataset form</a> to request it.\n"
+"our <a href=\"#suggest-form\">request dataset form</a> to request it.\n"
 "        "
 msgstr ""
 "\n"
@@ -232,6 +232,9 @@ msgid "Hide filters"
 msgstr "Ficha chujio"
 
 #: datasets/templates/datasets/dataset_suggest.html:7
+msgid "Add request"
+msgstr "Tuma mapendekezo"
+
 #: datasets/templates/datasets/dataset_suggest.html:13
 msgid "Add suggestion"
 msgstr "Tuma mapendekezo"
@@ -239,8 +242,8 @@ msgstr "Tuma mapendekezo"
 #: datasets/templates/datasets/dataset_suggest.html:20
 msgid ""
 "\n"
-"            Which other dataset would you like to see on <a href=\"http://"
-"opendata.go.tz\">Tanzanias Open Data Portal</a>?\n"
+"            Which other dataset would you like to see in <a href=\"http://"
+"opendata.go.tz\">the Tanzania's Open Data Portal</a>?\n"
 "        "
 msgstr ""
 "\n"
@@ -250,7 +253,7 @@ msgstr ""
 "        "
 
 #: datasets/templates/datasets/dataset_suggest.html:33
-msgid "Submit a your suggestion"
+msgid "Submit a your request"
 msgstr "Tuma mapendekezo yako"
 
 #: datasets/templates/datasets/dataset_suggest.html:40
@@ -285,7 +288,7 @@ msgid "English"
 msgstr ""
 
 #: suggestdataset/settings.py:180 suggestdataset/settings.py:182
-msgid "Suggest Dataset"
+msgid "Request Dataset"
 msgstr "Pendekeza Seti ya Takwimu"
 
 #: suggestdataset/settings.py:184 templates/includes/header_nav.html:38

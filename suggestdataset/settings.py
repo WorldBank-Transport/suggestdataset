@@ -177,9 +177,9 @@ MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
 
 SITE_ID = 1
 
-SITE_NAME = os.environ.get('SITE_NAME', ugettext('Suggest Dataset'))
+SITE_NAME = os.environ.get('SITE_NAME', ugettext('Request Dataset'))
 
-ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', ugettext('Suggest Dataset'))
+ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', ugettext('Request Dataset'))
 
 ADMIN_INDEX_TITLE = os.environ.get('ADMIN_INDEX_TITLE', ugettext('Management'))
 
