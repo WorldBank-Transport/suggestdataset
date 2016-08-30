@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-26 20:32+0300\n"
+"POT-Creation-Date: 2016-08-30 10:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,18 +136,22 @@ msgid "Suggest dataset"
 msgstr "Pendekeza seti ya takwimu"
 
 #: datasets/templates/datasets/dataset_detail.html:55
+msgid "Created by"
+msgstr "Mwanzilishi"
+
+#: datasets/templates/datasets/dataset_detail.html:56
 msgid "Timestamp"
 msgstr "Mhuri wa muda"
 
-#: datasets/templates/datasets/dataset_detail.html:56
+#: datasets/templates/datasets/dataset_detail.html:57
 msgid "Last modified"
 msgstr "Mara ya mwisho kusasishwa"
 
-#: datasets/templates/datasets/dataset_detail.html:62
+#: datasets/templates/datasets/dataset_detail.html:63
 msgid "Comments"
 msgstr "Maoni"
 
-#: datasets/templates/datasets/dataset_detail.html:68
+#: datasets/templates/datasets/dataset_detail.html:69
 msgid "We would like to hear from you, please add your comments"
 msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
 
@@ -240,8 +244,9 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"            Ni seti nyingine gani ya takwaimu ambayo ungependa ipatikane kupitia<a href="
-"\"http://opendata.go.tz\">Tovuti ya Takwimu huria Tanzania</a>.\n"
+"            Ni seti nyingine gani ya takwaimu ambayo ungependa ipatikane "
+"kupitia<a href=\"http://opendata.go.tz\">Tovuti ya Takwimu huria Tanzania</"
+"a>.\n"
 "        "
 
 #: datasets/templates/datasets/dataset_suggest.html:33

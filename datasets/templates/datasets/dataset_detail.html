@@ -52,6 +52,7 @@
             </p>
 
             <div class="text-muted text-right">
+                {% if dataset.suggester_name %}<label><strong>{% trans "Created by" %}</strong></label>: {{ dataset.suggester_name }}<br>{% endif %}
                 <label><strong>{% trans "Timestamp" %}</strong></label>: {{ dataset.date_created }}<br>
                 <label><strong>{% trans "Last modified" %}</strong></label>: {{ dataset.date_updated }}
             </div>
