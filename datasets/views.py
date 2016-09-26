@@ -10,7 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from django_filters.views import FilterView
 
-from .filters import DatasetFilter
+from .filters import DatasetFilter, DatasetLikingFilter
 from .forms import DatasetSuggestForm
 
 
@@ -26,7 +26,7 @@ class DatasetList(FilterView):
         .order_by('-likes')
     template_name = 'datasets/dataset_list.html'
     context_object_name = 'datasets'
-    filterset_class = DatasetFilter
+    filterset_class = DatasetLikingFilter
 
     def get_context_data(self, **kwargs):
         ctx = super(DatasetList, self).get_context_data(**kwargs)
