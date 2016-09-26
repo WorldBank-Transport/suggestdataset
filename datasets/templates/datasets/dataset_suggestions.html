@@ -73,9 +73,9 @@
                                 <strong>{{ dataset.name }}</strong>
                             </a>
                         </p>
-                        <span class="text-warning">{% blocktrans with time=dataset.date_created|timesince %}{{ time }} ago.{% endblocktrans %}</a>
+                        <span class="text-warning">{% blocktrans with time=dataset.date_created|timesince %}{{ time }} ago.{% endblocktrans %}</span>
                         {% if dataset.description %}
-                            <br>{{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
+                            <br>{{ dataset.description|truncatechars:200|linebreaks|urlizetrunc:15 }}
                         {% endif %}
                         <p>
                             <label class="text-muted"><strong>{% trans "Status" %}</strong></label>:

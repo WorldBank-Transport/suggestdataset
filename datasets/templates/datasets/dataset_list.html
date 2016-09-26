@@ -88,7 +88,7 @@
                 {% if dataset.description %}
                     <br>
                     <div class="text-muted">
-                        {{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
+                        {{ dataset.description|truncatechars:200|linebreaks|urlizetrunc:15 }}
                     </div>
                 {% endif %}
                 {% if dataset.organization %}<div class="">{{ dataset.organization }}</div>{% endif %}
