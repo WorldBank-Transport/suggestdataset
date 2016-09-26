@@ -15,6 +15,12 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="http://opendata.go.tz">{% trans 'Home' %}</a></li>
+                <li><a href="{% url 'dataset-suggestions' %}">{% trans 'Suggestions' %}</a></li>
+                <li><a href="{% url 'dataset-list' %}">{% trans 'Voting' %}</a></li>
+            </ul>
+
             <form id="select-language-form"action="{% url 'set_language' %}" method="post" class="navbar-form navbar-right">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ request.get_full_path }}" />

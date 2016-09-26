@@ -12,7 +12,7 @@
 
 {% block breadcumb %}
     <ol class="breadcrumb">
-        <li><a href="{% url 'dataset-list' %}">{% trans "Request dataset" %}</a></li>
+        <li><a href="{% url 'dataset-suggestions' %}">{% trans "Suggestions" %}</a></li>
         <li class="active">
           {{ dataset.name }}
         </li>
@@ -22,38 +22,45 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-2">
-            {% include 'includes/datasets/datasetlike_button.html' with not_responsive=False %}
+            {%  if dataset.status == 'approved' %}
+                {% include 'includes/datasets/datasetlike_button.html' with not_responsive=False %}
+            {% endif %}
         </div>
 
         <div class="col-sm-10">
             <p>
-                <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
-                {% for category in dataset.categories.all %}
-                    <a href="{% url 'dataset-list' %}?category={{ category.id }}">{{ category.name }}</a>
-                    {% if not forloop.last %}, {% endif %}
-                {% empty %}
-                    -
-                {% endfor %}
+                {% if dataset.categories.all %}
+                    <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
+                    {% for category in dataset.categories.all %}
+                        <a href="{% url 'dataset-list' %}?category={{ category.id }}">{{ category.name }}</a>
+                        {% if not forloop.last %}, {% endif %}
+                    {% empty %}
+                        -
+                    {% endfor %}
+                {% endif %}
             </p>
 
             {% if dataset.description %}
                 <div>{{ dataset.description|linebreaks|urlizetrunc:25 }}</div>
             {% endif %}
 
-            <p>
-                <label class="text-muted"><strong>{% trans "Organization" %}</strong></label>:
-                <a href="{% url 'dataset-list' %}?organization={{ dataset.organization.id }}">{{ dataset.organization.name }}</a>
-            </p>
+            {% if dataset.organization %}
+                <p>
+                    <label class="text-muted"><strong>{% trans "Organization" %}</strong></label>:
+                    <a href="{% url 'dataset-list' %}?organization={{ dataset.organization.id }}">{{ dataset.organization.name }}</a>
+                </p>
+            {% endif %}
 
             <p>
                 <label class="text-muted"><strong>{% trans "Status" %}</strong></label>:
-                <span class="text-{{ dataset.is_open_issue|yesno:'success,danger' }}">{{ dataset.is_open_issue|yesno:'Open,Closed' }}</span>,
-                <span class="text-warning">{{ dataset.get_status_display }}</span>
+                <span class="{% if dataset.status == 'approved' %}text-success{% elif dataset.status == 'open' %}text-warning{% elif dataset.status == 'rejected' %}text-danger{% else %}text-muted{% endif %}">
+                    {{ dataset.get_status_display }}
+                </span>
             </p>
 
             <div class="text-muted text-right">
                 {% if dataset.suggester_name %}<label><strong>{% trans "Created by" %}</strong></label>: {{ dataset.suggester_name }}<br>{% endif %}
-                <label><strong>{% trans "Timestamp" %}</strong></label>: {{ dataset.date_created }}<br>
+                <label><strong>{% trans "Posted" %}</strong></label>: {{ dataset.date_created }}<br>
                 <label><strong>{% trans "Last modified" %}</strong></label>: {{ dataset.date_updated }}
             </div>
             {% include 'includes/page_share_buttons.html' %}
@@ -62,18 +69,16 @@
             <div>
                 <h2><small>{% trans "Comments" %}</small></h2>
                 {% render_comment_list for dataset %}
-                {% if dataset.is_open_issue %}
-                    <div class="well">
-                        <h4>
-                            <small class="text-primary">
-                                {% trans "We would like to hear from you, please add your comments" %}
-                            </small>
-                        </h4>
-                        {% with next=dataset.get_absolute_url %}
-                            {% render_comment_form for dataset %}
-                        {% endwith %}
-                    </div>
-                {% endif %}
+                <div class="well">
+                    <h4>
+                        <small class="text-primary">
+                            {% trans "We would like to hear from you, please add your comments" %}
+                        </small>
+                    </h4>
+                    {% with next=dataset.get_absolute_url %}
+                        {% render_comment_form for dataset %}
+                    {% endwith %}
+                </div>
             </div>
 
         </div>

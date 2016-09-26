@@ -7,26 +7,18 @@
 {% block head_title %}{% trans 'select dataset' %}{% endblock %}
 
 {% block breadcumb %}
-    <ol class="breadcrumb">
-        <li class="active">
-          {% blocktrans with datasets_count=datasets.count %} {{ datasets_count }} datasets found{% endblocktrans %}
-        </li>
-    </ol>
-    <div>
-        {% include 'includes/page_share_buttons.html' %}
-    </div>
 {% endblock %}
 
 {% block page_title %}
+    <h3>{% trans "Voting for dataset release" %}</h3>
     <small class="">
+        {% url 'dataset-suggest' as suggest_url %}
         {% blocktrans %}
             Let us know if there is any dataset you wish to see on Tanzania's Open Data Portal.
             Please check the below list of datasets and 'like' any dataset which interests you.
-            If the dataset you are interested in isn't listed yet please use our <a href="#suggest-form">request dataset form</a> to request it.
+            If the dataset you are interested in isn't listed yet please use our <a href="{{ suggest_url }}">request dataset form</a> to request it.
         {% endblocktrans %}
     </small>
-
-    <hr>
 {% endblock %}
 
 {% block page_header %}
@@ -74,7 +66,6 @@
             </div>
         </form>
     </div>
-    <hr>
 {% endblock %}
 
 {% block content %}
@@ -91,17 +82,21 @@
                     </a>
                 </p>
                 {% for category in dataset.categories.all %}
-                    <a href="{% url 'dataset-list' %}?category={{ category.id }}">{{ category.name }}</a>
+                    <a href="{% url 'dataset-list' %}?category={{ category.id }}" class="text-warning">{{ category.name }}</a>
                     {% if not forloop.last %}, {% endif %}
                 {% endfor %}
                 {% if dataset.description %}
-                    <br>{{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
+                    <br>
+                    <div class="text-muted">
+                        {{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
+                    </div>
                 {% endif %}
                 {% if dataset.organization %}<div class="">{{ dataset.organization }}</div>{% endif %}
                 <p>
                     <label class="text-muted"><strong>{% trans "Status" %}</strong></label>:
-                    <span class="text-{{ dataset.is_open_issue|yesno:'success,danger' }}">{{ dataset.is_open_issue|yesno:'Open,Closed' }}</span>,
-                    <span class="text-warning">{{ dataset.get_status_display }}</span>
+                    <span class="{% if dataset.status == 'approved' %}text-success{% elif dataset.status == 'open' %}text-warning{% elif dataset.status == 'rejected' %}text-danger{% else %}text-muted{% endif %}">
+                        {{ dataset.get_status_display }}
+                    </span>
                 </p>
                 <hr>
             </div>
@@ -110,29 +105,6 @@
 
     <div class="text-center">
         {% show_pages %}
-    </div>
-
-    <hr id="suggest-form">
-
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-10">
-            <div class="well">
-                <h4>
-                    <small class="text-primary">
-                        {% trans 'Which other dataset would you like to see on <a href="http://opendata.go.tz">Tanzanias Open Data Portal</a>?' %}
-                    </small>
-                </h4>
-                <form class="form" method="POST" action="{% url 'dataset-suggest' %}">
-                    {% csrf_token %}
-                    {{ suggest_form|crispy }}
-                    <div class="form-group text-right">
-                        <input type="reset" value="Cancel" class="btn btn-default">
-                        <input type="submit" value="Submit" class="btn btn-primary">
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 
     <hr>

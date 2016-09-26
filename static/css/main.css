@@ -4,12 +4,22 @@ body{
 .filter-select{
     max-width: 100%;
 }
+
 .navbar-brand>img {
     max-height: 100%;
 }
+
 #main-nav{
     background: url('../img/odp-banner.png');
     background-size: 100% 70px;
+}
+
+.page-header {
+    margin: 23px 0;
+}
+
+.navbar-brand>img {
+    max-height: 100%;
 }
 
 @media (min-width: 768px){

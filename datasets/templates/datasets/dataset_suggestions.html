@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+{% load i18n %}
+{% load el_pagination_tags %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans 'select dataset' %}{% endblock %}
+
+{% block breadcumb %}
+{% endblock %}
+
+{% block page_title %}
+    <div class="row">
+        <div class="col-sm-7">
+            <h3 class="">{% trans 'Dataset suggestions' %}</h3>
+        </div>
+        <div class="col-sm-5">
+            <h3><a href="{% url 'dataset-suggest' %}" class="btn btn-primary">{% trans "Suggest a dataset" %}</a></h3>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="container-fluid">
+                <form class="form-inline" action="">
+                    <div class="form-group">
+                        <label>{% trans "Sort by" %}:</label>
+                        <select class="form-control input-sm filter-select" name="o" onchange="this.form.submit()">
+                            <option value="-date_created" default>{% trans 'Latest' %}</option>
+                            <option value='-likes' {% if filter.form.o.value == '-likes' %}selected{% endif %}>{% trans 'Most liked' %}</option>
+                        </select>
+                        <input type="hidden" name="status" value="{{ filter.form.status.value|default:'' }}"></input>
+                    </div>
+                </form>
+            </div>
+            <br>
+
+            <div class="panel panel-default hidden-xs">
+                <div class="panel-heading"><strong>{% trans "Filter by status" %}</strong></div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'dataset-suggestions' %}" class="text-success">{% trans "All" %}</a></li>
+                        {% for status in filter.form.status.field.choices %}
+                            {% if filter.form.status.value == status.0 %}
+                                <li>{{ status.1 }}</li>
+                            {% else %}
+                                <li><a href="?status={{ status.0 }}">{{ status.1 }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9">
+            {% paginate 20 datasets %}
+            {% for dataset in datasets %}
+                <div class="row">
+                    <div class="col-sm-2 col-xs-2 text-center">
+                        <span class="thmb">
+                            <i class="fa fa-2x fa-user"></i>
+                        </span>
+                        {% if dataset.suggester_name %}
+                            <br><span class="text-muted">{{ dataset.suggester_name }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-10 col-xs-10">
+                        <p>
+                            <a href="{{ dataset.get_absolute_url }}">
+                                <strong>{{ dataset.name }}</strong>
+                            </a>
+                        </p>
+                        <span class="text-warning">{% blocktrans with time=dataset.date_created|timesince %}{{ time }} ago.{% endblocktrans %}</a>
+                        {% if dataset.description %}
+                            <br>{{ dataset.description|truncatechars:100|linebreaks|urlizetrunc:15 }}
+                        {% endif %}
+                        <p>
+                            <label class="text-muted"><strong>{% trans "Status" %}</strong></label>:
+                            <a href="{% url 'dataset-suggestions' %}?status={{ dataset.status|default:'' }}" class="{% if dataset.status == 'approved' %}text-success{% elif dataset.status == 'open' %}text-warning{% elif dataset.status == 'rejected' %}text-danger{% else %}text-muted{% endif %}">
+                                {{ dataset.get_status_display }}
+                            </a>
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="text-center">
+                {% show_pages %}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <a href="{% url 'dataset-suggest' %}" class="btn btn-primary">{% trans "Suggest a dataset" %}</a>
+        </div>
+    </div>
+
+    <hr>
+{% endblock content %}
+
+{% block extra_js %}
+    <script>
+        function configureFilterVisibility(){
+            if ($(document).width() < 768 ) {
+                $('#list-filters-container').addClass('collapse');
+            } else {
+                $('#list-filters-container').removeClass('collapse in');
+            }
+            $('#list-filters-container').on('shown.bs.collapse', function () {
+                $('#list-filters-toggle').text("{% trans 'Hide filters' %}")
+            })
+            $('#list-filters-container').on('hidden.bs.collapse', function () {
+                $('#list-filters-toggle').text("{% trans 'Show filters' %}")
+            })
+        };
+
+        $(window).on("resize", configureFilterVisibility);
+        $(document).on("ready", configureFilterVisibility);
+    </script>
+{% endblock %}

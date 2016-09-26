@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-30 10:52+0300\n"
+"POT-Creation-Date: 2016-09-26 15:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,16 +42,16 @@ msgstr "Jina"
 msgid "Desciption"
 msgstr "Ufafanuzi"
 
-#: datasets/models.py:16 datasets/models.py:34 datasets/models.py:83
+#: datasets/models.py:16 datasets/models.py:34 datasets/models.py:80
 msgid "Date created"
 msgstr "Tarehe iliporekodiwa"
 
-#: datasets/models.py:18 datasets/models.py:36 datasets/models.py:85
+#: datasets/models.py:18 datasets/models.py:36 datasets/models.py:82
 msgid "Date updated"
 msgstr "Tarehe iliposasishwa"
 
-#: datasets/models.py:21 datasets/models.py:73
-#: datasets/templates/datasets/dataset_detail.html:30
+#: datasets/models.py:21 datasets/models.py:72
+#: datasets/templates/datasets/dataset_detail.html:33
 msgid "Category"
 msgstr "Kundi"
 
@@ -63,9 +63,9 @@ msgstr "makundi"
 msgid "Organization name"
 msgstr "Jina la taasisi"
 
-#: datasets/models.py:39 datasets/models.py:76
-#: datasets/templates/datasets/dataset_detail.html:44
-#: datasets/templates/datasets/dataset_list.html:56
+#: datasets/models.py:39 datasets/models.py:75
+#: datasets/templates/datasets/dataset_detail.html:49
+#: datasets/templates/datasets/dataset_list.html:48
 msgid "Organization"
 msgstr "Taasisi"
 
@@ -74,97 +74,91 @@ msgid "Organizations"
 msgstr "Taasisi"
 
 #: datasets/models.py:55
-msgid "Under review"
-msgstr "Suala linapitiwa"
+msgid "Approved"
+msgstr ""
 
 #: datasets/models.py:56
-msgid "In progress"
-msgstr "Iko kwenye mchakato"
+msgid "Open"
+msgstr ""
 
 #: datasets/models.py:57
-msgid "Published on Open Data Portal"
-msgstr "Imewekwa kwenye tovuti ya takwimu huria"
+msgid "Rejected"
+msgstr ""
 
-#: datasets/models.py:58
-msgid "Not for public"
-msgstr "Si kwa ajili ya umma"
-
-#: datasets/models.py:61
+#: datasets/models.py:60
 msgid "Suggester name"
 msgstr "Jina la aliyependekeza"
 
-#: datasets/models.py:63
+#: datasets/models.py:62
 msgid "Suggester email"
 msgstr "Barua pepe ya aliyependekezau"
 
-#: datasets/models.py:66
+#: datasets/models.py:65
 msgid "Suggester organization"
 msgstr "Taasisi ya aliyependekeza"
 
-#: datasets/models.py:67
+#: datasets/models.py:66
 msgid "Dataset name"
 msgstr "Jina la seti ya data"
 
-#: datasets/models.py:68
+#: datasets/models.py:67
 msgid "Dataset desciption"
 msgstr "Maelezo kuhusu seti ya data"
 
-#: datasets/models.py:69
+#: datasets/models.py:68
 msgid "likes"
 msgstr "waliopendekeza"
 
-#: datasets/models.py:78 datasets/templates/datasets/dataset_detail.html:49
-#: datasets/templates/datasets/dataset_list.html:102
+#: datasets/models.py:77 datasets/templates/datasets/dataset_detail.html:55
+#: datasets/templates/datasets/dataset_list.html:96
+#: datasets/templates/datasets/dataset_suggestions.html:81
 msgid "Status"
 msgstr "Hali/Hatua"
 
-#: datasets/models.py:81
-msgid "The issue is open"
-msgstr "Suala halijamalizika (The issue is open)"
-
-#: datasets/models.py:88
+#: datasets/models.py:85
 msgid "Dataset"
 msgstr "Seti ya takwimu"
 
-#: datasets/models.py:89
+#: datasets/models.py:86
 msgid "Datasets"
 msgstr "Seti za Takwimu"
 
 #: datasets/templates/datasets/dataset_detail.html:15
-#: datasets/templates/datasets/dataset_suggest.html:11
-msgid "Request dataset"
-msgstr "Pendekeza seti ya takwimu"
+#: templates/includes/header_nav.html:20
+msgid "Suggestions"
+msgstr "Mapendekezo"
 
-#: datasets/templates/datasets/dataset_detail.html:55
+#: datasets/templates/datasets/dataset_detail.html:62
 msgid "Created by"
 msgstr "Mwanzilishi"
 
-#: datasets/templates/datasets/dataset_detail.html:56
-msgid "Timestamp"
-msgstr "Mhuri wa muda"
+#: datasets/templates/datasets/dataset_detail.html:63
+#| msgid "Post"
+msgid "Posted"
+msgstr "Imetumwa"
 
-#: datasets/templates/datasets/dataset_detail.html:57
+#: datasets/templates/datasets/dataset_detail.html:64
 msgid "Last modified"
 msgstr "Mara ya mwisho kusasishwa"
 
-#: datasets/templates/datasets/dataset_detail.html:63
+#: datasets/templates/datasets/dataset_detail.html:70
 msgid "Comments"
 msgstr "Maoni"
 
-#: datasets/templates/datasets/dataset_detail.html:69
+#: datasets/templates/datasets/dataset_detail.html:75
 msgid "We would like to hear from you, please add your comments"
 msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
 
 #: datasets/templates/datasets/dataset_list.html:7
+#: datasets/templates/datasets/dataset_suggestions.html:7
 msgid "select dataset"
 msgstr "chagua seti ya takwimu"
 
-#: datasets/templates/datasets/dataset_list.html:12
-#, python-format
-msgid " %(datasets_count)s datasets found"
-msgstr " Seti %(datasets_count)s za takwimu zimepatikana"
+#: datasets/templates/datasets/dataset_list.html:13
+msgid "Voting for dataset release"
+msgstr ""
 
-#: datasets/templates/datasets/dataset_list.html:22
+#: datasets/templates/datasets/dataset_list.html:16
 msgid ""
 "\n"
 "            Let us know if there is any dataset you wish to see on "
@@ -172,7 +166,7 @@ msgid ""
 "            Please check the below list of datasets and 'like' any dataset "
 "which interests you.\n"
 "            If the dataset you are interested in isn't listed yet please use "
-"our <a href=\"#suggest-form\">request dataset form</a> to request it.\n"
+"our <a href=\"%(suggest_url)s\">request dataset form</a> to request it.\n"
 "        "
 msgstr ""
 "\n"
@@ -181,53 +175,50 @@ msgstr ""
 "Tafadhali cheki orodha ifuatayo na bonyeza kitufe cha 'like' kwa takwimu "
 "yoyote unayoipendelea.\n"
 "Ikiwa takwimu unayoipendelea haijaorodheshwa tafadhali tumia <a href="
-"\"#suggest-form\">fomu ya kupendekeza takwimu</a> kutufikishia mapendekezo "
+"\"%(suggest_url)s\">fomu ya kupendekeza takwimu</a> kutufikishia mapendekezo "
 "yako.\n"
 "        "
 
-#: datasets/templates/datasets/dataset_list.html:37
-#: datasets/templates/datasets/dataset_list.html:153
+#: datasets/templates/datasets/dataset_list.html:29
+#: datasets/templates/datasets/dataset_list.html:125
+#: datasets/templates/datasets/dataset_suggestions.html:119
 msgid "Show filters"
 msgstr "Onesha chujio"
 
-#: datasets/templates/datasets/dataset_list.html:44
+#: datasets/templates/datasets/dataset_list.html:36
 msgid "name"
 msgstr "jina"
 
-#: datasets/templates/datasets/dataset_list.html:47
-#: datasets/templates/datasets/dataset_list.html:49
+#: datasets/templates/datasets/dataset_list.html:39
+#: datasets/templates/datasets/dataset_list.html:41
 msgid "All datasets"
 msgstr "Takwimu zote"
 
-#: datasets/templates/datasets/dataset_list.html:58
+#: datasets/templates/datasets/dataset_list.html:50
 msgid "Collection Entity"
 msgstr "Mkusanyaji wa takwimu"
 
-#: datasets/templates/datasets/dataset_list.html:65
+#: datasets/templates/datasets/dataset_list.html:57
+#: datasets/templates/datasets/dataset_suggestions.html:30
 msgid "Sort by"
 msgstr "Kuanzia"
 
-#: datasets/templates/datasets/dataset_list.html:67
+#: datasets/templates/datasets/dataset_list.html:59
+#: datasets/templates/datasets/dataset_suggestions.html:33
 msgid "Most liked"
 msgstr "Zilizopendwa zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:68
+#: datasets/templates/datasets/dataset_list.html:60
+#: datasets/templates/datasets/dataset_suggestions.html:32
 msgid "Latest"
 msgstr "Mpya zaidi"
 
-#: datasets/templates/datasets/dataset_list.html:72
+#: datasets/templates/datasets/dataset_list.html:64
 msgid "Go"
 msgstr "Tafuta"
 
-#: datasets/templates/datasets/dataset_list.html:123
-msgid ""
-"Which other dataset would you like to see on <a href=\"http://opendata.go.tz"
-"\">Tanzanias Open Data Portal</a>?"
-msgstr ""
-"Ni seti nyingine gani ya takwaimu ambayo ungependa ipatikane kupitia<a href="
-"\"http://opendata.go.tz\">Tovuti ya Takwimu huria Tanzania</a>."
-
-#: datasets/templates/datasets/dataset_list.html:150
+#: datasets/templates/datasets/dataset_list.html:122
+#: datasets/templates/datasets/dataset_suggestions.html:116
 msgid "Hide filters"
 msgstr "Ficha chujio"
 
@@ -235,9 +226,14 @@ msgstr "Ficha chujio"
 msgid "Add request"
 msgstr "Tuma mapendekezo"
 
+#: datasets/templates/datasets/dataset_suggest.html:11 templates/home.html:5
+#: templates/includes/header_nav.html:19
+msgid "Home"
+msgstr "Mwanzo"
+
 #: datasets/templates/datasets/dataset_suggest.html:13
-msgid "Add suggestion"
-msgstr "Tuma mapendekezo"
+msgid "Suggest dataset"
+msgstr "Pendekeza seti ya takwimu"
 
 #: datasets/templates/datasets/dataset_suggest.html:20
 msgid ""
@@ -260,12 +256,33 @@ msgstr "Tuma mapendekezo yako"
 msgid "Cancel"
 msgstr "Sitisha"
 
+#: datasets/templates/datasets/dataset_suggestions.html:15
+msgid "Dataset suggestions"
+msgstr "Mapendekezo ya seti za takwimu"
+
+#: datasets/templates/datasets/dataset_suggestions.html:18
+#: datasets/templates/datasets/dataset_suggestions.html:100
+msgid "Suggest a dataset"
+msgstr "Pendekeza seti ya takwimu"
+
+#: datasets/templates/datasets/dataset_suggestions.html:42
+msgid "Filter by status"
+msgstr "Chuja kwa hali/hatua"
+
+#: datasets/templates/datasets/dataset_suggestions.html:45
+msgid "All"
+msgstr "Vyote"
+
+#: datasets/templates/datasets/dataset_suggestions.html:76
+msgid "%(time)s ago."
+msgstr "%(timesince)s zilizopita"
+
 #: datasets/templates/includes/datasets/datasetlike_button.html:12
 #: datasets/templates/includes/datasets/datasetlike_button.html:23
 msgid "Interested"
 msgstr "Umeipenda"
 
-#: datasets/views.py:62
+#: datasets/views.py:75
 #, python-format
 msgid ""
 "Thanks, we already received your suggestion: <a href=\"%s\" class=\"alert-"
@@ -274,7 +291,7 @@ msgstr ""
 "Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</"
 "a>"
 
-#: datasets/views.py:72
+#: datasets/views.py:85
 #, python-format
 msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
@@ -291,7 +308,7 @@ msgstr ""
 msgid "Request Dataset"
 msgstr "Pendekeza Seti ya Takwimu"
 
-#: suggestdataset/settings.py:184 templates/includes/header_nav.html:38
+#: suggestdataset/settings.py:184 templates/includes/header_nav.html:44
 msgid "Management"
 msgstr "Utawala"
 
@@ -334,10 +351,10 @@ msgstr "Fanya mabadiliko au"
 msgid "Post your comment"
 msgstr "Tuma maoni yako"
 
-#: templates/home.html:5
-msgid "Home"
-msgstr "Mwanzo"
-
 #: templates/includes/header_nav.html:8
 msgid "Toggle navigation"
 msgstr "Togoa urambazaji"
+
+#: templates/includes/header_nav.html:21
+msgid "Voting"
+msgstr ""

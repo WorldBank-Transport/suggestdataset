@@ -25,11 +25,11 @@ class DatasetAdmin(ImportExportModelAdmin):
     resource_class = resources.DatasetResource
     readonly_fields = ['id', 'date_created', 'date_updated', 'likes']
     filter_horizontal = ['categories']
-    list_display = ['id', 'name', 'organization', 'likes']
+    list_display = ['id', 'name', 'status', 'likes']
     list_display_links = ['id', 'name']
     list_select_related = ['organization']
     search_fields = ['name', '=id']
-    list_filter = ['categories', 'organization', 'date_created',
+    list_filter = ['categories', 'status', 'organization', 'date_created',
                    'date_updated']
 
 
