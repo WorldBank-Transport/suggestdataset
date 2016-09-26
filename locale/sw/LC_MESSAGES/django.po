@@ -156,7 +156,7 @@ msgstr "chagua seti ya takwimu"
 
 #: datasets/templates/datasets/dataset_list.html:13
 msgid "Voting for dataset release"
-msgstr ""
+msgstr "Kura kwa seti za takwimu kutolewa kwa umma"
 
 #: datasets/templates/datasets/dataset_list.html:16
 msgid ""
