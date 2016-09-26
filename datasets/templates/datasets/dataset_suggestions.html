@@ -25,14 +25,14 @@
     <div class="row">
         <div class="col-sm-2">
             <div class="container-fluid">
-                <form class="form-inline" action="">
+                <form class="form-inline" action="" id="filter-form">
                     <div class="form-group">
                         <label>{% trans "Sort by" %}:</label>
                         <select class="form-control input-sm filter-select" name="o" onchange="this.form.submit()">
                             <option value="-date_created" default>{% trans 'Latest' %}</option>
                             <option value='-likes' {% if filter.form.o.value == '-likes' %}selected{% endif %}>{% trans 'Most liked' %}</option>
                         </select>
-                        <input type="hidden" name="status" value="{{ filter.form.status.value|default:'' }}"></input>
+                        <input type="hidden" id="dataset-status-filter" name="status" value="{{ filter.form.status.value|default:'' }}"></input>
                     </div>
                 </form>
             </div>
@@ -47,7 +47,7 @@
                             {% if filter.form.status.value == status.0 %}
                                 <li>{{ status.1 }}</li>
                             {% else %}
-                                <li><a href="?status={{ status.0 }}">{{ status.1 }}</a></li>
+                                <li><a href="?status={{ status.0 }}" onclick="updateDatasetStatus('{{ status.0 }}');return false">{{ status.1 }}</a></li>
                             {% endif %}
                         {% endfor %}
                     </ul>
@@ -106,21 +106,9 @@
 
 {% block extra_js %}
     <script>
-        function configureFilterVisibility(){
-            if ($(document).width() < 768 ) {
-                $('#list-filters-container').addClass('collapse');
-            } else {
-                $('#list-filters-container').removeClass('collapse in');
-            }
-            $('#list-filters-container').on('shown.bs.collapse', function () {
-                $('#list-filters-toggle').text("{% trans 'Hide filters' %}")
-            })
-            $('#list-filters-container').on('hidden.bs.collapse', function () {
-                $('#list-filters-toggle').text("{% trans 'Show filters' %}")
-            })
+        function updateDatasetStatus(status){
+            $('#dataset-status-filter').val(status);
+            $('#filter-form').submit();
         };
-
-        $(window).on("resize", configureFilterVisibility);
-        $(document).on("ready", configureFilterVisibility);
     </script>
 {% endblock %}
