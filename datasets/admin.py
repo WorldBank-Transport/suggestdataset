@@ -29,8 +29,8 @@ class DatasetAdmin(ImportExportModelAdmin):
     list_display_links = ['id', 'name']
     list_select_related = ['organization']
     search_fields = ['name', '=id']
-    list_filter = ['categories', 'status', 'organization', 'date_created',
-                   'date_updated']
+    list_filter = ['categories', 'status', 'organization', 'archived',
+                   'date_created', 'date_updated']
 
 
 

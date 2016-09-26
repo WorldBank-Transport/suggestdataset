@@ -21,7 +21,7 @@ Dataset = apps.get_registered_model('datasets', 'Dataset')
 
 class DatasetList(FilterView):
     queryset = Dataset.objects\
-        .filter(status=Dataset.APPROVED)\
+        .filter(status=Dataset.APPROVED, archived=False)\
         .prefetch_related('categories', 'organization')\
         .order_by('-likes')
     template_name = 'datasets/dataset_list.html'
@@ -37,7 +37,7 @@ class DatasetList(FilterView):
 
 
 class DatasetSuggestions(FilterView):
-    queryset = Dataset.objects.order_by('-date_created')
+    queryset = Dataset.objects.filter(archived=False)
     template_name = 'datasets/dataset_suggestions.html'
     context_object_name = 'datasets'
     filterset_class = DatasetFilter
@@ -51,13 +51,14 @@ class DatasetSuggestions(FilterView):
 
 
 class DatasetDetail(DetailView):
-    model = Dataset
+    queryset = Dataset.objects.filter(archived=False)
     template_name = 'datasets/dataset_detail.html'
     context_object_name = 'dataset'
 
 
 class DatasetLikeCreate(UpdateView):
-    queryset = Dataset.objects.filter(status=Dataset.APPROVED)
+    queryset = Dataset.objects.filter(status=Dataset.APPROVED,
+                                      archived=False)
     fields = ['id']
 
     @method_decorator(require_http_methods(["POST"]))
