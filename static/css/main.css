@@ -5,6 +5,10 @@ body{
     max-width: 100%;
 }
 
+.navbar-brand{
+    padding: 10px 15px;
+}
+
 .navbar-brand>img {
     max-height: 100%;
 }
@@ -16,10 +20,6 @@ body{
 
 .page-header {
     margin: 23px 0;
-}
-
-.navbar-brand>img {
-    max-height: 100%;
 }
 
 @media (min-width: 768px){
