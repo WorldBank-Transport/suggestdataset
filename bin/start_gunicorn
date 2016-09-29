@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source //opt/virtualenv/suggestdataset/bin/activate
+cd /opt/suggestdataset
+/opt/virtualenv/suggestdataset/bin/gunicorn -c conf/gunicorn/conf.py suggestdataset.wsgi:application
