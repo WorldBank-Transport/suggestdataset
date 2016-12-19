@@ -16,7 +16,7 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="form-group text-right">
-                    <a href="{% url 'dataset-list' %}" class="btn btn-default">{% trans "Cancel" %}</a>
+                    <a href="{% url 'dataset-suggestions' %}" class="btn btn-default">{% trans "Cancel" %}</a>
                     <input type="submit" value="Submit" class="btn btn-primary">
                 </div>
             </form>
