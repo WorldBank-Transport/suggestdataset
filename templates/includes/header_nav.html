@@ -19,6 +19,7 @@
                 <li><a href="http://opendata.go.tz">{% trans 'Home' %}</a></li>
                 <li><a href="{% url 'dataset-suggestions' %}">{% trans 'Suggestions' %}</a></li>
                 <li><a href="{% url 'dataset-list' %}">{% trans 'Voting' %}</a></li>
+                <li><a href="{% url 'feedback-create' %}">{% trans 'Feedback' %}</a></li>
             </ul>
 
             <form id="select-language-form"action="{% url 'set_language' %}" method="post" class="navbar-form navbar-right">

@@ -13,4 +13,5 @@ gunicorn
 whitenoise
 django-contrib-comments
 django-widget-tweaks
+django-phonenumber-field
 ipython

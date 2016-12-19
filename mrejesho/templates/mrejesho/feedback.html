@@ -3,35 +3,15 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}{% trans 'Request for a dataset' %}{% endblock %}
-
-{% block breadcumb %}
-    <ol class="breadcrumb">
-        <li><a href="{% url 'dataset-list' %}">{% trans "Home" %}</a></li>
-        <li class="active">
-          {% trans 'Suggest dataset' %}
-        </li>
-    </ol>
-{% endblock %}
+{% block head_title %}{% trans 'Feedback' %}{% endblock %}
 
 {% block page_title %}
-    <small class="">
-        {% blocktrans %}
-            Which other dataset would you like to see in <a href="http://opendata.go.tz">the Tanzania's Open Data Portal</a>?
-        {% endblocktrans %}
-    </small>
-
-    <hr>
+    <h1><small>{% trans 'We would like to hear your feedback' %}</small></h1>
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="well">
-            <h4>
-                <small class="text-primary">
-                    {% trans "Request for a dataset" %}
-                </small>
-            </h4>
             <form class="form" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}

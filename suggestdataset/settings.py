@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'el_pagination',
     'django_comments',
     'widget_tweaks',
+    'phonenumber_field',
     'datasets',
+    'mrejesho',
     'debug_toolbar',
 ]
 
