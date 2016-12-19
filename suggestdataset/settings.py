@@ -204,3 +204,23 @@ COMMENTS_HIDE_REMOVED = True
 # extras
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# E-mail
+
+if os.environ.get('ADMINS'):
+    ADMINS = [i.split(':') for i in os.environ.get('ADMINS').split(',')]
+
+EMAIL_USE_TLS = bool(os.environ.get('EMAIL_USE_TLS', True))
+
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
+
+SERVER_EMAIL = os.environ.get('SERVER_EMAIL', '')
+
+EMAIL_FAIL_SILENTLY = bool(os.environ.get('EMAIL_FAIL_SILENTLY', True))

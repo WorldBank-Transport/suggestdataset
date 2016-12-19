@@ -1,0 +1,11 @@
+{% load i18n %}
+
+{% blocktrans with sender_name=feedback.sender_name %}Hello {{ sender_name }},{% endblocktrans %}
+{% blocktrans %}
+Thank you very much for your feedback on {{ site_name }}. We will respond accordingly as soon as we can.
+{% endblocktrans %}
+{% trans 'Regards' %},
+
+{{ site_name }}
+{{ site_domain }}
+
