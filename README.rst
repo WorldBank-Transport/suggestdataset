@@ -1,6 +1,6 @@
-============================================================
-A demo app for collecting suggestions for datasets release
-============================================================
+=============================================================
+A simple app for collecting suggestions for datasets release
+=============================================================
 
 Writen using `Python <https://www.python.org/>`_/`Django <https://www.djangoproject.com/>`_
 
@@ -15,6 +15,21 @@ Django works and how develop and to deploy projects by using it.
 
 The source code also include sample helper script for starting Gunicorn (`bin/start_gunicorn`)
 and sample cofiguration files for `Gunicorn`, `Nginx` and `Supervisor` in `conf/` folder.
+
+
+=========
+Features
+=========
+
+- Dataset suggestion form
+- Datasets suggestions list with status filter
+- Upvoting/Downvoting approved suggestions
+- Comment thread for dataset suggestion with an indicator for staff comments
+- Admin/Management interface, accessible via ``/admin``
+- General feedback/contact form
+- Email notifications for feedback
+- Multilingual support (default: English and Swahili)
+- Bulk data export
 
 
 ============================================================
@@ -154,31 +169,32 @@ Add file named `.env` within the project root for configuring your local setting
 
 
 Traditionally in Django project settings are configured in `settings.py` file
-within the project module but for convenience `"suggestdataset"` allow passing
-settings through enviroment variables and by configuring enviroment variables
-in a file named .env file which is not tracked by git.
+within the project module but for convenience `"suggestdataset"` allows passing
+settings through enviroment variables or by configuring enviroment variables
+in a file named .env in your project root directory. Project .env file is not
+tracked by Git.
 
 Add local environment settigs to `.env` , example
 
 ::
 
-    DEBUG=
-
     SECRET_KEY='Xxxxxxx-your-s3cr3t-xxxxxxxxxxxxxxxxxx'
 
     ALLOWED_HOSTS='localhost suggestdataset.example.com'
+
+    DATABASE_ENGINE='django.db.backends.postgresql_psycopg2'
 
     DATABASE_NAME=suggestdataset
 
     DATABASE_USER=suggestdataset
 
-    DATABASE_PASSWORD='XXXXXXXXX'
+    DATABASE_PASSWORD='<your_dbuser_password>'
 
     DATABASE_HOST='localhost'
 
     DATABASE_PORT='5432'
 
-    DATABASE_CONN_MAX_AGE=0
+    DATABASE_CONN_MAX_AGE=10
 
     STATIC_ROOT='/var/www/suggestdataset/static'
 
@@ -187,6 +203,22 @@ Add local environment settigs to `.env` , example
     MEDIA_ROOT='/var/www/suggestdataset/media'
 
     MEDIA_URL='http://suggestdataset.example.com/media/'
+
+    EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+
+    EMAIL_USE_TLS='true'
+
+    EMAIL_HOST='smtp.example.com'
+
+    EMAIL_HOST_USER='mailboxuser'
+
+    EMAIL_HOST_PASSWORD='XXXXXXXX'
+
+    DEFAULT_FROM_EMAIL='mail@example.com'
+
+    SERVER_EMAIL='server@example.com'
+
+    ADMINS='Admin:admin@example.com, Other Admin:admin2@example.com'
 
 
 Check if things are ok
