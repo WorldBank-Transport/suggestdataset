@@ -190,7 +190,21 @@ settings through enviroment variables or by configuring enviroment variables
 in a file named .env in your project root directory. Project .env file is not
 tracked by Git.
 
+
 Add local environment settigs to `.env` , example
+
+    DEBUG=True
+
+    DATABASE_ENGINE='django.db.backends.postgresql_psycopg2'
+
+    DATABASE_NAME=suggestdataset
+
+    DATABASE_USER=suggestdataset
+
+    DATABASE_PASSWORD='<your_dbuser_password>'
+
+
+You can also add other configuratiuons, example
 
 ::
 
