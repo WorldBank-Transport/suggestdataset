@@ -117,6 +117,7 @@ Install `pip`, `virtualenv` and `virtualenvwrapper` into your system
     sudo apt-get update
     sudo apt-get install python-dev python-pip
 
+
 If you already had an old version of pip installed  you may need to upgrade to a newer version.
 
 ::
