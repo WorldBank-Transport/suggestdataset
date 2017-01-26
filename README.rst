@@ -193,6 +193,8 @@ tracked by Git.
 
 Add local environment settigs to `.env` , example
 
+::
+
     DEBUG=True
 
     DATABASE_ENGINE='django.db.backends.postgresql_psycopg2'
