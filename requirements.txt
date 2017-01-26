@@ -1,4 +1,4 @@
-django>=1.9.0<=1.10.0
+django>=1.9.0,<1.10.0
 pytz
 psycopg2
 django-dotenv

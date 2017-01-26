@@ -114,13 +114,27 @@ Install `pip`, `virtualenv` and `virtualenvwrapper` into your system
 
 ::
 
-    sudo apt-get install python-dev python-pip python-virtualenv python-virtualenvwrapper
+    sudo apt-get install python-dev python-pip
+
+Then using pip
+
+::
+
+    sudo pip install virtualenv virtualenvwrapper
 
 
 Virtualenvwrapper is an optional but very convenient when working
 with python virtual enviroments especially during development.
 To use virtualenvwrapper you may need to make some few configurations to
 your system according to its documentation <http://virtualenvwrapper.readthedocs.io/en/latest/install.html#shell-startup-file/>_ .
+
+For example on ubuntu you may need to create or edit `~/.bashrc` or `~/.profile` and add the following lines
+
+::
+
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
 
 
 Create virtualenv for your project
