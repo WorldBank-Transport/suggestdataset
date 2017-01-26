@@ -137,6 +137,8 @@ For example on ubuntu you may need to create or edit ``~/.bashrc`` or ``~/.profi
     source /usr/local/bin/virtualenvwrapper.sh
 
 
+You may need to start a new terminal session for the above changes to take effect.
+
 Create virtualenv for your project
 __________________________________
 Assuming you have virtualenvwrapper properly installed and you want to call your
