@@ -1,10 +1,10 @@
-django
+django>=1.9.0<=1.10.0
 pytz
 psycopg2
 django-dotenv
-django-debug-toolbar
+django-debug-toolbar==1.4
 django-import-export
-django-filter
+django-filter==0.13.0
 django-el-pagination
 django-crispy-forms
 django-modeltranslation
