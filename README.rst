@@ -126,9 +126,9 @@ Then using pip
 Virtualenvwrapper is an optional but very convenient when working
 with python virtual enviroments especially during development.
 To use virtualenvwrapper you may need to make some few configurations to
-your system according to its documentation <http://virtualenvwrapper.readthedocs.io/en/latest/install.html#shell-startup-file/>_ .
+your system according to its documentation http://virtualenvwrapper.readthedocs.io/en/latest/install.html#shell-startup-file/ .
 
-For example on ubuntu you may need to create or edit `~/.bashrc` or `~/.profile` and add the following lines
+For example on ubuntu you may need to create or edit ``~/.bashrc`` or ``~/.profile`` and add the following lines
 
 ::
 
