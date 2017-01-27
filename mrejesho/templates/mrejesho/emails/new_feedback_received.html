@@ -1,12 +1,17 @@
 {% load i18n %}
+{% blocktrans with sender_name=feedback.sender_name feedback_id=feedback.id feedback_message=feedback.message %}
+Hello,
 
-{% blocktrans with sender_name=feedback.sender_name feedback_id=feedback.id %}Hello,{% endblocktrans %}
-{% blocktrans %}
 A new feedback has from {{ sender_name }} been received on {{ site_name }}.
 
 {{ site_domain }}/admin/mrejesho/feedback/{{ feedback_id }}
 
+=================================================
+{{ feedback_message }}
+=================================================
 {% endblocktrans %}
+
+
 {% trans 'Regards' %},
 
 {{ site_name }}

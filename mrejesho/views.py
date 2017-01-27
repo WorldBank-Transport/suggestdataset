@@ -63,12 +63,12 @@ class FeedbackCreate(CreateView):
             notification_message = render_to_string(
                 'mrejesho/emails/new_feedback_received.html', email_ctx)
             notification_mail = EmailMessage(
-                _('%(site_name)s: New Feedback received #%(feedback_id)'
+                _('%(site_name)s: New Feedback received #%(feedback_id)s'
                 %{'site_name': site.name, 'feedback_id': self.object.id}
                 ),
                 notification_message,
                 DEFAULT_FROM_EMAIL,
-                notifiable_email
+                notifiable_emails
             )
             notification_mail.send(fail_silently=EMAIL_FAIL_SILENTLY)
 
