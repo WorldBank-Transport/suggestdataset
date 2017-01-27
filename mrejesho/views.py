@@ -36,8 +36,8 @@ class FeedbackCreate(CreateView):
             'site_domain': site.domain,
             'feedback': self.object
         }
-        self.notify_sender(site, email_ctx)
-        self.notify_staff(site, email_ctx)
+        self.notify_sender(email_ctx, site)
+        self.notify_staff(email_ctx, site)
         return HttpResponseRedirect(self.get_success_url())
 
     def notify_sender(self, email_ctx, site):
