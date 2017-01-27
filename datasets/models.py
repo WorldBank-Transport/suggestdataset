@@ -69,7 +69,7 @@ class Dataset(models.Model):
                                         blank=True, null=True)
     categories = models.ManyToManyField(
         'datasets.Category', blank=True,
-        verbose_name=_('Category'))
+        verbose_name=_('Categories'))
     organization = models.ForeignKey(
         'datasets.Organization', blank=True, null=True,
         verbose_name=_('Organization'))

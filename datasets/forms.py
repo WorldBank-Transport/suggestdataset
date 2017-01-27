@@ -14,9 +14,8 @@ class DatasetSuggestForm(forms.ModelForm):
     class Meta:
         model = Dataset
         fields = [
-            'suggester_name', 'suggester_email',
-            'suggester_organization', 'name', 'description']
+            'suggester_name', 'suggester_email', 'name', 'categories',
+            'description']
         labels = {
-            'suggester_organization': _('Your organization'),
             'description': _('Description')
         }
