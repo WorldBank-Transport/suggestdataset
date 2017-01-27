@@ -10,13 +10,10 @@ class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
         fields = [
-            'sender_name', 'sender_email', 'sender_phone',
-            'sender_organization', 'message']
+            'sender_name', 'sender_email', 'message']
         labels = {
             'sender_name': _('Your name'),
             'sender_email': _('Your email'),
-            'sender_phone': _('Your phone'),
-            'sender_organization': _('Your organization'),
             'message': _('Your message'),
         }
 
