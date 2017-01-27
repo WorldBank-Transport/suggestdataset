@@ -250,6 +250,8 @@ You can also add other configuratiuons, example
 
     EMAIL_HOST='smtp.example.com'
 
+    EMAIL_PORT=25
+
     EMAIL_HOST_USER='mailboxuser'
 
     EMAIL_HOST_PASSWORD='XXXXXXXX'
