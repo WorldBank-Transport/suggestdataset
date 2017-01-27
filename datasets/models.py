@@ -84,8 +84,8 @@ class Dataset(models.Model):
         _('Date updated'), blank=True, null=True, auto_now=True)
 
     class Meta:
-        verbose_name = _("Dataset")
-        verbose_name_plural = _("Datasets")
+        verbose_name = _("Dataset Suggestion")
+        verbose_name_plural = _("Datasets Suggestions")
 
     def __str__(self):
         return self.name
