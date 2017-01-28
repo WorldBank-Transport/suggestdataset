@@ -1,0 +1,19 @@
+{% load i18n %}
+{% blocktrans with sender_name=comment.user_name comment_id=comment.id comment_message=comment.comment %}
+Hello,
+
+A new comment from {{ sender_name }} has been received on {{ site_name }}.
+
+{{ site_domain }}/admin/xcomment/xcomment/{{ comment_id }}
+
+=================================================
+{{ comment_message }}
+=================================================
+{% endblocktrans %}
+
+
+{% trans 'Regards' %},
+
+{{ site_name }}
+{{ site_domain }}
+

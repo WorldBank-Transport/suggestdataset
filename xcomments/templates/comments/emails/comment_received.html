@@ -1,0 +1,11 @@
+{% load i18n %}
+
+{% blocktrans with sender_name=comment.user_name %}Hello {{ sender_name }},{% endblocktrans %}
+{% blocktrans %}
+Thank you very much for your comment on {{ site_name }}.
+{% endblocktrans %}
+{% trans 'Regards' %},
+
+{{ site_name }}
+{{ site_domain }}
+
