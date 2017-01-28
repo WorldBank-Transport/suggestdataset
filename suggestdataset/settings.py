@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'import_export',
     'el_pagination',
     'django_comments',
+    'xcomments',
     'widget_tweaks',
     'phonenumber_field',
     'datasets',
@@ -200,6 +201,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # Comments
 
 COMMENTS_HIDE_REMOVED = True
+
+COMMENTS_APP = 'xcomments'
 
 # extras
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
