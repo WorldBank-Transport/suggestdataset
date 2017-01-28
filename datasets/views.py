@@ -3,6 +3,7 @@ from django.views.generic.edit import UpdateView, CreateView
 from django.apps import apps
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_http_methods
+from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -21,7 +22,7 @@ Dataset = apps.get_registered_model('datasets', 'Dataset')
 
 class DatasetList(FilterView):
     queryset = Dataset.objects\
-        .filter(status=Dataset.APPROVED, archived=False)\
+        .filter(status=Dataset.APPROVED, archived=False, is_public=True)\
         .prefetch_related('categories', 'organization')\
         .order_by('-likes')
     template_name = 'datasets/dataset_list.html'
@@ -37,7 +38,7 @@ class DatasetList(FilterView):
 
 
 class DatasetSuggestions(FilterView):
-    queryset = Dataset.objects.filter(archived=False)
+    queryset = Dataset.objects.filter(archived=False, is_public=True)
     template_name = 'datasets/dataset_suggestions.html'
     context_object_name = 'datasets'
     filterset_class = DatasetFilter
@@ -51,14 +52,14 @@ class DatasetSuggestions(FilterView):
 
 
 class DatasetDetail(DetailView):
-    queryset = Dataset.objects.filter(archived=False)
+    queryset = Dataset.objects.filter(archived=False, is_public=True)
     template_name = 'datasets/dataset_detail.html'
     context_object_name = 'dataset'
 
 
 class DatasetLikeCreate(UpdateView):
     queryset = Dataset.objects.filter(status=Dataset.APPROVED,
-                                      archived=False)
+                                      archived=False, is_public=True)
     fields = ['id']
 
     @method_decorator(require_http_methods(["POST"]))
@@ -70,7 +71,6 @@ class DatasetLikeCreate(UpdateView):
         if not type(liked_datasets) is list:
             liked_datasets = []
         if form.instance.id in liked_datasets:
-            print 'Already liked'
             messages.info(
                 self.request,
                 _('Thanks, we already received your suggestion: '
@@ -99,3 +99,14 @@ class DatasetSuggest(CreateView):
     model = Dataset
     form_class = DatasetSuggestForm
     template_name = 'datasets/dataset_suggest.html'
+
+    def form_valid(self, form):
+        self.object = form.save()
+        messages.success(self.request,
+                         _('Thanks, we have received your suggestion:'
+                         '"%(dataset_name)s"'
+                         %{'dataset_name': self.object.name}))
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse('dataset-suggestions')

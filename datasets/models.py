@@ -78,6 +78,8 @@ class Dataset(models.Model):
         default=OPEN)
     archived = models.BooleanField(_('Archived'), default=False,
                                    blank=True)
+    is_public = models.BooleanField(_('Is public'), default=False,
+                                    blank=True)
     date_created = models.DateTimeField(
         _('Date created'), auto_now_add=True)
     date_updated = models.DateTimeField(
