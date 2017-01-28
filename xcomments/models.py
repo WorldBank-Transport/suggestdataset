@@ -10,6 +10,7 @@ from django.template.loader import render_to_string
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Permission
+from django.contrib import messages
 
 DEFAULT_FROM_EMAIL = getattr(settings, 'DEFAULT_FROM_EMAIL')
 EMAIL_FAIL_SILENTLY = getattr(settings, 'EMAIL_FAIL_SILENTLY', True)
@@ -75,5 +76,11 @@ def notify_staff(sender, comment, request, *args, **kwargs):
         )
         notification_mail.send(fail_silently=EMAIL_FAIL_SILENTLY)
 
+
+def message_user(sender, comment, request, *args, **kwargs):
+    messages.success(request,
+                     _('Thanks, we have received your comments'))
+
 comment_was_posted.connect(notify_sender, sender=XComment)
 comment_was_posted.connect(notify_staff, sender=XComment)
+comment_was_posted.connect(message_user, sender=XComment)
