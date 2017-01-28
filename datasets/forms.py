@@ -1,5 +1,6 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
+from captcha.fields import CaptchaField
 
 from .models import Dataset
 
@@ -10,6 +11,7 @@ class DatasetSuggestForm(forms.ModelForm):
                                      required=True)
     suggester_email = forms.EmailField(label=_('Your email'),
                                        required=True)
+    captcha = CaptchaField()
 
     class Meta:
         model = Dataset

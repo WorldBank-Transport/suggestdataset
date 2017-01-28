@@ -118,6 +118,13 @@ Install `pip`, `virtualenv` and `virtualenvwrapper` into your system
     sudo apt-get install python-dev python-pip
 
 
+You may also need to install imaging libraries which are useful for various operations including CAPTCHA generation.
+
+::
+
+   sudo apt-get install libz-dev libjpeg-dev libfreetype6-dev
+
+
 If you already had an old version of pip installed  you may need to upgrade to a newer version.
 
 ::

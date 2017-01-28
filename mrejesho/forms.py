@@ -1,11 +1,13 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from django.apps import apps
+from captcha.fields import CaptchaField
 
 Feedback = apps.get_registered_model('mrejesho', 'Feedback')
 
 
 class FeedbackForm(forms.ModelForm):
+    captcha = CaptchaField()
 
     class Meta:
         model = Feedback

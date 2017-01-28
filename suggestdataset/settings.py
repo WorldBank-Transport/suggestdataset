@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'import_export',
     'el_pagination',
     'django_comments',
+    'captcha',
     'xcomments',
     'widget_tweaks',
     'phonenumber_field',

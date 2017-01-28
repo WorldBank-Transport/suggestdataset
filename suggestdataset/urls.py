@@ -24,6 +24,7 @@ from . import views
 urlpatterns = [
     # url(r'^$', views.home, name='home'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+     url(r'^captcha/', include('captcha.urls')),
 ]
 
 urlpatterns += i18n_patterns(
