@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView, CreateView
 from django.apps import apps
@@ -6,8 +7,14 @@ from django.views.decorators.http import require_http_methods
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
+from django.contrib.sites.shortcuts import get_current_site
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.db.models import Q
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Permission
 
 from django_filters.views import FilterView
 
@@ -18,6 +25,10 @@ from .forms import DatasetSuggestForm
 Category = apps.get_registered_model('datasets', 'Category')
 Organization = apps.get_registered_model('datasets', 'Organization')
 Dataset = apps.get_registered_model('datasets', 'Dataset')
+User = get_user_model()
+
+DEFAULT_FROM_EMAIL = getattr(settings, 'DEFAULT_FROM_EMAIL')
+EMAIL_FAIL_SILENTLY = getattr(settings, 'EMAIL_FAIL_SILENTLY', True)
 
 
 class DatasetList(FilterView):
@@ -106,7 +117,50 @@ class DatasetSuggest(CreateView):
                          _('Thanks, we have received your suggestion:'
                          '"%(dataset_name)s"'
                          %{'dataset_name': self.object.name}))
+
+        site = get_current_site(self.request)
+        email_ctx = {
+            'site_name': site.name,
+            'site_domain': site.domain,
+            'dataset': self.object
+        }
+        self.notify_sender(email_ctx, site)
+        self.notify_staff(email_ctx, site)
         return HttpResponseRedirect(self.get_success_url())
+
+    def notify_sender(self, email_ctx, site):
+        if self.object.suggester_email:
+            delivered_message = render_to_string(
+                'datasets/emails/suggestion_received.html', email_ctx)
+            delivered_mail = EmailMessage(
+                _('%(site_name)s: Dataset Suggestion'
+                %{'site_name': site.name}),
+                delivered_message,
+                DEFAULT_FROM_EMAIL,
+                [self.object.suggester_email]
+            )
+            delivered_mail.send(fail_silently=EMAIL_FAIL_SILENTLY)
+
+    def notify_staff(self, email_ctx, site):
+        perm = Permission.objects.get(
+            codename='can_receive_new_suggestion_email')
+        notifiable_emails = User.objects.filter(
+            Q(groups__permissions=perm) | Q(user_permissions=perm)
+            ).distinct().values_list('email', flat=True)
+        notifiable_emails = list(filter(None, notifiable_emails))
+        if notifiable_emails:
+            notification_message = render_to_string(
+                'datasets/emails/new_suggestion_received.html',
+                email_ctx)
+            notification_mail = EmailMessage(
+                _('%(site_name)s: New Dataset suggestion received'
+                '#%(suggestion_id)s' %{'site_name': site.name,
+                'suggestion_id': self.object.id}),
+                notification_message,
+                DEFAULT_FROM_EMAIL,
+                notifiable_emails
+            )
+            notification_mail.send(fail_silently=EMAIL_FAIL_SILENTLY)
 
     def get_success_url(self):
         return reverse('dataset-suggestions')

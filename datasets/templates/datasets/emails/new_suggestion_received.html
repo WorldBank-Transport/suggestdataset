@@ -1,0 +1,19 @@
+{% load i18n %}
+{% blocktrans with suggester_name=dataset.suggester_name suggestion_id=dataset.id dataset_name=dataset.name %}
+Hello,
+
+A new dataset suggestion from {{ suggester_name }} has been received on {{ site_name }}.
+
+{{ site_domain }}/admin/datasets/dataset/{{ suggestion_id }}
+
+=================================================
+{{ dataset_name }}
+=================================================
+{% endblocktrans %}
+
+
+{% trans 'Regards' %},
+
+{{ site_name }}
+{{ site_domain }}
+

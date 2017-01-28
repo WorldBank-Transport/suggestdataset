@@ -61,7 +61,8 @@ class Feedback(models.Model):
         verbose_name = _("Feedback")
         verbose_name_plural = _("Feedback")
         permissions = (
-            ('can_receive_new_feedback_email', _('Can receive notification on new feedback')),
+            ('can_receive_new_feedback_email',
+            _('Can receive notification on new feedback')),
         )
 
     def __str__(self):

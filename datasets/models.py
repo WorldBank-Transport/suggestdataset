@@ -88,6 +88,10 @@ class Dataset(models.Model):
     class Meta:
         verbose_name = _("Dataset Suggestion")
         verbose_name_plural = _("Datasets Suggestions")
+        permissions = (
+            ('can_receive_new_suggestion_email',
+            _('Can receive notification on new dataset suggestions')),
+        )
 
     def __str__(self):
         return self.name
