@@ -66,8 +66,8 @@ class DatasetLikeCreate(UpdateView):
         if form.instance.id in liked_datasets:
             messages.info(
                 self.request,
-                _('Thanks, we already received your suggestion: '
-                '<a href="%s" class="alert-link">%s</a>'
+                _("Thanks, we already received your 'vote': "
+                "<a href='%s' class='alert-link'>%s</a>"
                 %(form.instance.get_absolute_url(), form.instance.name)))
         else:
             form.instance.likes += 1
@@ -76,7 +76,7 @@ class DatasetLikeCreate(UpdateView):
             self.request.session['liked_datasets'] = liked_datasets
             messages.info(
                 self.request,
-                _('Thanks for your suggestion: <a class="alert-link"'
+                _('Thanks for your vote: <a class="alert-link"'
                 'href="%s">%s</a>'
                 %(form.instance.get_absolute_url(), form.instance.name)))
         return super(DatasetLikeCreate, self).form_valid(form)
