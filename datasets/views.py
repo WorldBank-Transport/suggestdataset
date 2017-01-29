@@ -4,7 +4,7 @@ from django.views.generic.edit import UpdateView, CreateView
 from django.apps import apps
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_http_methods
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.core.urlresolvers import reverse
 from django.shortcuts import redirect
 from django.contrib.sites.shortcuts import get_current_site
@@ -57,6 +57,8 @@ class DatasetLikeCreate(UpdateView):
 
     @method_decorator(require_http_methods(["POST"]))
     def dispatch(self, *args, **kwargs):
+        if not self.request.META.get('HTTP_USER_AGENT', None):
+            return HttpResponseForbidden()
         return super(DatasetLikeCreate, self).dispatch(*args, **kwargs)
 
     def form_valid(self, form):
