@@ -31,23 +31,6 @@ DEFAULT_FROM_EMAIL = getattr(settings, 'DEFAULT_FROM_EMAIL')
 EMAIL_FAIL_SILENTLY = getattr(settings, 'EMAIL_FAIL_SILENTLY', True)
 
 
-class DatasetList(FilterView):
-    queryset = Dataset.objects\
-        .filter(status=Dataset.APPROVED, archived=False, is_public=True)\
-        .prefetch_related('categories', 'organization')\
-        .order_by('-likes')
-    template_name = 'datasets/dataset_list.html'
-    context_object_name = 'datasets'
-    filterset_class = DatasetLikingFilter
-
-    def get_context_data(self, **kwargs):
-        ctx = super(DatasetList, self).get_context_data(**kwargs)
-        ctx['categories'] = Category.objects.values()
-        ctx['organizations'] = Organization.objects.values()
-        ctx['suggest_form'] = DatasetSuggestForm()
-        return ctx
-
-
 class DatasetSuggestions(FilterView):
     queryset = Dataset.objects.filter(archived=False, is_public=True)
     template_name = 'datasets/dataset_suggestions.html'
@@ -69,8 +52,7 @@ class DatasetDetail(DetailView):
 
 
 class DatasetLikeCreate(UpdateView):
-    queryset = Dataset.objects.filter(status=Dataset.APPROVED,
-                                      archived=False, is_public=True)
+    queryset = Dataset.objects.filter(archived=False, is_public=True)
     fields = ['id']
 
     @method_decorator(require_http_methods(["POST"]))

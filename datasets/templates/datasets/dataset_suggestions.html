@@ -67,7 +67,7 @@
                             <br><span class="text-muted">{{ dataset.suggester_name }}</span>
                         {% endif %}
                     </div>
-                    <div class="col-sm-10 col-xs-10">
+                    <div class="col-sm-8 col-xs-8">
                         <p>
                             <a href="{{ dataset.get_absolute_url }}">
                                 <strong>{{ dataset.name }}</strong>
@@ -83,9 +83,12 @@
                                 {{ dataset.get_status_display }}
                             </a>
                         </p>
-                        <hr>
+                    </div>
+                    <div class="col-sm-2 col-xs-2">
+                        {% include 'includes/datasets/datasetlike_button.html' %}
                     </div>
                 </div>
+                <hr>
             {% endfor %}
             <div class="text-center">
                 {% show_pages %}
