@@ -199,6 +199,10 @@ LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
+CAPTCHA_CHALLENGE_FUNCT = os.environ.get('CAPTCHA_CHALLENGE_FUNCT', 'captcha.helpers.random_char_challenge')
+
+CAPTCHA_NOISE_FUNCTIONS =  os.environ.get('CAPTCHA_NOISE_FUNCTIONS', 'captcha.helpers.noise_dots').split()
+
 # Comments
 
 COMMENTS_HIDE_REMOVED = True
