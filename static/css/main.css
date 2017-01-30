@@ -60,6 +60,9 @@ body{
     border: 1px solid #CCC;
 }
 
+.input-group-addon.captcha-addon{
+    padding: 0;
+}
 @media (min-width: 768px){
     .list-title {
         padding-left: 80px;
