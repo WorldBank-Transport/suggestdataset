@@ -181,9 +181,9 @@ MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
 
 SITE_ID = 1
 
-SITE_NAME = os.environ.get('SITE_NAME', ugettext('Open Data Suggestions'))
+SITE_NAME = os.environ.get('SITE_NAME', ugettext('Open Data Tanzania'))
 
-ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', ugettext('Open Data Suggestions'))
+ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', ugettext('Open Data Tanzania'))
 
 ADMIN_INDEX_TITLE = os.environ.get('ADMIN_INDEX_TITLE', ugettext('Management'))
 
