@@ -28,6 +28,7 @@ body{
 #main-nav{
     background: url('../img/odp-banner.png');
     height: 178px;
+    background-size: cover;
 }
 
 .page-header {
