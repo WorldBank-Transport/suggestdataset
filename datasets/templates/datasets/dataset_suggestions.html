@@ -4,7 +4,7 @@
 {% load el_pagination_tags %}
 {% load crispy_forms_tags %}
 
-{% block head_title %}{% trans 'Dataset requests' %}{% endblock %}
+{% block head_title %}{% trans 'Dataset Suggestions' %}{% endblock %}
 
 {% block breadcumb %}
 {% endblock %}
@@ -56,7 +56,7 @@
         <div class="col-sm-9">
             {% paginate 20 datasets %}
             {% for dataset in datasets %}
-                <div class="row">
+                <div class="row dataset-item">
                     <div class="col-sm-2 col-xs-2 text-center">
                         <span class="thmb">
                             <i class="fa fa-2x fa-user"></i>
@@ -86,7 +86,6 @@
                         {% include 'includes/datasets/datasetlike_button.html' %}
                     </div>
                 </div>
-                <hr>
             {% endfor %}
             <div class="text-center">
                 {% show_pages %}

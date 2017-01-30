@@ -1,6 +1,10 @@
 {% load i18n %}
 {% load static %}
 
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
 <nav class="navbar navbar-default navbar-fixed-top" id="main-nav">
 
     {% block header_account %}
@@ -10,9 +14,6 @@
                     <ul class="unstyled">
                         <li><a href="http://opendata.go.tz/user/login">{% trans "Login" %}</a></li>
                         <li><a href="http://opendata.go.tz/pages/faq">{% trans "FAQ" %}</a></li>
-                        {% get_current_language as LANGUAGE_CODE %}
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
                         {% for language in languages %}
                             <li>
                                 {% if language.code != LANGUAGE_CODE %}
@@ -49,7 +50,7 @@
             <div class="">  
                 <div class="container">
                     <div class="span12">
-                        <a href="/">
+                        <a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}">
                             <div class="logo"></div>
                         </a>
                         <div class="slogan">
@@ -103,14 +104,14 @@
                 <div class="span12" >         
                     <div class="right-menu menu-resize">
                         <ul class="menu-nav">
-                            <li><a href="http://opendata.go.tz">{% trans "Home" %}</a></li>
-                            <li><a href="http://opendata.go.tz/dataset">{% trans "Datasets" %}</a></li>
-                            <li><a href="http://opendata.go.tz/organization">{% trans "Organizations" %}</a></li>
-                            <li><a href="http://opendata.go.tz/group">{% trans "Groups" %}</a></li>
-                            <li><a href="http://opendata.go.tz/dash">{% trans "Visualization Gallery" %}</a></li>
+                            <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}">{% trans "Home" %}</a></li>
+                            <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/dataset">{% trans "Datasets" %}</a></li>
+                            <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/organization">{% trans "Organizations" %}</a></li>
+                            <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/group">{% trans "Groups" %}</a></li>
+                            <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/dash">{% trans "Visualization Gallery" %}</a></li>
                             <li><a href="{% url 'dataset-suggestions' %}">{% trans "Dataset Suggestions" %}</a></li>
                             <li><a href="{% url 'feedback-create' %}">{% trans "Feedback" %}</a></li>
-                            <li><a href="http://opendata.go.tz/pages/about">{% trans "About" %}</a></li>
+                            <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/pages/about">{% trans "About" %}</a></li>
                         </ul>
                     </div>
 

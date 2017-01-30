@@ -7,7 +7,7 @@ from .models import Dataset
 
 class DatasetSuggestForm(forms.ModelForm):
 
-    suggester_name = forms.CharField(label=_('Your full name'),
+    suggester_name = forms.CharField(label=_('Your name'),
                                      required=True)
     suggester_email = forms.EmailField(label=_('Your email'),
                                        required=True)
@@ -19,5 +19,6 @@ class DatasetSuggestForm(forms.ModelForm):
             'suggester_name', 'suggester_email', 'name', 'categories',
             'description']
         labels = {
-            'description': _('Description')
+            'description': _('Description'),
+            'categories': _('Category of the dataset')
         }

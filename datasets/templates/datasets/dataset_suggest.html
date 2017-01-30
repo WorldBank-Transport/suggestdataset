@@ -7,9 +7,9 @@
 
 {% block breadcumb %}
     <ol class="breadcrumb">
-        <li><a href="{% url 'dataset-suggestions' %}">{% trans "Home" %}</a></li>
+        <li><a href="{% url 'dataset-suggestions' %}">{% trans 'Dataset Suggestions' %}</a></li>
         <li class="active">
-          {% trans 'Suggest a dataset' %}
+          {% trans 'Form' %}
         </li>
     </ol>
 {% endblock %}
@@ -20,8 +20,6 @@
             Which other dataset would you like to see in <a href="http://opendata.go.tz">the Tanzania's Open Data Portal</a>?
         {% endblocktrans %}
     </div>
-
-    <hr>
 {% endblock %}
 
 {% block content %}

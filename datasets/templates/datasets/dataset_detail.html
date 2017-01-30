@@ -3,7 +3,7 @@
 {% load comments %}
 
 {% block head_title %}
-    {{ dataset.name }}
+    {{ dataset.name }} | {% trans "Dataset Suggestions" %}
 {% endblock %}
 
 {% block page_title %}
@@ -12,7 +12,7 @@
 
 {% block breadcumb %}
     <ol class="breadcrumb">
-        <li><a href="{% url 'dataset-suggestions' %}">{% trans "Suggestions" %}</a></li>
+        <li><a href="{% url 'dataset-suggestions' %}">{% trans "Dataset Suggestions" %}</a></li>
         <li class="active">
           {{ dataset.name }}
         </li>
@@ -21,15 +21,15 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-sm-2">
-            {%  if dataset.status == 'approved' %}
-                {% include 'includes/datasets/datasetlike_button.html' with not_responsive=False %}
-            {% endif %}
-        </div>
 
         <div class="col-sm-10">
-            <p>
-                {% if dataset.categories.all %}
+
+            {% if dataset.description %}
+                <div>{{ dataset.description|linebreaks|urlizetrunc:25 }}</div>
+            {% endif %}
+            
+            {% if dataset.categories.all %}
+                <p>
                     <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
                     {% for category in dataset.categories.all %}
                         <a href="{% url 'dataset-suggestions' %}?category={{ category.id }}">{{ category.name }}</a>
@@ -37,11 +37,7 @@
                     {% empty %}
                         -
                     {% endfor %}
-                {% endif %}
-            </p>
-
-            {% if dataset.description %}
-                <div>{{ dataset.description|linebreaks|urlizetrunc:25 }}</div>
+                </p>
             {% endif %}
 
             {% if dataset.organization %}
@@ -81,6 +77,10 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="col-sm-2">
+            {% include 'includes/datasets/datasetlike_button.html' with not_responsive=False %}
         </div>
     </div>
 {% endblock content %}
