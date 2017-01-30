@@ -24,23 +24,21 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-2">
-            <div class="container-fluid">
-                <form class="form-inline" action="" id="filter-form">
-                    <div class="form-group">
-                        <label>{% trans "Sort by" %}:</label>
-                        <select class="form-control input-sm filter-select" name="o" onchange="this.form.submit()">
-                            <option value="-date_created" default>{% trans 'Latest' %}</option>
-                            <option value='-likes' {% if filter.form.o.value == '-likes' %}selected{% endif %}>{% trans 'Most liked' %}</option>
-                        </select>
-                        <input type="hidden" id="dataset-status-filter" name="status" value="{{ filter.form.status.value|default:'' }}"></input>
-                    </div>
-                </form>
-            </div>
+            <form class="form-inline" action="" id="filter-form">
+                <div class="form-group">
+                    <label>{% trans "Sort by" %}:</label>
+                    <select class="form-control input-sm filter-select" name="o" onchange="this.form.submit()" style="min-width: 110px;">
+                        <option value="-date_created" default>{% trans 'Latest' %}</option>
+                        <option value='-likes' {% if filter.form.o.value == '-likes' %}selected{% endif %}>{% trans 'Most liked' %}</option>
+                    </select>
+                    <input type="hidden" id="dataset-status-filter" name="status" value="{{ filter.form.status.value|default:'' }}"></input>
+                </div>
+            </form>
             <br>
 
             <div class="panel panel-default hidden-xs">
                 <div class="panel-heading"><strong>{% trans "Filter by status" %}</strong></div>
-                <div class="panel-body">
+                <div class="panel-body" style="padding: 10px;">
                     <ul class="list-unstyled">
                         <li><a href="{% url 'dataset-suggestions' %}" class="text-success">{% trans "All" %}</a></li>
                         {% for status in filter.form.status.field.choices %}
