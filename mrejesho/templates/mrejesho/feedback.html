@@ -6,18 +6,18 @@
 {% block head_title %}{% trans 'Feedback' %}{% endblock %}
 
 {% block page_title %}
-    <h1><small>{% trans 'We would like to hear your feedback' %}</small></h1>
+    <h5>{% trans 'We would like to hear your feedback' %}</h5>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="well">
             <form class="form" method="POST">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="form-group text-right">
                     <a href="{% url 'dataset-suggestions' %}" class="btn btn-default">{% trans "Cancel" %}</a>
-                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="submit" value="Submit" class="btn btn-success">
                 </div>
             </form>
         </div>

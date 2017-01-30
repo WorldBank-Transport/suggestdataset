@@ -7,7 +7,7 @@
 
 {% block breadcumb %}
     <ol class="breadcrumb">
-        <li><a href="{% url 'dataset-list' %}">{% trans "Home" %}</a></li>
+        <li><a href="{% url 'dataset-suggestions' %}">{% trans "Home" %}</a></li>
         <li class="active">
           {% trans 'Suggest a dataset' %}
         </li>
@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container-fluid">
         <div class="well">
             <h4>
                 <small class="text-primary">
@@ -36,8 +36,8 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="form-group text-right">
-                    <a href="{% url 'dataset-list' %}" class="btn btn-default">{% trans "Cancel" %}</a>
-                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <a href="{% url 'dataset-suggestions' %}" class="btn btn-default">{% trans "Cancel" %}</a>
+                    <input type="submit" value="Submit" class="btn btn-success">
                 </div>
             </form>
         </div>

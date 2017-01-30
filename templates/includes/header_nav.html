@@ -2,7 +2,42 @@
 {% load static %}
 
 <nav class="navbar navbar-default navbar-fixed-top" id="main-nav">
-    <div class="container-fluid">
+
+    {% block header_account %}
+        <header class="account-masthead">
+            <div class="container ">
+                <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+                    <ul class="unstyled">
+                        <li><a href="http://opendata.go.tz/user/login">{% trans "Login" %}</a></li>
+                        <li><a href="http://opendata.go.tz/pages/faq">{% trans "FAQ" %}</a></li>
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <li>
+                                {% if language.code != LANGUAGE_CODE %}
+                                    <a  style="cursor: pointer;" onclick="$('#selected-language-input').val('{{ language.code }}');$('#select-language-form').submit();">
+                                        {{ language.name_local }}
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                        <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
+                    </ul>
+                </div>
+                <nav class="account not-authed">
+                    <ul class="unstyled">
+                    </ul>
+                </nav>
+           </div>
+        </header>
+        <form id="select-language-form" action="{% url 'set_language' %}" method="post" class="hidden">
+            {% csrf_token %}
+            <input id="selected-language-input" name="language" type="hidden" value="{{ LANGUAGE_CODE }}"/>
+        </form>
+    {% endblock %} <!-- ends of edditing omary 21-02-2014 -->
+
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">{% trans 'Toggle navigation' %}</span>
@@ -10,11 +45,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/" alt="{% trans SITE_NAME %}"><img src="{% static 'img/logo.png' %}"></a>
+
+            <div class="">  
+                <div class="container">
+                    <div class="span12">
+                        <a href="/">
+                            <div class="logo"></div>
+                        </a>
+                        <div class="slogan">
+                            <p id="head"><span><b>o</b></span>pendata.gov.tz</p>
+                            <p id="foot">{% trans "Government Open Data Portal" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+{% comment %}
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="http://opendata.go.tz">{% trans 'Home' %}</a></li>
                 <li><a href="{% url 'dataset-suggestions' %}">{% trans 'Suggestions' %}</a></li>
@@ -44,6 +93,35 @@
                     <li><a href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-unlock-alt"></i> {% trans 'Management' %}</a></li>
                 {% endif %}
             </ul>
+{% endcomment %}
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="container">
+            <div class="row">
+                <div class="span12" >         
+                    <div class="right-menu menu-resize">
+                        <ul class="menu-nav">
+                            <li><a href="http://opendata.go.tz">{% trans "Home" %}</a></li>
+                            <li><a href="http://opendata.go.tz/dataset">{% trans "Datasets" %}</a></li>
+                            <li><a href="http://opendata.go.tz/organization">{% trans "Organizations" %}</a></li>
+                            <li><a href="http://opendata.go.tz/group">{% trans "Groups" %}</a></li>
+                            <li><a href="http://opendata.go.tz/dash">{% trans "Visualization Gallery" %}</a></li>
+                            <li><a href="{% url 'dataset-suggestions' %}">{% trans "Dataset Suggestions" %}</a></li>
+                            <li><a href="{% url 'feedback-create' %}">{% trans "Feedback" %}</a></li>
+                            <li><a href="http://opendata.go.tz/pages/about">{% trans "About" %}</a></li>
+                        </ul>
+                    </div>
+
+                    {% block header_site_search %}
+                        <div class="left-menu menu-resize">
+                            <div class="field">
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
         </div>
     </div>
 </nav>

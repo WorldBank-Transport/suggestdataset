@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block page_title %}
-    <h1><small class="text-primary">{{ dataset.name }}</small></h1>
+    <h5>{{ dataset.name }}</h5>
 {% endblock %}
 
 {% block breadcumb %}
@@ -32,7 +32,7 @@
                 {% if dataset.categories.all %}
                     <label class="text-muted"><strong>{% trans "Category" %}</strong></label>:
                     {% for category in dataset.categories.all %}
-                        <a href="{% url 'dataset-list' %}?category={{ category.id }}">{{ category.name }}</a>
+                        <a href="{% url 'dataset-suggestions' %}?category={{ category.id }}">{{ category.name }}</a>
                         {% if not forloop.last %}, {% endif %}
                     {% empty %}
                         -
@@ -47,7 +47,7 @@
             {% if dataset.organization %}
                 <p>
                     <label class="text-muted"><strong>{% trans "Organization" %}</strong></label>:
-                    <a href="{% url 'dataset-list' %}?organization={{ dataset.organization.id }}">{{ dataset.organization.name }}</a>
+                    <a href="{% url 'dataset-suggestions' %}?organization={{ dataset.organization.id }}">{{ dataset.organization.name }}</a>
                 </p>
             {% endif %}
 

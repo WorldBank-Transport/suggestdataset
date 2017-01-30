@@ -1,8 +1,20 @@
 body{
-    padding-top: 50px;
+    padding-top: 180px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: #444444;
+    background-color: #eeeeee;
+    background-image: url(../img/bg.png);
 }
 .filter-select{
     max-width: 100%;
+}
+
+.container{
+    width: 990px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .navbar-brand{
@@ -15,11 +27,36 @@ body{
 
 #main-nav{
     background: url('../img/odp-banner.png');
-    background-size: 100% 70px;
+    height: 178px;
 }
 
 .page-header {
     margin: 23px 0;
+    padding-bottom: 0px;
+    font-weight: 700;
+}
+
+.page-header h5{
+    font-weight: 700;
+}
+
+.logo {
+    /* border: solid 1px green; */
+    height: 110px;
+    width: 125px;
+    margin-top: 2px;
+    background-image: url(../img/arm.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    float: left;
+    position: relative;
+}
+
+.content{
+    background: #fff;
+    padding: 30px 30px 20px 30px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
 }
 
 @media (min-width: 768px){
@@ -36,4 +73,714 @@ body{
 
 .messages .alert-info {
     background-color: #4B95B1;
+}
+
+/*==Open Data New CSS==*/
+/*==Written by : Edward Nyahucho==*/
+/*====e-Government Agency*/
+
+.resize{
+	
+}
+.module-resource {
+    background-color: #FFF;
+    border-bottom: 1px solid #DDD;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 3px 3px 0px 0px;
+    width: 140%;
+    position: relative;
+    left: -20%;
+}
+.resize-cont{
+	width: 85%;
+	position: relative;
+	left: 9%;
+}
+
+.up-cont{
+	width: 100%;
+
+}
+.down-cont{
+	width: 100%;
+	position: relative;
+	left: 35px;
+}
+.top-fixed{
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+}
+.mid-body{
+	height: 184px;
+}
+
+.menu-nav a:visited {
+    color: #f5f5f5;
+}
+.top_nav {
+	background-color:#053346;
+	height: 30px;
+}
+
+.header {
+	background-image: url(../img/banner.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	/*border: solid 1px blue;*/
+	height: 115px;
+	background-color: #fff;
+}
+
+.account-masthead {
+    min-height: 30px;
+    color: #ffffff;
+    background: #003647 url(../img/bg.png);
+}
+
+.account-masthead .account {
+    float: right;
+}
+
+.account-masthead .account ul li{
+    display: block;
+    float: left;
+    border-left: 1px solid #00232e;
+}
+
+.account-masthead .account ul li a {
+    display: block;
+    color: #bfd7de;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 10px;
+    line-height: 31px;
+}
+
+.account-masthead .account ul li a.sub {
+    font-weight: 300;
+}
+
+.account-masthead .account ul li a:hover {
+    color: #d9e7eb;
+    background-color: #00232e;
+    text-decoration: none;
+}
+
+ul, lo {
+    padding: 0;
+    margin: 0 0 10px 25px;
+}
+
+ul.unstyled, ol.unstyled {
+    margin-left: 0;
+    list-style: none;
+}
+
+.menu .container{
+    width: 940px;
+}
+
+.menu-nav>li{
+	list-style-type: none;
+	display: inline;
+	color: #fff;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding-right: 20px;
+	line-height: 40px;
+}
+
+.menu-nav>li.active{
+	width: auto;
+    height: auto;
+    
+  
+   background-color: #ccc;
+   
+   padding-top:12px;
+   padding-bottom: 12px;
+  padding-left: 20px;
+	
+
+
+}
+.menu-nav>li.active>a{
+   color: #444;
+	}
+
+.right-menu{
+	float: left;
+	position: relative;
+	left: -2.5%;
+	
+
+}
+.simple-input .field input {
+    width: 100%;
+    height: auto;
+    margin: 0px -7px;
+    padding: 9px 5px;
+}
+.righty-menu{
+	width: 66%;
+	float: left;
+	position: relative;
+	left: -2.5%;
+}
+.left-menu{
+	width: 30%;
+	float: right;
+}
+.lefty-menu{
+	width: 34%;
+	float: right;
+}
+.check{
+	border: solid 1px red;
+}
+
+ li>input{
+ 	padding-right: 0px;
+ 	margin-top: 5px;
+ 	float: right;
+ 	width:314px;
+ 	border-radius:4px;
+}
+
+.menu-nav a {
+	color: #fff;
+}
+.menu-nav  a:hover{
+	color: #fff;
+}
+.sector {
+	/*
+	background-repeat: no-repeat;
+	background-position: right;*/
+	background-image: url(../img/sector.png);
+	/*border: solid 1px blue;*/
+	height: 190px;
+}
+.thumb-width{
+   float: left;
+   padding-left:80px;
+   padding-right: 60px;
+}
+.sector-thumb {
+	position: relative;
+	left: 220px;
+	top: 20px;
+	
+}
+
+.thumb-width{
+
+	
+
+}
+.sector-head{
+ display: block;
+	color:#053346; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	 margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+
+	
+	
+
+
+}
+.sector-cont{
+	position: relative;
+	top: 20px;
+
+}
+.desc{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	 margin-left: auto;
+     margin-right: auto;
+	
+	font-size: 90%;
+	width: 150px;
+	text-align: center;
+	
+
+
+}
+.recent{
+	position:relative;
+	left: -40px;
+
+}
+.menu {
+	/*border: solid 1px red;*/
+	background-color:#146c89;
+	height: 40px;
+}
+.slider-box {
+	/*border: solid 1px red;*/
+	/*background-color:#053346;*/
+	height: 285px;
+	background-color: #fff;
+}
+.slider-color{
+	background-color: #fff;
+
+}
+
+.logo_wrap {
+	/*border: solid 1px red;*/
+	width: 1160px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.slogan {
+	
+	float: left;
+	/*border: solid 1px red;*/
+	height: 110px;
+}
+
+.slogan #head {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	margin: 30px 10px 5px 2px;
+	color: #08c;
+    font-weight: 600;
+}
+
+#head span {
+	border: solid 3px #08c;
+	padding: 1px 5px;
+	font-weight: bold;
+	margin: 0px 3px 0px 0px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.slogan #foot {
+	margin: 27px 10px 10px 2px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.sidebar {
+	/*border: solid 1px red;*/
+	float: left; 
+	width: 294px;
+	overflow: hidden;
+	padding-bottom: 2px;
+	margin: 10px 0px 10px 5px;
+}
+
+.pop {
+	border: solid 1px #cccccc;
+	height: 100px;
+	margin: 7px;
+}
+
+.sidebar h1 {
+	/*border: solid 1px red;*/
+	margin: 0px 0px 10px 0px;
+	font-size: 20px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	background-color: #08c;
+	color: #fff;
+	
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+
+.body_wrap {
+	/*border: solid 1px red;*/
+	overflow: hidden;
+	width: 1160px;
+	margin: 0px auto;
+}
+
+
+#datasets {
+	/*border: solid 1px blue;*/
+	width: 100%;
+	/*height: 500px;
+*/
+}
+#datasets-wrap {
+
+	width: 100%;
+
+}
+.datasets-wrap-div{
+	float: left;
+}
+
+.dataset{
+	/*border: solid 1px red;*/
+	
+	position: relative;
+	top: 30px;
+}
+.related-link{
+	/*border: solid 1px blue;*/
+	width: 30%;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	top: 30px;
+	float: right;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 30px  solid transparent;
+	border-right: 30px 30px solid transparent;
+	
+	border-top: 20px solid #146c89;
+	position: relative;
+	left: 130px;
+	top: -24px;
+}
+.dataset-content{
+	/*border: solid 1px red;*/
+	width: 93%;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: relative;
+	top: 80px;
+}
+
+.related-content{
+	
+	/*border: solid 1px red;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;*/
+}
+.dataset-title{
+	color:#146c89; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 15px;
+	position: relative;
+}
+#data-title{
+	color:#146c89; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 15px;
+	position: relative;
+	left: -235px;
+}
+#data-create{
+	color:#939393; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 10px;
+	position: relative;
+	left: -235px;
+}
+.dataset-create{
+	color:#939393; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 10px;
+	position: relative;
+}
+.data-well-sm {
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  color:#676767; 
+  
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+ 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.dataset-body{
+	color:#676767; 
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 12px;
+}
+
+.more-button{
+	 display: inline;
+  padding:7px;
+  font-size: 75%;
+  
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background-color: #424242;
+
+position: relative;
+left: 86%;
+
+
+}
+.well-data {
+
+  position: relative;
+ 
+}
+.box {
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  border-top: 3px solid #d2d6de;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.box.box-solid {
+  border-top: 0px;
+}
+.box.box-solid.box-primary {
+  border: 1px solid #146c89;
+}
+.box.box-solid.box-primary > .box-header {
+  color: #ffffff;
+  background: #146c89;
+  background-color: #146c89;
+}
+.box.box-solid.box-primary > .box-header {
+  color: #ffffff;
+  background: #146c89;
+  background-color: #146c89;
+}
+.box.box-primary {
+  border-top-color: #146c89;
+}
+.box-header {
+  color: #444;
+  display: block;
+  padding: 10px;
+  position: relative;
+}
+.box.box-solid.box-primary > .box-header {
+  color: #ffffff;
+  background: #146c89;
+  background-color: #146c89;
+}
+.box-body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 10px;
+  background-color: #f6f6f6;
+}
+.box.height-control .box-body {
+  max-height: 300px;
+  overflow: auto;
+}
+.box .border-right {
+  border-right: 1px solid #f4f4f4;
+}
+.box .border-left {
+  border-left: 1px solid #f4f4f4;
+}
+.box.box-solid {
+  border-top: 0px;
+}
+.box-title{
+	color: #fff;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1;
+
+}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+/*slider*/
+
+/* Edward Nyahucho Css for java slidesv1.1 */
+
+#sliderFrame {
+	position:relative;
+	/*width:815px;*/
+	margin: 0 auto;} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
+    
+#slider {
+    /*width:815px;*/
+    height:285px;/* Make it the same size as your images */
+	background:#fff url(loading.gif) no-repeat 50% 50%;
+	position:relative;
+	margin:0 auto;/*make the image slider center-aligned */
+   /* box-shadow: 0px 1px 5px #999999;*/
+
+	left: -10px;
+
+}
+#slider img {
+	position:absolute;
+	border:none;
+	display:none;
+}
+
+/* the link style (if an image is wrapped in a link) */
+#slider a.imgLink {
+	z-index:2;
+	display:none;position:absolute;
+	top:0px;left:0px;border:0;padding:0;margin:0;
+	width:100%;height:100%;
+}
+
+/* Caption styles */
+div.mc-caption-bg, div.mc-caption-bg2 {
+	position:absolute;
+	width:100%;
+	height:auto;
+	padding:0;
+	left:0px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
+	bottom:0px;/*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+	z-index:3;
+	overflow:hidden;
+	font-size: 0;
+}
+div.mc-caption-bg {
+	background-color:black;
+}
+div.mc-caption {
+	font: bold 14px/20px Arial;
+	color:#EEE;
+	z-index:4;
+	padding:10px 0;/*Adding a padding-left or padding-right here will make the caption area wider than its background. Sometimes you may need to define its width again here to keep it the same width as its background area (div.mc-caption-bg).*/
+	text-align:center;
+}
+div.mc-caption a {
+	color:#FB0;
+}
+div.mc-caption a:hover {
+	color:#DA0;
+}
+
+
+/* ------ built-in navigation bullets wrapper ------*/
+div.navBulletsWrapper  {
+	top:265px; 
+	left:60px; /* Its position is relative to the #slider */
+	width:150px;
+	background:none;
+	padding-left:20px;
+	position:relative;
+	z-index:5;
+	cursor:pointer;
+}
+
+/* each bullet */
+div.navBulletsWrapper div 
+{
+    width:11px; 
+    height:11px;
+    background:transparent url(../img/bullet.png) no-repeat 0 0;
+    float:left;
+    overflow:hidden;
+    vertical-align:middle;
+    cursor:pointer;
+    margin-right:11px;/* distance between each bullet*/
+    _position:relative;/*IE6 hack*/
+}
+
+div.navBulletsWrapper div.active {background-position:0 -11px;}
+
+
+/* --------- Others ------- */
+#slider 
+{
+	transform: translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -o-transform:translate3d(0,0,0);
+}
+
+
+/*slider*/
+
+.foot {
+	/*border: solid 1px red;*/
+	
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.tr_about {
+	/*border: solid 1px red;*/
+	float: left;
+	width: 300px;
+	margin-right: 25px;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.tr_groups {
+	/*border: solid 1px red;*/
+	float: left;
+	margin-right: 25px;
+	margin-top: 10px;
+	width: 390px;
+}
+
+.tr_contacts {
+	/*border: solid 1px red;*/
+	width: 380px;
+	margin-top: 10px;
+	float: right;
+	margin-right: 8px;
+}
+.footer {
+	/*
+	background-repeat: no-repeat;
+	background-position: right;*/
+	background-color:#146c89;
+	/*border: solid 1px blue;*/
+	height: 100px;
+	position: relative;
+	top: 150px;
+	width: 100%;
+}
+.footer a {
+    color: #fff;
+}
+.footer-size{
+	text-align: center;
+	width: 90%;
+	position: relative;
+	left: 40px;
+	top: 10px;
+	background-color:#146c89;
+	height: 70px;
+	color: #fff; 
+	font-size: 80%;
 }
