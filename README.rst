@@ -23,14 +23,17 @@ Features
 
 - Dataset suggestion form
 - Datasets suggestions list with status filter
-- Upvoting/Downvoting approved suggestions
-- Comment thread for dataset suggestion with an indicator for staff comments
+- Upvoting/Like dataset suggestions
+- Comment thread for dataset suggestion
 - Admin/Management interface, accessible via ``/admin``
-- General feedback/contact form
-- Email notifications for feedback
+- General feedback form
+- Email notifications for senders and staff on new feedback and dataset suggestions
 - Multilingual support (default: English and Swahili)
 - Bulk data export
 
+
+    Note: For users to receive staff notification they have to assigned the respective
+    permissions using the admin interface.
 
 ============================================================
 Sample installation on Ubuntu or other debian based systems
