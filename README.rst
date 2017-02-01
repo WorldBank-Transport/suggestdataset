@@ -411,3 +411,17 @@ Restart services
     sudo service supervisor restart
     sudo service nginx restart
 
+
+When there are changes in application source code you may need to restart your process manager for the changes to become fully effective.
+Example using supervisor
+
+::
+
+    sudo supervisorctl restart all
+
+
+or
+
+::
+
+    sudo supervisorctl restart <your-supervisor-process-name>
