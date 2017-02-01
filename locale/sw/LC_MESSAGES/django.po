@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-26 15:51+0300\n"
+"POT-Creation-Date: 2017-02-01 11:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,40 +18,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: datasets/forms.py:9
-msgid "Your full name"
-msgstr "Jina lako kamili"
+#: datasets/apps.py:9 datasets/models.py:90
+msgid "Datasets Suggestions"
+msgstr "Mapendekezo ya seti za takwimu"
 
-#: datasets/forms.py:11
+#: datasets/forms.py:10 mrejesho/forms.py:17
+msgid "Your name"
+msgstr "Jina lako"
+
+#: datasets/forms.py:12 mrejesho/forms.py:18
 msgid "Your email"
 msgstr "Barua pepe"
 
-#: datasets/forms.py:20
-msgid "Your organization"
-msgstr "Taasisi yako"
-
-#: datasets/forms.py:21
+#: datasets/forms.py:22
 msgid "Description"
 msgstr "Maelezo"
 
-#: datasets/models.py:13
+#: datasets/forms.py:23
+msgid "Category of the dataset"
+msgstr "Kundi la Takwimu"
+
+#: datasets/models.py:13 mrejesho/models.py:12 mrejesho/models.py:39
 msgid "Name"
 msgstr "Jina"
 
-#: datasets/models.py:14 datasets/models.py:32
+#: datasets/models.py:14 datasets/models.py:32 mrejesho/models.py:13
 msgid "Desciption"
 msgstr "Ufafanuzi"
 
-#: datasets/models.py:16 datasets/models.py:34 datasets/models.py:80
+#: datasets/models.py:16 datasets/models.py:34 datasets/models.py:84
+#: mrejesho/models.py:15 mrejesho/models.py:55
 msgid "Date created"
 msgstr "Tarehe iliporekodiwa"
 
-#: datasets/models.py:18 datasets/models.py:36 datasets/models.py:82
+#: datasets/models.py:18 datasets/models.py:36 datasets/models.py:86
+#: mrejesho/models.py:17 mrejesho/models.py:57
 msgid "Date updated"
 msgstr "Tarehe iliposasishwa"
 
-#: datasets/models.py:21 datasets/models.py:72
-#: datasets/templates/datasets/dataset_detail.html:33
+#: datasets/models.py:21 datasets/templates/datasets/dataset_detail.html:33
+#: mrejesho/models.py:20 mrejesho/models.py:51
 msgid "Category"
 msgstr "Kundi"
 
@@ -64,12 +70,11 @@ msgid "Organization name"
 msgstr "Jina la taasisi"
 
 #: datasets/models.py:39 datasets/models.py:75
-#: datasets/templates/datasets/dataset_detail.html:49
-#: datasets/templates/datasets/dataset_list.html:48
+#: datasets/templates/datasets/dataset_detail.html:45 mrejesho/models.py:43
 msgid "Organization"
 msgstr "Taasisi"
 
-#: datasets/models.py:40
+#: datasets/models.py:40 templates/includes/header_nav.html:109
 msgid "Organizations"
 msgstr "Taasisi"
 
@@ -109,133 +114,70 @@ msgstr "Maelezo kuhusu seti ya data"
 msgid "likes"
 msgstr "waliopendekeza"
 
-#: datasets/models.py:77 datasets/templates/datasets/dataset_detail.html:55
-#: datasets/templates/datasets/dataset_list.html:96
-#: datasets/templates/datasets/dataset_suggestions.html:81
+#: datasets/models.py:72 mrejesho/models.py:21
+msgid "Categories"
+msgstr "Makundi"
+
+#: datasets/models.py:77 datasets/templates/datasets/dataset_detail.html:51
+#: datasets/templates/datasets/dataset_suggestions.html:79
+#: mrejesho/models.py:47
 msgid "Status"
 msgstr "Hali/Hatua"
 
-#: datasets/models.py:85
-msgid "Dataset"
-msgstr "Seti ya takwimu"
+#: datasets/models.py:79
+msgid "Archived"
+msgstr ""
 
-#: datasets/models.py:86
-msgid "Datasets"
-msgstr "Seti za Takwimu"
+#: datasets/models.py:81
+msgid "Is public"
+msgstr ""
 
+#: datasets/models.py:89
+
+msgid "Dataset Suggestion"
+msgstr "Mapendekezo ya seti ya takwimu"
+
+#: datasets/models.py:93
+msgid "Can receive notification on new dataset suggestions"
+msgstr ""
+
+#: datasets/templates/datasets/dataset_detail.html:6
 #: datasets/templates/datasets/dataset_detail.html:15
-#: templates/includes/header_nav.html:20
-msgid "Suggestions"
-msgstr "Mapendekezo"
+#: datasets/templates/datasets/dataset_suggest.html:10
+#: datasets/templates/datasets/dataset_suggestions.html:7
+#: templates/includes/header_nav.html:112
+msgid "Dataset Suggestions"
+msgstr "Mapendekezo ya seti za takwimu"
 
-#: datasets/templates/datasets/dataset_detail.html:62
+#: datasets/templates/datasets/dataset_detail.html:58
 msgid "Created by"
 msgstr "Mwanzilishi"
 
-#: datasets/templates/datasets/dataset_detail.html:63
-#| msgid "Post"
+#: datasets/templates/datasets/dataset_detail.html:59
 msgid "Posted"
 msgstr "Imetumwa"
 
-#: datasets/templates/datasets/dataset_detail.html:64
+#: datasets/templates/datasets/dataset_detail.html:60
 msgid "Last modified"
 msgstr "Mara ya mwisho kusasishwa"
 
-#: datasets/templates/datasets/dataset_detail.html:70
+#: datasets/templates/datasets/dataset_detail.html:66 xcomments/models.py:23
 msgid "Comments"
 msgstr "Maoni"
 
-#: datasets/templates/datasets/dataset_detail.html:75
+#: datasets/templates/datasets/dataset_detail.html:71
 msgid "We would like to hear from you, please add your comments"
 msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
 
-#: datasets/templates/datasets/dataset_list.html:7
-#: datasets/templates/datasets/dataset_suggestions.html:7
-msgid "select dataset"
-msgstr "chagua seti ya takwimu"
+#: datasets/templates/datasets/dataset_suggest.html:6
+msgid "Dataset Suggestion Form"
+msgstr "Fomu ya Mapendekezo ya takwimu"
 
-#: datasets/templates/datasets/dataset_list.html:13
-msgid "Voting for dataset release"
-msgstr "Kura kwa seti za takwimu kutolewa kwa umma"
+#: datasets/templates/datasets/dataset_suggest.html:12
+msgid "Form"
+msgstr "Fomu"
 
-#: datasets/templates/datasets/dataset_list.html:16
-msgid ""
-"\n"
-"            Let us know if there is any dataset you wish to see on "
-"Tanzania's Open Data Portal.\n"
-"            Please check the below list of datasets and 'like' any dataset "
-"which interests you.\n"
-"            If the dataset you are interested in isn't listed yet please use "
-"our <a href=\"%(suggest_url)s\">request dataset form</a> to request it.\n"
-"        "
-msgstr ""
-"\n"
-"Karibu utufahamishe kama kuna takwimu yoyote ambayo ungependa kuiona kwenye "
-"tovuti ya Takwimu huria Tanzania.\n"
-"Tafadhali cheki orodha ifuatayo na bonyeza kitufe cha 'like' kwa takwimu "
-"yoyote unayoipendelea.\n"
-"Ikiwa takwimu unayoipendelea haijaorodheshwa tafadhali tumia <a href="
-"\"%(suggest_url)s\">fomu ya kupendekeza takwimu</a> kutufikishia mapendekezo "
-"yako.\n"
-"        "
-
-#: datasets/templates/datasets/dataset_list.html:29
-#: datasets/templates/datasets/dataset_list.html:125
-#: datasets/templates/datasets/dataset_suggestions.html:119
-msgid "Show filters"
-msgstr "Onesha chujio"
-
-#: datasets/templates/datasets/dataset_list.html:36
-msgid "name"
-msgstr "jina"
-
-#: datasets/templates/datasets/dataset_list.html:39
-#: datasets/templates/datasets/dataset_list.html:41
-msgid "All datasets"
-msgstr "Takwimu zote"
-
-#: datasets/templates/datasets/dataset_list.html:50
-msgid "Collection Entity"
-msgstr "Mkusanyaji wa takwimu"
-
-#: datasets/templates/datasets/dataset_list.html:57
-#: datasets/templates/datasets/dataset_suggestions.html:30
-msgid "Sort by"
-msgstr "Kuanzia"
-
-#: datasets/templates/datasets/dataset_list.html:59
-#: datasets/templates/datasets/dataset_suggestions.html:33
-msgid "Most liked"
-msgstr "Zilizopendwa zaidi"
-
-#: datasets/templates/datasets/dataset_list.html:60
-#: datasets/templates/datasets/dataset_suggestions.html:32
-msgid "Latest"
-msgstr "Mpya zaidi"
-
-#: datasets/templates/datasets/dataset_list.html:64
-msgid "Go"
-msgstr "Tafuta"
-
-#: datasets/templates/datasets/dataset_list.html:122
-#: datasets/templates/datasets/dataset_suggestions.html:116
-msgid "Hide filters"
-msgstr "Ficha chujio"
-
-#: datasets/templates/datasets/dataset_suggest.html:7
-msgid "Add request"
-msgstr "Tuma mapendekezo"
-
-#: datasets/templates/datasets/dataset_suggest.html:11 templates/home.html:5
-#: templates/includes/header_nav.html:19
-msgid "Home"
-msgstr "Mwanzo"
-
-#: datasets/templates/datasets/dataset_suggest.html:13
-msgid "Suggest dataset"
-msgstr "Pendekeza seti ya takwimu"
-
-#: datasets/templates/datasets/dataset_suggest.html:20
+#: datasets/templates/datasets/dataset_suggest.html:19
 msgid ""
 "\n"
 "            Which other dataset would you like to see in <a href=\"http://"
@@ -248,11 +190,14 @@ msgstr ""
 "a>.\n"
 "        "
 
-#: datasets/templates/datasets/dataset_suggest.html:33
-msgid "Submit a your request"
-msgstr "Tuma mapendekezo yako"
+#: datasets/templates/datasets/dataset_suggest.html:30
+#: datasets/templates/datasets/dataset_suggestions.html:18
+#: datasets/templates/datasets/dataset_suggestions.html:100
+msgid "Suggest a dataset"
+msgstr "Pendekeza seti ya takwimu"
 
-#: datasets/templates/datasets/dataset_suggest.html:40
+#: datasets/templates/datasets/dataset_suggest.html:37
+#: mrejesho/templates/mrejesho/feedback.html:19
 msgid "Cancel"
 msgstr "Sitisha"
 
@@ -260,57 +205,268 @@ msgstr "Sitisha"
 msgid "Dataset suggestions"
 msgstr "Mapendekezo ya seti za takwimu"
 
-#: datasets/templates/datasets/dataset_suggestions.html:18
-#: datasets/templates/datasets/dataset_suggestions.html:100
-msgid "Suggest a dataset"
-msgstr "Pendekeza seti ya takwimu"
+#: datasets/templates/datasets/dataset_suggestions.html:29
+msgid "Sort by"
+msgstr "Kuanzia"
 
-#: datasets/templates/datasets/dataset_suggestions.html:42
+#: datasets/templates/datasets/dataset_suggestions.html:31
+msgid "Latest"
+msgstr "Mpya zaidi"
+
+#: datasets/templates/datasets/dataset_suggestions.html:32
+msgid "Most liked"
+msgstr "Zilizopendwa zaidi"
+
+#: datasets/templates/datasets/dataset_suggestions.html:40
 msgid "Filter by status"
 msgstr "Chuja kwa hali/hatua"
 
-#: datasets/templates/datasets/dataset_suggestions.html:45
+#: datasets/templates/datasets/dataset_suggestions.html:43
 msgid "All"
 msgstr "Vyote"
 
-#: datasets/templates/datasets/dataset_suggestions.html:76
+#: datasets/templates/datasets/dataset_suggestions.html:74
 msgid "%(time)s ago."
 msgstr "%(timesince)s zilizopita"
+
+#: datasets/templates/datasets/emails/new_suggestion_received.html:2
+#, python-format
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"A new dataset suggestion from %(suggester_name)s has been received on "
+"%(site_name)s.\n"
+"\n"
+"%(site_domain)s/admin/datasets/dataset/%(suggestion_id)s\n"
+"\n"
+"=================================================\n"
+"%(dataset_name)s\n"
+"=================================================\n"
+msgstr ""
+
+#: datasets/templates/datasets/emails/new_suggestion_received.html:15
+#: datasets/templates/datasets/emails/suggestion_received.html:7
+#: mrejesho/templates/mrejesho/emails/feedback_received.html:7
+#: mrejesho/templates/mrejesho/emails/new_feedback_received.html:15
+#: xcomments/templates/comments/emails/comment_received.html:7
+#: xcomments/templates/comments/emails/new_comment_received.html:15
+msgid "Regards"
+msgstr ""
+
+#: datasets/templates/datasets/emails/suggestion_received.html:3
+
+msgid "Hello %(suggester_name)s,"
+msgstr "Habari %(suggester_name)s,"
+
+#: datasets/templates/datasets/emails/suggestion_received.html:4
+#, python-format
+msgid ""
+"\n"
+"Thank you very much for your suggestion on %(site_name)s. We will respond "
+"accordingly as soon as we can.\n"
+msgstr ""
 
 #: datasets/templates/includes/datasets/datasetlike_button.html:12
 #: datasets/templates/includes/datasets/datasetlike_button.html:23
 msgid "Interested"
 msgstr "Umeipenda"
 
-#: datasets/views.py:75
-#, python-format
+#: datasets/views.py:71
 msgid ""
-"Thanks, we already received your suggestion: <a href=\"%s\" class=\"alert-"
-"link\">%s</a>"
+"Thanks, we already received your 'vote': <a href='%s' class='alert-link'>%s</"
+"a>"
 msgstr ""
 "Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</"
 "a>"
 
-#: datasets/views.py:85
-#, python-format
-msgid "Thanks for your suggestion: <a class=\"alert-link\"href=\"%s\">%s</a>"
-msgstr "Asante kwa mapendekezo yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
+#: datasets/views.py:81
+msgid "Thanks for your vote: <a class=\"alert-link\"href=\"%s\">%s</a>"
+msgstr "Asante kwa kura yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
 
-#: suggestdataset/settings.py:139
+#: datasets/views.py:101
+msgid "Thanks, we have received your suggestion:\"%(dataset_name)s\""
+msgstr ""
+"Asante, tumepokea mapendekezo yako:\"%(dataset_name)s\""
+
+#: datasets/views.py:120
+msgid "%(site_name)s: Dataset Suggestion"
+msgstr "%(site_name)s: Mapendekezo ya seti za takwimu"
+
+#: datasets/views.py:140
+#, python-format
+msgid "%(site_name)s: New Dataset suggestion received#%(suggestion_id)s"
+msgstr ""
+
+#: mrejesho/admin.py:26
+msgid "Sender"
+msgstr ""
+
+#: mrejesho/admin.py:30 mrejesho/models.py:61 mrejesho/models.py:62
+#: mrejesho/templates/mrejesho/feedback.html:6
+#: templates/includes/header_nav.html:113
+msgid "Feedback"
+msgstr ""
+
+#: mrejesho/admin.py:33
+msgid "Internal"
+msgstr ""
+
+#: mrejesho/apps.py:9
+msgid "Users Feedback"
+msgstr ""
+
+#: mrejesho/forms.py:19
+msgid "Your message"
+msgstr "Ujumbe wako"
+
+#: mrejesho/forms.py:29
+msgid "Please provide either a valid email address or phone number"
+msgstr ""
+
+#: mrejesho/models.py:34
+msgid "Received/Read"
+msgstr ""
+
+#: mrejesho/models.py:35
+msgid "Under review"
+msgstr ""
+
+#: mrejesho/models.py:36
+msgid "Response sent"
+msgstr ""
+
+#: mrejesho/models.py:40
+msgid "Email"
+msgstr ""
+
+#: mrejesho/models.py:42
+msgid "Phone"
+msgstr ""
+
+#: mrejesho/models.py:46
+msgid "Message"
+msgstr ""
+
+#: mrejesho/models.py:52
+msgid "Remarks"
+msgstr ""
+
+#: mrejesho/models.py:53
+msgid "Notified staff"
+msgstr ""
+
+#: mrejesho/models.py:65
+msgid "Can receive notification on new feedback"
+msgstr ""
+
+#: mrejesho/templates/mrejesho/emails/feedback_received.html:3
+#: xcomments/templates/comments/emails/comment_received.html:3
+#, python-format
+msgid "Hello %(sender_name)s,"
+msgstr ""
+
+#: mrejesho/templates/mrejesho/emails/feedback_received.html:4
+#, python-format
+msgid ""
+"\n"
+"Thank you very much for your feedback on %(site_name)s. We will respond "
+"accordingly as soon as we can.\n"
+msgstr ""
+
+#: mrejesho/templates/mrejesho/emails/new_feedback_received.html:2
+#, python-format
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"A new feedback from %(sender_name)s has been received on %(site_name)s.\n"
+"\n"
+"%(site_domain)s/admin/mrejesho/feedback/%(feedback_id)s\n"
+"\n"
+"=================================================\n"
+"%(feedback_message)s\n"
+"=================================================\n"
+msgstr ""
+
+#: mrejesho/templates/mrejesho/feedback.html:9
+msgid "We would like to hear your feedback"
+msgstr "Tunapenda kusikia maoni yako"
+
+#: mrejesho/templates/mrejesho/feedback_thanks.html:5
+msgid "Thank you"
+msgstr "Asante"
+
+#: mrejesho/templates/mrejesho/feedback_thanks.html:8
+msgid "Thanks for your feedback"
+msgstr ""
+
+#: mrejesho/templates/mrejesho/feedback_thanks.html:14
+msgid "We are happy to hear from you!"
+msgstr ""
+
+#: mrejesho/views.py:48
+#, python-format
+msgid "%(site_name)s: Feedback"
+msgstr ""
+
+#: mrejesho/views.py:66
+#, python-format
+msgid "%(site_name)s: New Feedback received #%(feedback_id)s"
+msgstr ""
+
+#: suggestdataset/settings.py:143
 msgid "Kiswahili"
 msgstr ""
 
-#: suggestdataset/settings.py:140
+#: suggestdataset/settings.py:144
 msgid "English"
 msgstr ""
 
-#: suggestdataset/settings.py:180 suggestdataset/settings.py:182
-msgid "Request Dataset"
-msgstr "Pendekeza Seti ya Takwimu"
+#: suggestdataset/settings.py:184 suggestdataset/settings.py:186
+msgid "Open Data Tanzania"
+msgstr ""
 
-#: suggestdataset/settings.py:184 templates/includes/header_nav.html:44
+#: suggestdataset/settings.py:188
 msgid "Management"
 msgstr "Utawala"
+
+#: templates/admin/index.html:20
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:37
+msgid "View"
+msgstr ""
+
+#: templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:55
+msgid "Recent Actions"
+msgstr ""
+
+#: templates/admin/index.html:56
+msgid "My Actions"
+msgstr ""
+
+#: templates/admin/index.html:60
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:74
+msgid "Unknown content"
+msgstr ""
+
+#: templates/captcha/image.html:4
+msgid "Play CAPTCHA as audio file"
+msgstr ""
 
 #: templates/comments/form.html:12 templates/comments/preview.html:34
 msgid "Post"
@@ -351,10 +507,108 @@ msgstr "Fanya mabadiliko au"
 msgid "Post your comment"
 msgstr "Tuma maoni yako"
 
-#: templates/includes/header_nav.html:8
+#: templates/home.html:5 templates/includes/header_nav.html:107
+msgid "Home"
+msgstr "Mwanzo"
+
+#: templates/includes/footer.html:8
+msgid "Terms &amp; Conditions "
+msgstr ""
+
+#: templates/includes/footer.html:9
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/includes/footer.html:10
+msgid "Copyright Notice"
+msgstr ""
+
+#: templates/includes/footer.html:11
+msgid "Contact us"
+msgstr ""
+
+#: templates/includes/footer.html:12
+msgid ""
+"Government Open Data Portal is designed, developed and hosted by e-"
+"Government Agency. Data are Managed by National Bureau of Statistics."
+msgstr ""
+
+#: templates/includes/header_nav.html:15
+msgid "Login"
+msgstr ""
+
+#: templates/includes/header_nav.html:16
+msgid "FAQ"
+msgstr ""
+
+#: templates/includes/header_nav.html:26
+msgid "Admin"
+msgstr ""
+
+#: templates/includes/header_nav.html:44
 msgid "Toggle navigation"
 msgstr "Togoa urambazaji"
 
-#: templates/includes/header_nav.html:21
-msgid "Voting"
+#: templates/includes/header_nav.html:58
+msgid "Government Open Data Portal"
+msgstr ""
+
+#: templates/includes/header_nav.html:108
+msgid "Datasets"
+msgstr "Seti za Takwimu"
+
+#: templates/includes/header_nav.html:110
+msgid "Groups"
+msgstr ""
+
+#: templates/includes/header_nav.html:111
+msgid "Visualization Gallery"
+msgstr ""
+
+#: templates/includes/header_nav.html:114
+msgid "About"
+msgstr "Kuhusu"
+
+#: xcomments/models.py:22
+msgid "Comment"
+msgstr "Maoni"
+
+#: xcomments/models.py:26
+msgid "Can receive notification on new comments"
+msgstr ""
+
+#: xcomments/models.py:43
+#, python-format
+msgid "%(site_name)s: Comment Received"
+msgstr ""
+
+#: xcomments/models.py:70
+#, python-format
+msgid "%(site_name)s: New Comment received#%(comment_id)s"
+msgstr ""
+
+#: xcomments/models.py:82
+msgid "Thanks, we have received your comments"
+msgstr ""
+
+#: xcomments/templates/comments/emails/comment_received.html:4
+#, python-format
+msgid ""
+"\n"
+"Thank you very much for your comment on %(site_name)s.\n"
+msgstr ""
+
+#: xcomments/templates/comments/emails/new_comment_received.html:2
+#, python-format
+msgid ""
+"\n"
+"Hello,\n"
+"\n"
+"A new comment from %(sender_name)s has been received on %(site_name)s.\n"
+"\n"
+"%(site_domain)s/admin/xcomment/xcomment/%(comment_id)s\n"
+"\n"
+"=================================================\n"
+"%(comment_message)s\n"
+"=================================================\n"
 msgstr ""
