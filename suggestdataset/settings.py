@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import dotenv
 import dj_database_url
-
+from distutils.util import strtobool
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY', '3ss+te5koy+))l6$r)=hw6d1-#r%kodx(9tbh#2h95lcs^v!5q')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DEBUG', False))
+DEBUG = bool(strtobool(os.environ.get('DEBUG', 'False')))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(' ')
 
@@ -197,7 +197,7 @@ LOGIN_REDIRECT_URL = os.environ.get('LOGIN_REDIRECT_URL', '/')
 
 SESSION_COOKIE_AGE = int(os.environ.get('SESSION_COOKIE_AGE', 1200))
 
-SESSION_SAVE_EVERY_REQUEST = bool(os.environ.get('SESSION_SAVE_EVERY_REQUEST', True))
+SESSION_SAVE_EVERY_REQUEST = bool(strtobool(os.environ.get('SESSION_SAVE_EVERY_REQUEST', 'True')))
 
 # Forms
 
@@ -221,7 +221,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 if os.environ.get('ADMINS'):
     ADMINS = [i.split(':') for i in os.environ.get('ADMINS').split(',')]
 
-EMAIL_USE_TLS = bool(os.environ.get('EMAIL_USE_TLS', True))
+EMAIL_USE_TLS = bool(strtobool(os.environ.get('EMAIL_USE_TLS', 'True')))
 
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
 
@@ -237,4 +237,4 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
 
 SERVER_EMAIL = os.environ.get('SERVER_EMAIL', '')
 
-EMAIL_FAIL_SILENTLY = bool(os.environ.get('EMAIL_FAIL_SILENTLY', True))
+EMAIL_FAIL_SILENTLY = bool(strtobool(os.environ.get('EMAIL_FAIL_SILENTLY', 'True')))
