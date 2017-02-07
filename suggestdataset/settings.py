@@ -179,7 +179,7 @@ MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
 
 # Site
 
-SITE_ID = 1
+SITE_ID = int(os.environ.get('SITE_ID', 1))
 
 SITE_NAME = os.environ.get('SITE_NAME', ugettext('Open Data Tanzania'))
 
