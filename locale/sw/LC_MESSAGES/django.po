@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-01 11:09+0300\n"
+"POT-Creation-Date: 2017-02-08 13:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,7 +133,6 @@ msgid "Is public"
 msgstr ""
 
 #: datasets/models.py:89
-
 msgid "Dataset Suggestion"
 msgstr "Mapendekezo ya seti ya takwimu"
 
@@ -226,6 +225,7 @@ msgid "All"
 msgstr "Vyote"
 
 #: datasets/templates/datasets/dataset_suggestions.html:74
+#, python-format
 msgid "%(time)s ago."
 msgstr "%(timesince)s zilizopita"
 
@@ -255,7 +255,7 @@ msgid "Regards"
 msgstr ""
 
 #: datasets/templates/datasets/emails/suggestion_received.html:3
-
+#, python-format
 msgid "Hello %(suggester_name)s,"
 msgstr "Habari %(suggester_name)s,"
 
@@ -273,6 +273,7 @@ msgid "Interested"
 msgstr "Umeipenda"
 
 #: datasets/views.py:71
+#, python-format
 msgid ""
 "Thanks, we already received your 'vote': <a href='%s' class='alert-link'>%s</"
 "a>"
@@ -281,15 +282,17 @@ msgstr ""
 "a>"
 
 #: datasets/views.py:81
+#, python-format
 msgid "Thanks for your vote: <a class=\"alert-link\"href=\"%s\">%s</a>"
 msgstr "Asante kwa kura yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
 
 #: datasets/views.py:101
+#, python-format
 msgid "Thanks, we have received your suggestion:\"%(dataset_name)s\""
-msgstr ""
-"Asante, tumepokea mapendekezo yako:\"%(dataset_name)s\""
+msgstr "Asante, tumepokea mapendekezo yako:\"%(dataset_name)s\""
 
 #: datasets/views.py:120
+#, python-format
 msgid "%(site_name)s: Dataset Suggestion"
 msgstr "%(site_name)s: Mapendekezo ya seti za takwimu"
 
