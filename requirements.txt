@@ -15,4 +15,5 @@ django-contrib-comments
 django-widget-tweaks
 django-phonenumber-field
 django-simple-captcha
+django-newsletter
 ipython

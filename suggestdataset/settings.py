@@ -55,6 +55,9 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'datasets',
     'mrejesho',
+    'django_extensions',
+    'sorl.thumbnail',
+    'newsletter',
     'debug_toolbar',
 ]
 
@@ -238,3 +241,7 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'webmaster@localhost')
 SERVER_EMAIL = os.environ.get('SERVER_EMAIL', '')
 
 EMAIL_FAIL_SILENTLY = bool(strtobool(os.environ.get('EMAIL_FAIL_SILENTLY', 'True')))
+
+# Newsletter
+
+NEWSLETTER_CONFIRM_EMAIL = bool(strtobool(os.environ.get('NEWSLETTER_CONFIRM_EMAIL', 'False')))

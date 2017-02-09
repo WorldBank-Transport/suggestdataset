@@ -1,0 +1,22 @@
+{% extends "newsletter/common.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Newsletter archive" %}: {{ newsletter.title }}{% endblock %}
+
+{% block page_title %}
+    <h5>{% trans "Newsletter archive" %} {{ newsletter.title }}</h5>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-responsive table-stripped table-hover">
+        {% for submission in latest %}
+        <tr>
+            <td><a href="{{ submission.get_absolute_url }}">{{ submission.publish_date|date }}</a></td>
+            <td><a href="{{ submission.get_absolute_url }}">{{ submission.message }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p class="text-right"><a class="btn btn-link" href="{% url 'newsletter_list' %}"><i class="fa fa-backward"></i> {% trans "Back" %}</a></p>
+{% endblock content %}

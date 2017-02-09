@@ -1,0 +1,50 @@
+{% extends "newsletter/common.html" %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{{ newsletter.title }}: {% trans "Newsletter subscribe" %}{% endblock %}
+
+{% block page_title %}
+    <h5>
+        <span class="text-muted">{% trans "Subscribe for a Newsletter" %}:</span>
+        {{ newsletter.title }}
+    </h5>
+{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <small>
+                {% blocktrans with newsletter_title=newsletter.title %}Fill the form below to receive the "<strong>{{ newsletter_title }}</strong>" newsletter.{% endblocktrans %}</small>
+        </div>
+        <div class="panel-body">
+            {% if error %}
+                <p>{% trans "Due to a technical error we were not able to submit your confirmation email. This could be because your email address is invalid." %}</p>
+
+                {% comment %} Replace the the following dummy with a valid email address and remove this comment.
+
+                <p>{% trans "If the error persists, please don't hesitate to contact us at the following email address:" %} <a href="mailto:info@foobar.com">info@foobar.com</a></p>
+
+                {% endcomment %}
+            {% else %}
+                <form class="form" enctype="multipart/form-data" method="post" action=".">
+                    {% csrf_token %}
+                    {{ form|crispy}}
+                    <p><input class="btn btn-success" id="id_submit" name="submit" value="{% trans 'Subscribe' %}" type="submit" /></p>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block extra_js %}
+    <script>
+        $(document).ready(function() {
+            $("#hint_id_name_field").hide();
+            $("#id_name_field").attr("placeholder", "{% trans 'Your Name (optional)' %}");
+            $("#id_email_field").attr("placeholder", "{% trans 'Your Email' %}");
+        });
+    </script>
+{% endblock %}
