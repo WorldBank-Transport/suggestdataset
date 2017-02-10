@@ -4,8 +4,13 @@
 
 {% block head_title %}{% trans "Newsletter" %} {{ newsletter.title }} {{ action }} {% trans "activate" %}{% endblock %}
 
-{% block content %}
-    <h1>{% trans "Newsletter" %} {{ newsletter.title }} {{ action }} {% trans "activate" %}</h1>
+{% block page_title %}
+    <h4>{{ newsletter.title }}</h4>
+    <h5><small class="text-primary">{% trans "Newsletter Subscription" %}</small></h5>
+{% endblock %}
 
+
+{% block content %}
+    <p class="lead text-success">{% trans "Congratulations!" %}</p>
     <p>{% trans "Your subscription has successfully been activated." %}</p>
 {% endblock content %}
