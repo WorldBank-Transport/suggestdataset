@@ -62,41 +62,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-{% comment %}
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="http://opendata.go.tz">{% trans 'Home' %}</a></li>
-                <li><a href="{% url 'dataset-suggestions' %}">{% trans 'Suggestions' %}</a></li>
-                <li><a href="{% url 'feedback-create' %}">{% trans 'Feedback' %}</a></li>
-            </ul>
-
-            <form id="select-language-form"action="{% url 'set_language' %}" method="post" class="navbar-form navbar-right">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ request.get_full_path }}" />
-                {% get_current_language as LANGUAGE_CODE %}
-                {% get_available_languages as LANGUAGES %}
-                {% get_language_info_list for LANGUAGES as languages %}
-                <input id="selected-language-input" name="language" type="hidden" value="{{ LANGUAGE_CODE }}"/>
-                <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                    {% for language in languages %}
-                        <button type="button"
-                                class="btn {% if language.code == LANGUAGE_CODE %}btn-primary{% else %}btn-default{% endif %}"
-                                onclick="$('#selected-language-input').val('{{ language.code }}');$('#select-language-form').submit();">
-                            <small>{{ language.name_local }} ({{ language.code }})</small>
-                        </button>
-                    {% endfor %}
-                </div>
-            </form>
-
-            <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated and user.is_staff %}
-                    <li><a href="{% url 'admin:index' %}" target="_blank"><i class="fa fa-unlock-alt"></i> {% trans 'Management' %}</a></li>
-                {% endif %}
-            </ul>
-{% endcomment %}
-        </div>
     </div>
 
     <div class="menu">

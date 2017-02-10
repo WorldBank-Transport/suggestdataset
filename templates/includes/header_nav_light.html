@@ -1,0 +1,35 @@
+{% load i18n %}
+{% load static %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<nav class="navbar navbar-default navbar-light" id="main-nav">
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="">  
+                <div class="container">
+                    <div class="span12">
+                        <a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}">
+                            <div class="logo"></div>
+                        </a>
+                        <div class="slogan">
+                            <p id="head"><span><b>o</b></span>pendata.gov.tz</p>
+                            <p id="foot">{% trans "Government Open Data Portal" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</nav>
