@@ -28,6 +28,7 @@ Features
 - Admin/Management interface, accessible via ``/admin``
 - General feedback form
 - Email notifications for senders and staff on new feedback and dataset suggestions
+- Newsletters
 - Multilingual support (default: English and Swahili)
 - Bulk data export
 
@@ -425,3 +426,49 @@ or
 ::
 
     sudo supervisorctl restart <your-supervisor-process-name>
+
+
+Sending newsletter e-mails
+_____________________________
+
+In order to send newsletter emails you will have to execute
+``python manage runjob submit`` command. To process message queue
+periodically you may use crontab, example
+
+::
+
+    @daily cd /path/to/my/suggestdataset && /path/to/my/virtualenv/bin/python manage.py runjob submit
+
+OR
+
+::
+
+    @daily cd /path/to/my/suggestdataset && /path/to/my/virtualenv/bin/python manage.py runjobs hourly
+
+
+For more information check out *django-newsletter* documentation, http://django-newsletter.readthedocs.io/en/latest/index.html
+
+
+Upgrading
+_________
+
+To Update an existing deployment usually you will have to
+
+- Get the new source code (usually by pulling from Github)
+- Activate virtual environment
+- Ensure all requirements are installed
+- Apply database migrations
+- Collect static files
+- Restart the application server
+
+
+Example:
+
+::
+
+    cd suggestdataset
+    git pull origin master
+    pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py collectstatic
+    sudo supervisorctl restart all
