@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-08 13:09+0300\n"
+"POT-Creation-Date: 2017-02-10 11:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "Jina la taasisi"
 msgid "Organization"
 msgstr "Taasisi"
 
-#: datasets/models.py:40 templates/includes/header_nav.html:109
+#: datasets/models.py:40 templates/includes/header_nav.html:75
 msgid "Organizations"
 msgstr "Taasisi"
 
@@ -144,7 +144,7 @@ msgstr ""
 #: datasets/templates/datasets/dataset_detail.html:15
 #: datasets/templates/datasets/dataset_suggest.html:10
 #: datasets/templates/datasets/dataset_suggestions.html:7
-#: templates/includes/header_nav.html:112
+#: templates/includes/header_nav.html:78
 msgid "Dataset Suggestions"
 msgstr "Mapendekezo ya seti za takwimu"
 
@@ -307,7 +307,7 @@ msgstr ""
 
 #: mrejesho/admin.py:30 mrejesho/models.py:61 mrejesho/models.py:62
 #: mrejesho/templates/mrejesho/feedback.html:6
-#: templates/includes/header_nav.html:113
+#: templates/includes/header_nav.html:79
 msgid "Feedback"
 msgstr ""
 
@@ -418,19 +418,19 @@ msgstr ""
 msgid "%(site_name)s: New Feedback received #%(feedback_id)s"
 msgstr ""
 
-#: suggestdataset/settings.py:143
+#: suggestdataset/settings.py:146
 msgid "Kiswahili"
 msgstr ""
 
-#: suggestdataset/settings.py:144
+#: suggestdataset/settings.py:147
 msgid "English"
 msgstr ""
 
-#: suggestdataset/settings.py:184 suggestdataset/settings.py:186
+#: suggestdataset/settings.py:187 suggestdataset/settings.py:189
 msgid "Open Data Tanzania"
 msgstr ""
 
-#: suggestdataset/settings.py:188
+#: suggestdataset/settings.py:191
 msgid "Management"
 msgstr "Utawala"
 
@@ -510,7 +510,7 @@ msgstr "Fanya mabadiliko au"
 msgid "Post your comment"
 msgstr "Tuma maoni yako"
 
-#: templates/home.html:5 templates/includes/header_nav.html:107
+#: templates/home.html:5 templates/includes/header_nav.html:73
 msgid "Home"
 msgstr "Mwanzo"
 
@@ -544,33 +544,299 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: templates/includes/header_nav.html:26
+#: templates/includes/header_nav.html:17
+msgid "Subscribe for Newsletters"
+msgstr ""
+
+#: templates/includes/header_nav.html:27
 msgid "Admin"
 msgstr ""
 
-#: templates/includes/header_nav.html:44
+#: templates/includes/header_nav.html:45
+#: templates/includes/header_nav_light.html:13
 msgid "Toggle navigation"
 msgstr "Togoa urambazaji"
 
-#: templates/includes/header_nav.html:58
+#: templates/includes/header_nav.html:59
+#: templates/includes/header_nav_light.html:27
 msgid "Government Open Data Portal"
 msgstr ""
 
-#: templates/includes/header_nav.html:108
+#: templates/includes/header_nav.html:74
 msgid "Datasets"
 msgstr "Seti za Takwimu"
 
-#: templates/includes/header_nav.html:110
+#: templates/includes/header_nav.html:76
 msgid "Groups"
 msgstr ""
 
-#: templates/includes/header_nav.html:111
+#: templates/includes/header_nav.html:77
 msgid "Visualization Gallery"
 msgstr ""
 
-#: templates/includes/header_nav.html:114
+#: templates/includes/header_nav.html:80
 msgid "About"
 msgstr "Kuhusu"
+
+#: templates/newsletter/message/message.html:32
+msgid "Read more"
+msgstr ""
+
+#: templates/newsletter/message/message.html:40
+msgid "Read message online"
+msgstr ""
+
+#: templates/newsletter/message/message.html:42
+#: templates/newsletter/newsletter_detail.html:20
+#: templates/newsletter/subscription_unsubscribe.html:23
+#: templates/newsletter/subscription_unsubscribe_user.html:23
+msgid "Unsubscribe"
+msgstr ""
+
+#: templates/newsletter/message/message.txt:15
+msgid "Unsubscribe:"
+msgstr ""
+
+#: templates/newsletter/message/subscribe.html:6
+#, python-format
+msgid "Subscription to %(title)s"
+msgstr ""
+
+#: templates/newsletter/message/subscribe.html:10
+#: templates/newsletter/message/subscribe.txt:1
+#, python-format
+msgid ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested a subscription to %(title)s.\n"
+"\n"
+"If you would like to confirm your subscription, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+msgstr ""
+
+#: templates/newsletter/message/subscribe_subject.txt:1
+msgid "Confirm subscription"
+msgstr ""
+
+#: templates/newsletter/message/unsubscribe.html:6
+#, python-format
+msgid "Unsubscription from %(title)s"
+msgstr ""
+
+#: templates/newsletter/message/unsubscribe.html:9
+#: templates/newsletter/message/unsubscribe.txt:1
+#, python-format
+msgid ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested unsubscription from %(title)s.\n"
+"\n"
+"If you would like to confirm your unsubscription, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+msgstr ""
+
+#: templates/newsletter/message/unsubscribe_subject.txt:1
+msgid "Confirm unsubscription"
+msgstr ""
+
+#: templates/newsletter/message/update.html:6
+#, python-format
+msgid "Update of subscription to %(title)s"
+msgstr ""
+
+#: templates/newsletter/message/update.html:9
+#: templates/newsletter/message/update.txt:1
+#, python-format
+msgid ""
+"Dear %(name)s,\n"
+"\n"
+"you, or someone in your name requested updating your personal information "
+"for %(title)s.\n"
+"\n"
+"To make changes to your information in our database, please follow this "
+"activation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Kind regards,"
+msgstr ""
+
+#: templates/newsletter/message/update_subject.txt:1
+msgid "Update information"
+msgstr ""
+
+#: templates/newsletter/newsletter_detail.html:5
+#: templates/newsletter/newsletter_detail.html:9
+#: templates/newsletter/subscription_activate.html:6
+#: templates/newsletter/subscription_activate.html:9
+#: templates/newsletter/subscription_subscribe_activated.html:5
+#: templates/newsletter/subscription_subscribe_activated.html:8
+#: templates/newsletter/subscription_unsubscribe_activated.html:5
+#: templates/newsletter/subscription_unsubscribe_activated.html:8
+#: templates/newsletter/subscription_update_activated.html:5
+#: templates/newsletter/subscription_update_activated.html:8
+msgid "Newsletter"
+msgstr ""
+
+#: templates/newsletter/newsletter_detail.html:16
+#: templates/newsletter/newsletter_list.html:43
+#: templates/newsletter/subscription_subscribe.html:35
+#: templates/newsletter/subscription_subscribe_user.html:22
+msgid "Subscribe"
+msgstr ""
+
+#: templates/newsletter/newsletter_detail.html:21
+msgid "Archive"
+msgstr ""
+
+#: templates/newsletter/newsletter_detail.html:22
+msgid "Go Back"
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:5
+msgid "Newsletter list"
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:9
+msgid "Subscribe to our Newsletters"
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:33
+#, fuzzy
+#| msgid "Description"
+msgid "Update subscriptions"
+msgstr "Maelezo"
+
+#: templates/newsletter/submission_archive.html:5
+#: templates/newsletter/submission_archive.html:8
+msgid "Newsletter archive"
+msgstr ""
+
+#: templates/newsletter/submission_archive.html:21
+msgid "Back"
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:6
+#: templates/newsletter/subscription_activate.html:9
+#: templates/newsletter/subscription_subscribe_activated.html:5
+#: templates/newsletter/subscription_subscribe_activated.html:8
+#: templates/newsletter/subscription_unsubscribe_activated.html:5
+#: templates/newsletter/subscription_unsubscribe_activated.html:8
+#: templates/newsletter/subscription_update_activated.html:5
+#: templates/newsletter/subscription_update_activated.html:8
+msgid "activate"
+msgstr ""
+
+#: templates/newsletter/subscription_activate.html:14
+msgid "Activate"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:6
+#: templates/newsletter/subscription_subscribe_email_sent.html:5
+#: templates/newsletter/subscription_subscribe_email_sent.html:8
+#: templates/newsletter/subscription_subscribe_user.html:5
+#: templates/newsletter/subscription_subscribe_user.html:8
+msgid "Newsletter subscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:10
+msgid "Subscribe for a Newsletter"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:19
+#, python-format
+msgid ""
+"Fill the form below to receive the \"<strong>%(newsletter_title)s</strong>\" "
+"newsletter."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:23
+#: templates/newsletter/subscription_unsubscribe.html:11
+#: templates/newsletter/subscription_update.html:11
+msgid ""
+"Due to a technical error we were not able to submit your confirmation email. "
+"This could be because your email address is invalid."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:47
+msgid "Your Name (optional)"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe.html:48
+#, fuzzy
+#| msgid "Your email"
+msgid "Your Email"
+msgstr "Barua pepe"
+
+#: templates/newsletter/subscription_subscribe_activated.html:10
+msgid "Your subscription has successfully been activated."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_email_sent.html:10
+msgid ""
+"Your subscription request was successfully received and an activation email "
+"has been sent to you. In that email you will find a link which you need to "
+"follow in order to activate your subscription."
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_user.html:19
+msgid "Do you want to subscribe to this newsletter?"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:5
+#: templates/newsletter/subscription_unsubscribe.html:8
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:5
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:8
+#: templates/newsletter/subscription_unsubscribe_user.html:5
+#: templates/newsletter/subscription_unsubscribe_user.html:8
+msgid "Newsletter unsubscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_activated.html:10
+msgid "You have successfully been unsubscribed."
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_email_sent.html:10
+msgid ""
+"Your unsubscription request has successfully been received. An email has "
+"been sent to you with a link you need to follow in order to confirm your "
+"unsubscription."
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe_user.html:20
+msgid "Do you want to unsubscribe from this newsletter?"
+msgstr ""
+
+#: templates/newsletter/subscription_update.html:5
+#: templates/newsletter/subscription_update.html:8
+#: templates/newsletter/subscription_update_email_sent.html:5
+#: templates/newsletter/subscription_update_email_sent.html:8
+#, fuzzy
+#| msgid "Date updated"
+msgid "Newsletter update"
+msgstr "Tarehe iliposasishwa"
+
+#: templates/newsletter/subscription_update.html:23
+#, fuzzy
+#| msgid "Description"
+msgid "Update subscription"
+msgstr "Maelezo"
+
+#: templates/newsletter/subscription_update_activated.html:10
+msgid "Your subscription has successfully been updated."
+msgstr ""
+
+#: templates/newsletter/subscription_update_email_sent.html:10
+msgid ""
+"Your update request was successfully received and an activation email has "
+"been sent to you. In that email you will find a link which you need to "
+"follow in order to update your subscription."
+msgstr ""
 
 #: xcomments/models.py:22
 msgid "Comment"
