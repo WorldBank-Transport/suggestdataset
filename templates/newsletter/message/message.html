@@ -17,12 +17,12 @@
 
 <div class="container-fluid">
     {% for article in message.articles.all %}
-        <a href="{{ article.url }}"><h5 class="text-primary">{{ article.title }}</h5></a>
+        <a href="{% if article.url %}{{ article.url }}{% else %}http://suggest.{{ site.domain }}{{ submission.get_absolute_url }}{% endif %}"><h5 class="text-primary">{{ article.title }}</h5></a>
 
         <div>
             <div class="">
                 {% thumbnail article.image "200x200" as image %}
-                    <img src="http://{{ site.domain }}{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}">
+                    <img src="http://suggest.{{ site.domain }}{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}">
                 {% endthumbnail %}
             </div>
 
@@ -37,9 +37,9 @@
     
     <div class="well" style="border: 0px; box-shadow: none;" >
         {% if submission.publish %}
-        <a class="btn btn-success btn-sm" href="http://{{ site.domain }}{{ submission.get_absolute_url }}">{% trans "Read message online" %}</a>
+        <a class="btn btn-success btn-sm" href="http://suggest.{{ site.domain }}{{ submission.get_absolute_url }}">{% trans "Read message online" %}</a>
         {% endif %}
-        <a class="btn btn-warning btn-sm" href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">{% trans "Unsubscribe" %}</a>
+        <a class="btn btn-warning btn-sm" href="http://suggest.{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">{% trans "Unsubscribe" %}</a>
     </div>
 
 </div>
