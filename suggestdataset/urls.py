@@ -25,13 +25,13 @@ urlpatterns = [
     # url(r'^$', views.home, name='home'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^captcha/', include('captcha.urls')),
-    url(r'^newsletter/', include('newsletter.urls')),
 ]
 
 urlpatterns += i18n_patterns(
     url(r'^', include('datasets.urls')),
     url(r'^feedback/', include('mrejesho.urls')),
     url(r'^comments/', include('django_comments.urls')),
+    url(r'^newsletter/', include('newsletter.urls')),
     url(r'^utawala/', admin.site.urls),
 )
 
