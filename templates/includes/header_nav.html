@@ -12,9 +12,10 @@
             <div class="container ">
                 <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
                     <ul class="unstyled">
-                        <li><a href="http://opendata.go.tz/user/login">{% trans "Login" %}</a></li>
-                        <li><a href="http://opendata.go.tz/pages/faq">{% trans "FAQ" %}</a></li>
+                        <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/user/login">{% trans "Login" %}</a></li>
+                        <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/pages/faq">{% trans "FAQ" %}</a></li>
                         <li><a href="{% url 'newsletter_list' %}">{% trans "Subscribe for Newsletters" %}</a></li>
+                        <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
                         {% for language in languages %}
                             <li>
                                 {% if language.code != LANGUAGE_CODE %}
@@ -24,7 +25,6 @@
                                 {% endif %}
                             </li>
                         {% endfor %}
-                        <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
                     </ul>
                 </div>
                 <nav class="account not-authed">
