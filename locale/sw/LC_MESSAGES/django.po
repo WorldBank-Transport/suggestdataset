@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-10 11:59+0300\n"
+"POT-Creation-Date: 2017-02-11 14:14+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,7 @@ msgstr "Jina"
 
 #: datasets/models.py:14 datasets/models.py:32 mrejesho/models.py:13
 msgid "Desciption"
-msgstr "Ufafanuzi"
+msgstr "Maelezo"
 
 #: datasets/models.py:16 datasets/models.py:34 datasets/models.py:84
 #: mrejesho/models.py:15 mrejesho/models.py:55
@@ -54,7 +54,7 @@ msgstr "Tarehe iliporekodiwa"
 #: datasets/models.py:18 datasets/models.py:36 datasets/models.py:86
 #: mrejesho/models.py:17 mrejesho/models.py:57
 msgid "Date updated"
-msgstr "Tarehe iliposasishwa"
+msgstr "Tarehe ilipohuishwa"
 
 #: datasets/models.py:21 datasets/templates/datasets/dataset_detail.html:33
 #: mrejesho/models.py:20 mrejesho/models.py:51
@@ -80,15 +80,15 @@ msgstr "Taasisi"
 
 #: datasets/models.py:55
 msgid "Approved"
-msgstr ""
+msgstr "Iliyothibitishwa"
 
 #: datasets/models.py:56
 msgid "Open"
-msgstr ""
+msgstr "Fungua"
 
 #: datasets/models.py:57
 msgid "Rejected"
-msgstr ""
+msgstr "Iliyokataliwa"
 
 #: datasets/models.py:60
 msgid "Suggester name"
@@ -96,7 +96,7 @@ msgstr "Jina la aliyependekeza"
 
 #: datasets/models.py:62
 msgid "Suggester email"
-msgstr "Barua pepe ya aliyependekezau"
+msgstr "Barua pepe ya aliyependekeza"
 
 #: datasets/models.py:65
 msgid "Suggester organization"
@@ -112,7 +112,7 @@ msgstr "Maelezo kuhusu seti ya data"
 
 #: datasets/models.py:68
 msgid "likes"
-msgstr "waliopendekeza"
+msgstr "waliopenda"
 
 #: datasets/models.py:72 mrejesho/models.py:21
 msgid "Categories"
@@ -126,11 +126,11 @@ msgstr "Hali/Hatua"
 
 #: datasets/models.py:79
 msgid "Archived"
-msgstr ""
+msgstr "Zilizotunzwa"
 
 #: datasets/models.py:81
 msgid "Is public"
-msgstr ""
+msgstr "Kwa Matumizi ya Umma"
 
 #: datasets/models.py:89
 msgid "Dataset Suggestion"
@@ -138,7 +138,7 @@ msgstr "Mapendekezo ya seti ya takwimu"
 
 #: datasets/models.py:93
 msgid "Can receive notification on new dataset suggestions"
-msgstr ""
+msgstr "Anaweza kupokea ujumbe wa data mpya zilizopendekezwa"
 
 #: datasets/templates/datasets/dataset_detail.html:6
 #: datasets/templates/datasets/dataset_detail.html:15
@@ -150,7 +150,7 @@ msgstr "Mapendekezo ya seti za takwimu"
 
 #: datasets/templates/datasets/dataset_detail.html:58
 msgid "Created by"
-msgstr "Mwanzilishi"
+msgstr "Imeandaliwa na"
 
 #: datasets/templates/datasets/dataset_detail.html:59
 msgid "Posted"
@@ -158,7 +158,7 @@ msgstr "Imetumwa"
 
 #: datasets/templates/datasets/dataset_detail.html:60
 msgid "Last modified"
-msgstr "Mara ya mwisho kusasishwa"
+msgstr "Mara ya mwisho kuhuishwa"
 
 #: datasets/templates/datasets/dataset_detail.html:66 xcomments/models.py:23
 msgid "Comments"
@@ -184,7 +184,7 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"            Ni seti nyingine gani ya takwaimu ambayo ungependa ipatikane "
+"            Ni seti gani nyingine ya takwaimu ambayo ungependa ipatikane "
 "kupitia<a href=\"http://opendata.go.tz\">Tovuti ya Takwimu huria Tanzania</"
 "a>.\n"
 "        "
@@ -206,7 +206,7 @@ msgstr "Mapendekezo ya seti za takwimu"
 
 #: datasets/templates/datasets/dataset_suggestions.html:29
 msgid "Sort by"
-msgstr "Kuanzia"
+msgstr "Chagua kwa"
 
 #: datasets/templates/datasets/dataset_suggestions.html:31
 msgid "Latest"
@@ -227,7 +227,7 @@ msgstr "Vyote"
 #: datasets/templates/datasets/dataset_suggestions.html:74
 #, python-format
 msgid "%(time)s ago."
-msgstr "%(timesince)s zilizopita"
+msgstr "%(time)s zilizopita"
 
 #: datasets/templates/datasets/emails/new_suggestion_received.html:2
 #, python-format
@@ -252,7 +252,7 @@ msgstr ""
 #: xcomments/templates/comments/emails/comment_received.html:7
 #: xcomments/templates/comments/emails/new_comment_received.html:15
 msgid "Regards"
-msgstr ""
+msgstr "Wako"
 
 #: datasets/templates/datasets/emails/suggestion_received.html:3
 #, python-format
@@ -266,6 +266,9 @@ msgid ""
 "Thank you very much for your suggestion on %(site_name)s. We will respond "
 "accordingly as soon as we can.\n"
 msgstr ""
+"\n"
+"Tunashukuru sana kwa maoni yako kupitia %(site_name)s. Tutakujibu hivi punde "
+"kwa kadri tutakavyoweza.\n"
 
 #: datasets/templates/includes/datasets/datasetlike_button.html:12
 #: datasets/templates/includes/datasets/datasetlike_button.html:23
@@ -300,24 +303,26 @@ msgstr "%(site_name)s: Mapendekezo ya seti za takwimu"
 #, python-format
 msgid "%(site_name)s: New Dataset suggestion received#%(suggestion_id)s"
 msgstr ""
+"%(site_name)s: Tumepokea Seti mpya ya Takwimu iliyopendekezwa#"
+"%(suggestion_id)s"
 
 #: mrejesho/admin.py:26
 msgid "Sender"
-msgstr ""
+msgstr "Mtumaji"
 
 #: mrejesho/admin.py:30 mrejesho/models.py:61 mrejesho/models.py:62
 #: mrejesho/templates/mrejesho/feedback.html:6
 #: templates/includes/header_nav.html:79
 msgid "Feedback"
-msgstr ""
+msgstr "Mrejesho"
 
 #: mrejesho/admin.py:33
 msgid "Internal"
-msgstr ""
+msgstr "Ndani"
 
 #: mrejesho/apps.py:9
 msgid "Users Feedback"
-msgstr ""
+msgstr "Mrejesho wa watumiaji"
 
 #: mrejesho/forms.py:19
 msgid "Your message"
@@ -325,49 +330,49 @@ msgstr "Ujumbe wako"
 
 #: mrejesho/forms.py:29
 msgid "Please provide either a valid email address or phone number"
-msgstr ""
+msgstr "Tafadhali toa Barua pepe au Namba ya simu iliyosahihi"
 
 #: mrejesho/models.py:34
 msgid "Received/Read"
-msgstr ""
+msgstr "Imepokelewa/Imesomwa"
 
 #: mrejesho/models.py:35
 msgid "Under review"
-msgstr ""
+msgstr "Inapitiwa"
 
 #: mrejesho/models.py:36
 msgid "Response sent"
-msgstr ""
+msgstr "Mrejesho Umetumwa"
 
 #: mrejesho/models.py:40
 msgid "Email"
-msgstr ""
+msgstr "Barua Pepe"
 
 #: mrejesho/models.py:42
 msgid "Phone"
-msgstr ""
+msgstr "Simu"
 
 #: mrejesho/models.py:46
 msgid "Message"
-msgstr ""
+msgstr "Ujumbe"
 
 #: mrejesho/models.py:52
 msgid "Remarks"
-msgstr ""
+msgstr "Maoni"
 
 #: mrejesho/models.py:53
 msgid "Notified staff"
-msgstr ""
+msgstr "Wafanyakazi Waliotaarifiwa"
 
 #: mrejesho/models.py:65
 msgid "Can receive notification on new feedback"
-msgstr ""
+msgstr "Anaweza pokea ujumbe wa mrejesho mpya"
 
 #: mrejesho/templates/mrejesho/emails/feedback_received.html:3
 #: xcomments/templates/comments/emails/comment_received.html:3
 #, python-format
 msgid "Hello %(sender_name)s,"
-msgstr ""
+msgstr "Hallo %(sender_name)s,"
 
 #: mrejesho/templates/mrejesho/emails/feedback_received.html:4
 #, python-format
@@ -376,6 +381,9 @@ msgid ""
 "Thank you very much for your feedback on %(site_name)s. We will respond "
 "accordingly as soon as we can.\n"
 msgstr ""
+"\n"
+"Asante sana kwa Mrejesho wako kupitia %(site_name)s. Tutakujibu hivi punde "
+"kadri tutakavyoweza.\n"
 
 #: mrejesho/templates/mrejesho/emails/new_feedback_received.html:2
 #, python-format
@@ -402,33 +410,33 @@ msgstr "Asante"
 
 #: mrejesho/templates/mrejesho/feedback_thanks.html:8
 msgid "Thanks for your feedback"
-msgstr ""
+msgstr "Asante kwa Mrejesho wako"
 
 #: mrejesho/templates/mrejesho/feedback_thanks.html:14
 msgid "We are happy to hear from you!"
-msgstr ""
+msgstr "Tunafuraha kusikia kutoka kwako"
 
 #: mrejesho/views.py:48
 #, python-format
 msgid "%(site_name)s: Feedback"
-msgstr ""
+msgstr "%(site_name)s: Mrejesho"
 
 #: mrejesho/views.py:66
 #, python-format
 msgid "%(site_name)s: New Feedback received #%(feedback_id)s"
-msgstr ""
+msgstr "%(site_name)s: Tumepokea Mrejesho mpya #%(feedback_id)s"
 
 #: suggestdataset/settings.py:146
 msgid "Kiswahili"
-msgstr ""
+msgstr "Kiswahili"
 
 #: suggestdataset/settings.py:147
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: suggestdataset/settings.py:187 suggestdataset/settings.py:189
 msgid "Open Data Tanzania"
-msgstr ""
+msgstr "Tovuti Kuu Huria Ya Takwimu Tanzania"
 
 #: suggestdataset/settings.py:191
 msgid "Management"
@@ -437,19 +445,19 @@ msgstr "Utawala"
 #: templates/admin/index.html:20
 #, python-format
 msgid "Models in the %(name)s application"
-msgstr ""
+msgstr "Models in the %(name)s application"
 
 #: templates/admin/index.html:31
 msgid "Add"
-msgstr ""
+msgstr "Ongeza"
 
 #: templates/admin/index.html:37
 msgid "View"
-msgstr ""
+msgstr "Tazama"
 
 #: templates/admin/index.html:47
 msgid "You don't have permission to edit anything."
-msgstr ""
+msgstr "Hauna ruhusa ya kubadilisha chochote"
 
 #: templates/admin/index.html:55
 msgid "Recent Actions"
@@ -461,11 +469,11 @@ msgstr ""
 
 #: templates/admin/index.html:60
 msgid "None available"
-msgstr ""
+msgstr "Isiyokuwepo"
 
 #: templates/admin/index.html:74
 msgid "Unknown content"
-msgstr ""
+msgstr "Taarifa Isiyojulikana"
 
 #: templates/captcha/image.html:4
 msgid "Play CAPTCHA as audio file"
@@ -490,7 +498,7 @@ msgstr "Hakuna aliyetuma maoni"
 
 #: templates/comments/preview.html:5
 msgid "Preview your comment"
-msgstr "Hakiki"
+msgstr "Hakiki Maoni yako"
 
 #: templates/comments/preview.html:8
 msgid "Comment preview"
@@ -516,51 +524,53 @@ msgstr "Mwanzo"
 
 #: templates/includes/footer.html:8
 msgid "Terms &amp; Conditions "
-msgstr ""
+msgstr "Kanuni &amp; Masharti"
 
 #: templates/includes/footer.html:9
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Sera ya Faragha"
 
 #: templates/includes/footer.html:10
 msgid "Copyright Notice"
-msgstr ""
+msgstr "Hatimiliki"
 
 #: templates/includes/footer.html:11
 msgid "Contact us"
-msgstr ""
+msgstr "Wasiliana Nasi"
 
 #: templates/includes/footer.html:12
 msgid ""
 "Government Open Data Portal is designed, developed and hosted by e-"
 "Government Agency. Data are Managed by National Bureau of Statistics."
 msgstr ""
+"Tovuti Kuu ya Takwimu Huria imesanifiwa, imetengenezwa na imehifadhiwa "
+"naWakala ya Serikali Mtandao. Takwimu Zinaratibiwa na Ofisi ya Taifa ya "
+"Takwimu."
 
 #: templates/includes/header_nav.html:15
 msgid "Login"
-msgstr ""
+msgstr "Ingia"
 
 #: templates/includes/header_nav.html:16
 msgid "FAQ"
-msgstr ""
+msgstr "MMM"
 
 #: templates/includes/header_nav.html:17
 msgid "Subscribe for Newsletters"
-msgstr ""
+msgstr "Jisajiri Kwa Taarifa"
 
 #: templates/includes/header_nav.html:27
 msgid "Admin"
-msgstr ""
+msgstr "Mtawala"
 
 #: templates/includes/header_nav.html:45
-#: templates/includes/header_nav_light.html:13
 msgid "Toggle navigation"
 msgstr "Togoa urambazaji"
 
 #: templates/includes/header_nav.html:59
-#: templates/includes/header_nav_light.html:27
+#: templates/includes/header_nav_light.html:20
 msgid "Government Open Data Portal"
-msgstr ""
+msgstr "Tovuti Kuu ya Takwimu Huria Tanzania"
 
 #: templates/includes/header_nav.html:74
 msgid "Datasets"
@@ -568,11 +578,11 @@ msgstr "Seti za Takwimu"
 
 #: templates/includes/header_nav.html:76
 msgid "Groups"
-msgstr ""
+msgstr "Makundi"
 
 #: templates/includes/header_nav.html:77
 msgid "Visualization Gallery"
-msgstr ""
+msgstr "Maktaba ya Picha"
 
 #: templates/includes/header_nav.html:80
 msgid "About"
@@ -580,27 +590,27 @@ msgstr "Kuhusu"
 
 #: templates/newsletter/message/message.html:32
 msgid "Read more"
-msgstr ""
+msgstr "Soma zaidi"
 
 #: templates/newsletter/message/message.html:40
 msgid "Read message online"
-msgstr ""
+msgstr "Soma ujumbe kwa Mtandao"
 
 #: templates/newsletter/message/message.html:42
 #: templates/newsletter/newsletter_detail.html:20
-#: templates/newsletter/subscription_unsubscribe.html:23
-#: templates/newsletter/subscription_unsubscribe_user.html:23
+#: templates/newsletter/subscription_unsubscribe.html:27
+#: templates/newsletter/subscription_unsubscribe_user.html:26
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Jisajiri"
 
 #: templates/newsletter/message/message.txt:15
 msgid "Unsubscribe:"
-msgstr ""
+msgstr "Jitoe"
 
 #: templates/newsletter/message/subscribe.html:6
 #, python-format
 msgid "Subscription to %(title)s"
-msgstr ""
+msgstr "Jisajiri kwa %(title)s"
 
 #: templates/newsletter/message/subscribe.html:10
 #: templates/newsletter/message/subscribe.txt:1
@@ -616,15 +626,25 @@ msgid ""
 "\n"
 "Kind regards,"
 msgstr ""
+"Mpendwa %(name)s,\n"
+"\n"
+"Wewe, au Mtu mwingine kwa kutumia jina lako alitaka kujisajiri kwenye "
+"%(title)s.\n"
+"\n"
+"Kama utapenda kuhakiki Usajiri wako, Tafadhali tembelea hapaactivation "
+"link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Wako Mtiifu,"
 
 #: templates/newsletter/message/subscribe_subject.txt:1
 msgid "Confirm subscription"
-msgstr ""
+msgstr "Hakiki Usajiri"
 
 #: templates/newsletter/message/unsubscribe.html:6
 #, python-format
 msgid "Unsubscription from %(title)s"
-msgstr ""
+msgstr "Jitoe kutoka %(title)s"
 
 #: templates/newsletter/message/unsubscribe.html:9
 #: templates/newsletter/message/unsubscribe.txt:1
@@ -640,10 +660,20 @@ msgid ""
 "\n"
 "Kind regards,"
 msgstr ""
+"Mpendwa %(name)s,\n"
+"\n"
+"Wewe, au Mtu mwingine kwa kutumia jina lako alitaka kuondoa usajiri kwenye "
+"%(title)s.\n"
+"\n"
+"Kama utapenda kuhakiki Kutondoa usajiri wako, Tafadhali tembelea "
+"hapaactivation link:\n"
+"http://%(domain)s%(url)s\n"
+"\n"
+"Wako Mtiifu,"
 
 #: templates/newsletter/message/unsubscribe_subject.txt:1
 msgid "Confirm unsubscription"
-msgstr ""
+msgstr "Hakiki Kuondoa Usajiri"
 
 #: templates/newsletter/message/update.html:6
 #, python-format
@@ -675,7 +705,6 @@ msgstr ""
 #: templates/newsletter/subscription_activate.html:6
 #: templates/newsletter/subscription_activate.html:9
 #: templates/newsletter/subscription_subscribe_activated.html:5
-#: templates/newsletter/subscription_subscribe_activated.html:8
 #: templates/newsletter/subscription_unsubscribe_activated.html:5
 #: templates/newsletter/subscription_unsubscribe_activated.html:8
 #: templates/newsletter/subscription_update_activated.html:5
@@ -704,13 +733,11 @@ msgstr ""
 
 #: templates/newsletter/newsletter_list.html:9
 msgid "Subscribe to our Newsletters"
-msgstr ""
+msgstr "Jisajili kupata 'Newsletters'"
 
 #: templates/newsletter/newsletter_list.html:33
-#, fuzzy
-#| msgid "Description"
 msgid "Update subscriptions"
-msgstr "Maelezo"
+msgstr ""
 
 #: templates/newsletter/submission_archive.html:5
 #: templates/newsletter/submission_archive.html:8
@@ -719,12 +746,11 @@ msgstr ""
 
 #: templates/newsletter/submission_archive.html:21
 msgid "Back"
-msgstr ""
+msgstr "Rudi"
 
 #: templates/newsletter/subscription_activate.html:6
 #: templates/newsletter/subscription_activate.html:9
 #: templates/newsletter/subscription_subscribe_activated.html:5
-#: templates/newsletter/subscription_subscribe_activated.html:8
 #: templates/newsletter/subscription_unsubscribe_activated.html:5
 #: templates/newsletter/subscription_unsubscribe_activated.html:8
 #: templates/newsletter/subscription_update_activated.html:5
@@ -756,7 +782,7 @@ msgid ""
 msgstr ""
 
 #: templates/newsletter/subscription_subscribe.html:23
-#: templates/newsletter/subscription_unsubscribe.html:11
+#: templates/newsletter/subscription_unsubscribe.html:15
 #: templates/newsletter/subscription_update.html:11
 msgid ""
 "Due to a technical error we were not able to submit your confirmation email. "
@@ -768,12 +794,20 @@ msgid "Your Name (optional)"
 msgstr ""
 
 #: templates/newsletter/subscription_subscribe.html:48
-#, fuzzy
-#| msgid "Your email"
 msgid "Your Email"
 msgstr "Barua pepe"
 
-#: templates/newsletter/subscription_subscribe_activated.html:10
+#: templates/newsletter/subscription_subscribe_activated.html:9
+#, fuzzy
+#| msgid "Newsletter update"
+msgid "Newsletter Subscription"
+msgstr "Tarehe iliposasishwa"
+
+#: templates/newsletter/subscription_subscribe_activated.html:14
+msgid "Congratulations!"
+msgstr ""
+
+#: templates/newsletter/subscription_subscribe_activated.html:15
 msgid "Your subscription has successfully been activated."
 msgstr ""
 
@@ -789,12 +823,15 @@ msgid "Do you want to subscribe to this newsletter?"
 msgstr ""
 
 #: templates/newsletter/subscription_unsubscribe.html:5
-#: templates/newsletter/subscription_unsubscribe.html:8
 #: templates/newsletter/subscription_unsubscribe_email_sent.html:5
 #: templates/newsletter/subscription_unsubscribe_email_sent.html:8
 #: templates/newsletter/subscription_unsubscribe_user.html:5
-#: templates/newsletter/subscription_unsubscribe_user.html:8
 msgid "Newsletter unsubscribe"
+msgstr ""
+
+#: templates/newsletter/subscription_unsubscribe.html:9
+#: templates/newsletter/subscription_unsubscribe_user.html:9
+msgid "Unsubscribe from the Newsletter"
 msgstr ""
 
 #: templates/newsletter/subscription_unsubscribe_activated.html:10
@@ -808,7 +845,7 @@ msgid ""
 "unsubscription."
 msgstr ""
 
-#: templates/newsletter/subscription_unsubscribe_user.html:20
+#: templates/newsletter/subscription_unsubscribe_user.html:23
 msgid "Do you want to unsubscribe from this newsletter?"
 msgstr ""
 
@@ -816,14 +853,10 @@ msgstr ""
 #: templates/newsletter/subscription_update.html:8
 #: templates/newsletter/subscription_update_email_sent.html:5
 #: templates/newsletter/subscription_update_email_sent.html:8
-#, fuzzy
-#| msgid "Date updated"
 msgid "Newsletter update"
 msgstr "Tarehe iliposasishwa"
 
 #: templates/newsletter/subscription_update.html:23
-#, fuzzy
-#| msgid "Description"
 msgid "Update subscription"
 msgstr "Maelezo"
 
@@ -849,7 +882,7 @@ msgstr ""
 #: xcomments/models.py:43
 #, python-format
 msgid "%(site_name)s: Comment Received"
-msgstr ""
+msgstr "%(site_name)s: Maoni yametufikia"
 
 #: xcomments/models.py:70
 #, python-format
@@ -858,7 +891,7 @@ msgstr ""
 
 #: xcomments/models.py:82
 msgid "Thanks, we have received your comments"
-msgstr ""
+msgstr "Asante, Tumepata Maoni yako"
 
 #: xcomments/templates/comments/emails/comment_received.html:4
 #, python-format
@@ -866,6 +899,8 @@ msgid ""
 "\n"
 "Thank you very much for your comment on %(site_name)s.\n"
 msgstr ""
+"\n"
+"Asante sana kwa maoni yako kwenye %(site_name)s.\n"
 
 #: xcomments/templates/comments/emails/new_comment_received.html:2
 #, python-format
