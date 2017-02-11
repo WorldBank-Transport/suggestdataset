@@ -68,8 +68,8 @@ class DatasetLikeCreate(UpdateView):
         if form.instance.id in liked_datasets:
             messages.info(
                 self.request,
-                _("Thanks, we already received your 'vote': "
-                "<a href='%s' class='alert-link'>%s</a>"
+                _("Thanks, we have already received your vote for "
+                "this dataset: <a href='%s' class='alert-link'>%s</a>"
                 %(form.instance.get_absolute_url(), form.instance.name)))
         else:
             form.instance.likes += 1

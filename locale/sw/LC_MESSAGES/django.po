@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-11 14:14+0300\n"
+"POT-Creation-Date: 2017-02-11 19:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,8 +165,8 @@ msgid "Comments"
 msgstr "Maoni"
 
 #: datasets/templates/datasets/dataset_detail.html:71
-msgid "We would like to hear from you, please add your comments"
-msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
+msgid "Discuss about this suggested dataset"
+msgstr "Jadili kuhusu pendekezo hili"
 
 #: datasets/templates/datasets/dataset_suggest.html:6
 msgid "Dataset Suggestion Form"
@@ -276,12 +276,11 @@ msgid "Interested"
 msgstr "Umeipenda"
 
 #: datasets/views.py:71
-#, python-format
 msgid ""
-"Thanks, we already received your 'vote': <a href='%s' class='alert-link'>%s</"
-"a>"
+"Thanks, we have already received your vote for this dataset: <a href='%s' "
+"class='alert-link'>%s</a>"
 msgstr ""
-"Asante, tumepokea mapendekezo yako: <a href=\"%s\" class=\"alert-link\">%s</"
+"Asante, tumeshapokea kura yako kwa takwimu hii: <a href=\"%s\" class=\"alert-link\">%s</"
 "a>"
 
 #: datasets/views.py:81
@@ -548,20 +547,29 @@ msgstr ""
 "Takwimu."
 
 #: templates/includes/header_nav.html:15
+msgid "Admin"
+msgstr "Utawala"
+
+#: templates/includes/header_nav.html:16
 msgid "Login"
 msgstr "Ingia"
 
-#: templates/includes/header_nav.html:16
+#: templates/includes/header_nav.html:17
+#: templates/newsletter/newsletter_detail.html:5
+#: templates/newsletter/newsletter_detail.html:9
+#: templates/newsletter/subscription_activate.html:6
+#: templates/newsletter/subscription_activate.html:9
+#: templates/newsletter/subscription_subscribe_activated.html:5
+#: templates/newsletter/subscription_unsubscribe_activated.html:5
+#: templates/newsletter/subscription_unsubscribe_activated.html:8
+#: templates/newsletter/subscription_update_activated.html:5
+#: templates/newsletter/subscription_update_activated.html:8
+msgid "Newsletter"
+msgstr "Jarida"
+
+#: templates/includes/header_nav.html:18
 msgid "FAQ"
 msgstr "MMM"
-
-#: templates/includes/header_nav.html:17
-msgid "Subscribe for Newsletters"
-msgstr "Jisajili Kwa Taarifa"
-
-#: templates/includes/header_nav.html:27
-msgid "Admin"
-msgstr "Utawala"
 
 #: templates/includes/header_nav.html:45
 msgid "Toggle navigation"
@@ -699,18 +707,6 @@ msgstr ""
 #: templates/newsletter/message/update_subject.txt:1
 msgid "Update information"
 msgstr ""
-
-#: templates/newsletter/newsletter_detail.html:5
-#: templates/newsletter/newsletter_detail.html:9
-#: templates/newsletter/subscription_activate.html:6
-#: templates/newsletter/subscription_activate.html:9
-#: templates/newsletter/subscription_subscribe_activated.html:5
-#: templates/newsletter/subscription_unsubscribe_activated.html:5
-#: templates/newsletter/subscription_unsubscribe_activated.html:8
-#: templates/newsletter/subscription_update_activated.html:5
-#: templates/newsletter/subscription_update_activated.html:8
-msgid "Newsletter"
-msgstr "Jarida"
 
 #: templates/newsletter/newsletter_detail.html:16
 #: templates/newsletter/newsletter_list.html:43
@@ -914,3 +910,9 @@ msgid ""
 "%(comment_message)s\n"
 "=================================================\n"
 msgstr ""
+
+#~ msgid "We would like to hear from you, please add your comments"
+#~ msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"
+
+#~ msgid "Subscribe for Newsletters"
+#~ msgstr "Jisajili Kwa Taarifa"
