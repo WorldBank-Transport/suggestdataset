@@ -78,7 +78,7 @@ class DatasetLikeCreate(UpdateView):
             self.request.session['liked_datasets'] = liked_datasets
             messages.info(
                 self.request,
-                _('Thanks for your vote: <a class="alert-link"'
+                _('Thanks for your vote for <a class="alert-link"'
                 'href="%s">%s</a>'
                 %(form.instance.get_absolute_url(), form.instance.name)))
         return super(DatasetLikeCreate, self).form_valid(form)
@@ -98,8 +98,8 @@ class DatasetSuggest(CreateView):
     def form_valid(self, form):
         self.object = form.save()
         messages.success(self.request,
-                         _('Thanks, we have received your suggestion:'
-                         '"%(dataset_name)s"'
+                         _('Thanks, we have received your suggestion '
+                         'for "%(dataset_name)s"'
                          %{'dataset_name': self.object.name}))
 
         site = get_current_site(self.request)

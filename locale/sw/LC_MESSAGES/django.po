@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-11 19:02+0300\n"
+"POT-Creation-Date: 2017-02-12 12:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,22 +276,23 @@ msgid "Interested"
 msgstr "Umeipenda"
 
 #: datasets/views.py:71
+#, python-format
 msgid ""
 "Thanks, we have already received your vote for this dataset: <a href='%s' "
 "class='alert-link'>%s</a>"
 msgstr ""
-"Asante, tumeshapokea kura yako kwa takwimu hii: <a href=\"%s\" class=\"alert-link\">%s</"
-"a>"
+"Asante, tumeshapokea kura yako kwa takwimu hii: <a href=\"%s\" class=\"alert-"
+"link\">%s</a>"
 
 #: datasets/views.py:81
 #, python-format
-msgid "Thanks for your vote: <a class=\"alert-link\"href=\"%s\">%s</a>"
-msgstr "Asante kwa kura yako: <a class=\"alert-link\"href=\"%s\">%s</a>"
+msgid "Thanks for your vote for <a class=\"alert-link\"href=\"%s\">%s</a>"
+msgstr "Asante kwa kura yako kwa <a class=\"alert-link\"href=\"%s\">%s</a>"
 
 #: datasets/views.py:101
 #, python-format
-msgid "Thanks, we have received your suggestion:\"%(dataset_name)s\""
-msgstr "Asante, tumepokea mapendekezo yako:\"%(dataset_name)s\""
+msgid "Thanks, we have received your suggestion for \"%(dataset_name)s\""
+msgstr "Asante, tumepokea mapendekezo yako kwa \"%(dataset_name)s\""
 
 #: datasets/views.py:120
 #, python-format
@@ -709,7 +710,7 @@ msgid "Update information"
 msgstr ""
 
 #: templates/newsletter/newsletter_detail.html:16
-#: templates/newsletter/newsletter_list.html:43
+#: templates/newsletter/newsletter_list.html:50
 #: templates/newsletter/subscription_subscribe.html:35
 #: templates/newsletter/subscription_subscribe_user.html:22
 msgid "Subscribe"
@@ -731,7 +732,13 @@ msgstr ""
 msgid "Subscribe to our Newsletters"
 msgstr "Jisajili kupata 'Newsletters'"
 
-#: templates/newsletter/newsletter_list.html:33
+#: templates/newsletter/newsletter_list.html:16
+msgid ""
+"Subscribe to get exciting news, events and updates about Tanzania Open Data "
+"Initiative."
+msgstr ""
+
+#: templates/newsletter/newsletter_list.html:40
 msgid "Update subscriptions"
 msgstr ""
 

@@ -11,6 +11,13 @@
 {% endblock %}
 
 {% block content %}
+    <div class="text-box">
+        <strong class="">
+        {% blocktrans %}Subscribe to get exciting news, events and updates about Tanzania Open Data Initiative.{% endblocktrans %}
+        </strong>
+    </div>
+
+
     {% if user.is_authenticated %}
         <form method="POST" action="">
             {% csrf_token %}

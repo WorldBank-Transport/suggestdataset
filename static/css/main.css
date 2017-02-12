@@ -446,3 +446,8 @@ ul.unstyled, ol.unstyled {
 	color: #fff; 
 	font-size: 80%;
 }
+
+.text-box{
+    padding: 10px;
+    font-size: 1.2em;
+}
