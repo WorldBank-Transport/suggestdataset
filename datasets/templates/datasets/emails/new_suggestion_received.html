@@ -1,10 +1,10 @@
-{% load i18n %}
-{% blocktrans with suggester_name=dataset.suggester_name suggestion_id=dataset.id dataset_name=dataset.name %}
+{% load i18n %}{% url 'admin:datasets_dataset_change' dataset.id as suggestion_admin_url %}
+{% blocktrans with suggester_name=dataset.suggester_name dataset_name=dataset.name %}
 Hello,
 
 A new dataset suggestion from {{ suggester_name }} has been received on {{ site_name }}.
 
-{{ site_domain }}/admin/datasets/dataset/{{ suggestion_id }}
+{{ site_url }}{{ suggestion_admin_url }}
 
 =================================================
 {{ dataset_name }}

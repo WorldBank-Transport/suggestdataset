@@ -247,6 +247,10 @@ You can also add other configuratiuons, example
 
     DATABASE_CONN_MAX_AGE=10
 
+    SITE_URL = 'http://example.com'
+
+    SITE_NAME = 'My Site'
+
     STATIC_ROOT='/var/www/suggestdataset/static'
 
     STATIC_URL='http://suggestdataset.example.com/static/'

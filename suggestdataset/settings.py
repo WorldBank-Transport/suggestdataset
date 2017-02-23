@@ -186,6 +186,8 @@ SITE_ID = int(os.environ.get('SITE_ID', 1))
 
 SITE_NAME = os.environ.get('SITE_NAME', ugettext('Open Data Tanzania'))
 
+SITE_URL = os.environ.get('SITE_URL', 'http://suggest.opendata.go.tz')
+
 ADMIN_SITE_HEADER = os.environ.get('ADMIN_SITE_HEADER', ugettext('Open Data Tanzania'))
 
 ADMIN_INDEX_TITLE = os.environ.get('ADMIN_INDEX_TITLE', ugettext('Management'))

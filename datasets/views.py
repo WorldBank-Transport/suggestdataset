@@ -27,6 +27,7 @@ Organization = apps.get_registered_model('datasets', 'Organization')
 Dataset = apps.get_registered_model('datasets', 'Dataset')
 User = get_user_model()
 
+SITE_URL = getattr(settings, 'SITE_URL')
 DEFAULT_FROM_EMAIL = getattr(settings, 'DEFAULT_FROM_EMAIL')
 EMAIL_FAIL_SILENTLY = getattr(settings, 'EMAIL_FAIL_SILENTLY', True)
 
@@ -106,6 +107,7 @@ class DatasetSuggest(CreateView):
         email_ctx = {
             'site_name': site.name,
             'site_domain': site.domain,
+            'site_url': SITE_URL,
             'dataset': self.object
         }
         self.notify_sender(email_ctx, site)
