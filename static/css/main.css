@@ -30,6 +30,11 @@ body.body-light{
     background-size: cover;
 }
 
+#menu-navbar-collapse{
+    background: #FFFFFF;
+    border-top: 1px solid #EEE;
+}
+
 .navbar-light#main-nav{
     height: 120px;
 }
@@ -55,6 +60,7 @@ body.body-light{
     background-repeat: no-repeat;
     float: left;
     position: relative;
+    display: inline-block;
 }
 
 #content-wrapper{
@@ -93,8 +99,34 @@ body.body-light{
 }
 
 @media (max-width: 768px){
-    #main-nav .navbar-collapse{
-        background: #fff;
+    body{
+        padding-top: 120px;
+    }
+
+    #main-nav{
+        height: 120px;
+    }
+
+    .logo {
+        /* border: solid 1px green; */
+        height: 80px;
+        width: 70px;
+    }
+
+    body .slogan {
+        height: 80px;
+    }
+
+    body .slogan #head {
+        font-size: 20px;
+        margin: 20px 8px 5px 2px;
+        color: #08c;
+        font-weight: 600;
+    }
+
+    body .slogan #foot {
+        margin: 20px 7px 7px 2px;
+        font-size: 10px;
     }
 }
 
@@ -355,6 +387,7 @@ ul.unstyled, ol.unstyled {
 	float: left;
 	/*border: solid 1px red;*/
 	height: 110px;
+    display: inline-block;
 }
 
 .slogan #head {
