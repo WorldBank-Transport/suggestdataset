@@ -52,8 +52,8 @@ class Dataset(models.Model):
     REJECTED = 'rejected'
 
     STATUSES = (
+        (OPEN, _('Under review')),
         (APPROVED, _('Approved')),
-        (OPEN, _('Open')),
         (REJECTED, _('Rejected')),
     )
 
