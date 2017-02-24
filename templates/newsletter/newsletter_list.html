@@ -1,6 +1,7 @@
 {% extends "newsletter/common.html" %}
 
 {% load i18n %}
+{% load newsletter_tags %}
 
 {% block head_title %}{% trans "Newsletter list" %}{% endblock %}
 
@@ -11,12 +12,12 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="text-box">
         <strong class="">
         {% blocktrans %}Subscribe to get exciting news, events and updates about Tanzania Open Data Initiative.{% endblocktrans %}
         </strong>
     </div>
-
 
     {% if user.is_authenticated %}
         <form method="POST" action="">
@@ -47,9 +48,46 @@
             {% for newsletter in object_list %}
             <tr>
                 <td><a href="{% url 'newsletter_detail' newsletter.slug %}" class="lead">{{ newsletter.title }}</a></td>
-                <td><a href="{% url 'newsletter_subscribe_request' newsletter.slug %}" class="btn btn-success">{% trans "Subscribe" %}</a></td>
+                <td>
+                    <a href="{% url 'newsletter_subscribe_request' newsletter.slug %}" class="btn btn-success btn-sm">{% trans "Subscribe" %}</a>
+                    <a href="{% url 'newsletter_archive' newsletter.slug %}" class="btn btn-info btn-sm">{% trans "View archive" %}</a>
+                </td>
             </tr>
             {% endfor %}
         </table>
+    {% endif %}
+
+    {% get_newsletter_submissions as previous_submissions %}
+    {% if previous_submissions  %}
+        <hr>
+        <div class="well">
+            <div class="">
+                <strong class="text-muted">
+                    {% trans "Previous newsletters"  %}
+                </strong>
+            </div>
+            <div>
+                {% for submission in previous_submissions %}
+                    <div>
+                        <h4><a href="{{ submission.get_absolute_url }}"><span class="text-default">{{ submission.message.title }}</span></a></h4>
+                        <h5><a href="{{ submission.newsletter.get_absolute_url }}"><small class="text-success">{{ submission.newsletter.title }}, <span class="text-muted">{{ submission.publish_date|date }}</span></small></a></h5>
+                        <hr>
+                    </div>
+
+                    <div>
+                        {% with article=submission.message.articles.first %}
+                            {% if article %}
+                            <strong>{{ article.title }}</strong>
+                            <div>
+                                <div>{{ article.text|safe }}</div>
+                            </div>
+                            {% endif %}
+                        {% endwith %}
+                        <div class="text-right"><a href="{{ submission.get_absolute_url }}" class="btn btn-primary btn-sm">{% trans "Read more" %}</a></div>
+                        <hr>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     {% endif %}
 {% endblock content %}

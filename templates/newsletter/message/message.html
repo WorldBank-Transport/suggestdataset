@@ -40,6 +40,7 @@
         <a class="btn btn-success btn-sm" href="http://suggest.{{ site.domain }}{{ submission.get_absolute_url }}">{% trans "Read message online" %}</a>
         {% endif %}
         <a class="btn btn-warning btn-sm" href="http://suggest.{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">{% trans "Unsubscribe" %}</a>
+        <a class="btn btn-primary btn-sm pull-right strong" href="http://{{ site.domain }}">{{ site.name }}</a>
     </div>
 
 </div>

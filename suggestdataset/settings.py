@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'sorl.thumbnail',
     'newsletter',
+    'xnewsletters',
     'debug_toolbar',
 ]
 
