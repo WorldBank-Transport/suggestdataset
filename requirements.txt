@@ -16,4 +16,5 @@ django-widget-tweaks
 django-phonenumber-field
 django-simple-captcha
 django-newsletter
+django-tinymce
 ipython

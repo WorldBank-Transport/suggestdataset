@@ -32,6 +32,7 @@ urlpatterns += i18n_patterns(
     url(r'^feedback/', include('mrejesho.urls')),
     url(r'^comments/', include('django_comments.urls')),
     url(r'^newsletter/', include('newsletter.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^utawala/', admin.site.urls),
 )
 

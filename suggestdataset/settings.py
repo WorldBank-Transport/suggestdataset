@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'newsletter',
     'xnewsletters',
+    'tinymce',
     'debug_toolbar',
 ]
 
@@ -248,3 +249,5 @@ EMAIL_FAIL_SILENTLY = bool(strtobool(os.environ.get('EMAIL_FAIL_SILENTLY', 'True
 # Newsletter
 
 NEWSLETTER_CONFIRM_EMAIL = bool(strtobool(os.environ.get('NEWSLETTER_CONFIRM_EMAIL', 'False')))
+
+NEWSLETTER_RICHTEXT_WIDGET = os.environ.get('NEWSLETTER_RICHTEXT_WIDGET', 'tinymce.widgets.TinyMCE')
