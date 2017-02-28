@@ -1,5 +1,7 @@
 {% extends "layout_light.html" %}
 {% load thumbnail i18n %}
+{% load static %}
+{% get_media_prefix as MEDIA_PREFIX %}
 
 
 {% block head_title %}{{ newsletter.title }}: {{ message.title }}{% endblock %}
@@ -22,7 +24,7 @@
         <div>
             <div class="">
                 {% thumbnail article.image "200x200" as image %}
-                    <img src="http://suggest.{{ site.domain }}{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}">
+                    <img src="{{ MEDIA_PREFIX }}{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}">
                 {% endthumbnail %}
             </div>
 
