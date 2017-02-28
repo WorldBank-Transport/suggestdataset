@@ -11,22 +11,22 @@
         <input type="hidden" name="next" value="{{ request.get_full_path }}">
         <div class="btn-group hidden-xs" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Interested' %}?">
             <button type="submit"
-                    class="btn btn-success">
+                    class="btn btn-success btn-sm">
                 <strong>{{ dataset.likes }}</strong>
             </button>
             <button type="submit"
-                    class="btn btn-default">
+                    class="btn btn-default btn-sm">
                 <i class="fa fa-thumbs-up text-success"></i>
             </button>
         </div>
 
         <div class="btn-group hidden-sm hidden-lg hidden-md" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Interested' %}?">
             <button type="submit"
-                    class="btn btn-success {% if not_responsive %}btn-block{% endif %}">
+                    class="btn btn-success btn-sm {% if not_responsive %}btn-block{% endif %}">
                 <strong>{{ dataset.likes }}</strong>
             </button>
             <button type="submit"
-                    class="btn btn-default">
+                    class="btn btn-default btn-sm">
                 <i class="fa fa-thumbs-up text-success"></i>
             </button>
         </div>
