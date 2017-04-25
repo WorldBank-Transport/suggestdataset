@@ -197,7 +197,7 @@ $(document).ready(function($) {
 	
 	
 	////------- Projects Carousel
-	$(".projects-carousel").owlCarousel({
+/*	$(".projects-carousel").owlCarousel({
 		navigation : true,
 		pagination: false,
 		slideSpeed : 400,
@@ -289,7 +289,7 @@ $(document).ready(function($) {
 	});
 	
 	
-	
+	*/
 	
 	
 	/*----------------------------------------------------*/
@@ -453,6 +453,7 @@ $(document).ready(function($) {
 /*	Portfolio Isotope
 /*----------------------------------------------------*/
 
+/*
 jQuery(window).load(function(){
 	
 	var $container = $('#portfolio');
@@ -490,6 +491,7 @@ jQuery(window).load(function(){
 	});
 	
 });
+* /
 /* ----------------- End JS Document ----------------- */
 
 
