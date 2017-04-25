@@ -395,24 +395,6 @@ $(document).ready(function($) {
 		},{accX: 0, accY: 0});
 	});
 	
-	
-	
-	
-	
-	/*----------------------------------------------------*/
-	/*	Nivo Lightbox
-	/*----------------------------------------------------*/
-	
-	$('.lightbox').nivoLightbox({
-		effect: 'fadeScale',
-		keyboardNav: true,
-		errorMessage: 'The requested content cannot be loaded. Please try again later.'
-	});
-	
-	
-	
-	
-	
 	/*----------------------------------------------------*/
 	/*	Change Slider Nav Icons
 	/*----------------------------------------------------*/
