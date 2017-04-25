@@ -5,11 +5,23 @@
         {% include 'includes/header_nav.html' %}
     {% endblock header %}
 
+    <div class="page-banner no-subtitle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul style="list-style-type: none;">
+                    <h2>{% block page_title %}{% endblock %}</h2>
+                    </ul>
+                </div>
+                <div class="col-md-6">{% block breadcumb %}{% endblock %}</div>
+            </div>
+        </div>
+    </div>
+
     <div class="container" id="content-wrapper">
-        {% block breadcumb %}{% endblock %}
-        <div class="page-header">
+        
+        <div class="">
             <div class="content">
-                {% block page_title %}{% endblock %}
                 {% block page_header %}{% endblock %}
             </div>
         </div>

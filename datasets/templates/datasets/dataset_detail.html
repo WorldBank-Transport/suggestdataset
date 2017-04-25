@@ -7,16 +7,16 @@
 {% endblock %}
 
 {% block page_title %}
-    <h5>{{ dataset.name }}</h5>
+    <h2>{{ dataset.name }}</h2>
 {% endblock %}
 
 {% block breadcumb %}
-    <ol class="breadcrumb">
+    <ul class="breadcrumbs">
         <li><a href="{% url 'dataset-suggestions' %}">{% trans "Dataset Suggestions" %}</a></li>
         <li class="active">
           {{ dataset.name }}
         </li>
-    </ol>
+    </ul>
 {% endblock %}
 
 {% block content %}

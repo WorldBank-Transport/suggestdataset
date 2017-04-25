@@ -1333,6 +1333,15 @@ zoom: 1;
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+.heading-color{
+    color: #00afd1;
+}
+.sidebar a {
+    color: #333;
+}
+.right-sidebar{
+	border-left: 1px dashed #ddd;
+}
 .revicon-search-1:before { content: '\e802'; } /* '' */
 .revicon-pencil-1:before { content: '\e831'; } /* '' */
 .revicon-picture-1:before { content: '\e803'; } /* '' */

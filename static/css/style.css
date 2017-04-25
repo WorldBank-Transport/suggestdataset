@@ -113,7 +113,6 @@ h6 {
 }
 
 p {
-    color: #888;
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
     line-height: 22px;
@@ -850,7 +849,7 @@ ul.breadcrumbs li:first-child:before {
 }
 
 ul.breadcrumbs li a {
-	color: #888;
+	color: #000;
 	font-weight: 600;
 	transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;

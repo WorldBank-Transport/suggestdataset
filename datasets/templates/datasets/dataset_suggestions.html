@@ -6,56 +6,59 @@
 
 {% block head_title %}{% trans 'Dataset Suggestions' %}{% endblock %}
 
-{% block breadcumb %}
+{% block page_title %}
+    <h2 class="">{% trans 'Dataset suggestions' %}</h2>
 {% endblock %}
 
-{% block page_title %}
-    <div class="row">
-        <div class="col-sm-9">
-            <h5 class="">{% trans 'Dataset suggestions' %}</h5>
-        </div>
-        <div class="col-sm-3">
-            <strong><a href="{% url 'dataset-suggest' %}" class="btn btn-success">{% trans "Suggest a dataset" %}</a></strong>
-        </div>
-    </div>
+{% block breadcumb %}
+    <div class="text-right"><a href="{% url 'dataset-suggest' %}" class="btn btn-primary"><strong>{% trans "Suggest a dataset" %}</strong></a></div>
 {% endblock %}
 
 
 {% block content %}
     <div class="row">
-        <div class="col-sm-2">
-            <form class="form-inline" action="" id="filter-form">
+        <div class="col-sm-2 sidebar left-sidebar">
+
+            <div class="widget widget-categories">
+                <ul>
+                    <li><a href="{% url 'dataset-suggestions' %}" title="{% trans 'clear filters' %}"><span><i class="fa fa-refresh"></i> {% trans "Refresh" %}</span></a></li>
+                </ul>
+            </div>
+
+            <div class="widget widget-categories">
+                <h4 class="heading-color">{% trans 'Start with' %}<span class="head-line"></span></h4>
+                <ul>
+                    <li><a href="{% url 'dataset-suggestions' %}?o=" onclick="updateDatasetOrder('');return false" title="{% trans 'Latest suggestions' %}"><span>{% trans "Latest" %}</span></a></li>
+                    <li><a href="{% url 'dataset-suggestions' %}?o=-likes" onclick="updateDatasetOrder('-likes');return false" title="{% trans 'Suggestions with more likes' %}"><span>{% trans "Most liked" %}</span></a></li>
+                </ul>
+            </div>
+
+            <div class="widget widget-categories">
+                <h4 class="heading-color">{% trans 'Status' %}<span class="head-line"></span></h4>
+                <ul>
+                    <li><a href="{% url 'dataset-suggestions' %}" title="{% trans 'All dataset suggestions' %}"><span>{% trans "All" %}</span></a></li>
+                    {% for status in filter.form.status.field.choices %}
+                        {% if filter.form.status.value == status.0 %}
+                            <li><a class="active" href="?status={{ status.0 }}" onclick="updateDatasetStatus('{{ status.0 }}');return false">{{ status.1 }}</a></li>
+                        {% else %}
+                            <li><a href="?status={{ status.0 }}" onclick="updateDatasetStatus('{{ status.0 }}');return false"><span>{{ status.1 }}</span></a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <form class="hidden" action="" id="filter-form">
                 <div class="form-group">
-                    <label>{% trans "Sort by" %}:</label>
-                    <select class="form-control input-sm filter-select" name="o" onchange="this.form.submit()" style="min-width: 110px;">
-                        <option value="-date_created" default>{% trans 'Latest' %}</option>
-                        <option value='-likes' {% if filter.form.o.value == '-likes' %}selected{% endif %}>{% trans 'Most liked' %}</option>
-                    </select>
                     <input type="hidden" id="dataset-status-filter" name="status" value="{{ filter.form.status.value|default:'' }}"></input>
+                    <input type="hidden" id="dataset-order" name="o" value="{{ filter.form.o.value|default:'' }}"></input>
                 </div>
             </form>
-            <br>
-
-            <div class="panel panel-default hidden-xs">
-                <div class="panel-heading"><strong>{% trans "Filter by status" %}</strong></div>
-                <div class="panel-body" style="padding: 10px;">
-                    <ul class="list-unstyled">
-                        <li><a href="{% url 'dataset-suggestions' %}" class="text-success">{% trans "All" %}</a></li>
-                        {% for status in filter.form.status.field.choices %}
-                            {% if filter.form.status.value == status.0 %}
-                                <li>{{ status.1 }}</li>
-                            {% else %}
-                                <li><a href="?status={{ status.0 }}" onclick="updateDatasetStatus('{{ status.0 }}');return false">{{ status.1 }}</a></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
         </div>
 
-        <div class="col-sm-9">
+        <div class="col-sm-9 right-sidebar">
             {% paginate 20 datasets %}
             {% for dataset in datasets %}
+            <div class="container">
                 <div class="row dataset-item">
                     <div class="col-sm-2 col-xs-2 text-center">
                         <span class="thmb">
@@ -86,6 +89,7 @@
                         {% include 'includes/datasets/datasetlike_button.html' %}
                     </div>
                 </div>
+            </div>
             {% endfor %}
             <div class="text-center">
                 {% show_pages %}
@@ -97,7 +101,7 @@
 
     <div class="row">
         <div class="col-sm-3 col-sm-offset-9">
-            <a href="{% url 'dataset-suggest' %}" class="btn btn-success">{% trans "Suggest a dataset" %}</a>
+            <a href="{% url 'dataset-suggest' %}" class="btn btn-primary">{% trans "Suggest a dataset" %}</a>
         </div>
     </div>
 
@@ -108,6 +112,10 @@
     <script>
         function updateDatasetStatus(status){
             $('#dataset-status-filter').val(status);
+            $('#filter-form').submit();
+        };
+        function updateDatasetOrder(order){
+            $('#dataset-order').val(order);
             $('#filter-form').submit();
         };
     </script>
