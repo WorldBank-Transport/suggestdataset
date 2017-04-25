@@ -1,11 +1,9 @@
 body{
-    padding-top: 180px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
     font-size: 12px;
     line-height: 20px;
-    color: #444444;
     background-color: #eeeeee;
-    background-image: url(../img/bg.png);
+    background-image: url(../images/bg.png);
 }
 
 body.body-light{
@@ -16,16 +14,12 @@ body.body-light{
     max-width: 100%;
 }
 
-.navbar-brand{
-    padding: 10px 15px;
-}
-
 .navbar-brand>img {
     max-height: 100%;
 }
 
 #main-nav{
-    background: url('../img/odp-banner.png');
+    background: url('../images/odp-banner.png');
     height: 178px;
     background-size: cover;
 }
@@ -55,7 +49,7 @@ body.body-light{
     height: 110px;
     width: 125px;
     margin-top: 2px;
-    background-image: url(../img/arm.png);
+    background-image: url(../images/arm.png);
     background-position: left top;
     background-repeat: no-repeat;
     float: left;
@@ -85,14 +79,13 @@ body.body-light{
 
 .input-group-addon.captcha-addon{
     padding: 0;
+    width: auto;
 }
 @media (min-width: 768px){
     .list-title {
         padding-left: 80px;
     }
     .container{
-        width: 990px;
-        max-width: 100%;
         margin-right: auto;
         margin-left: auto;
     }
@@ -200,7 +193,7 @@ span.select2-container--bootstrap .select2-selection {
 }
 
 .header {
-	background-image: url(../img/banner.png);
+	background-image: url(../images/banner.png);
 	background-repeat: no-repeat;
 	background-position: right;
 	/*border: solid 1px blue;*/
@@ -211,7 +204,7 @@ span.select2-container--bootstrap .select2-selection {
 .account-masthead {
     min-height: 30px;
     color: #ffffff;
-    background: #003647 url(../img/bg.png);
+    background: #003647 url(../images/bg.png);
 }
 
 .account-masthead .account {
@@ -245,7 +238,6 @@ span.select2-container--bootstrap .select2-selection {
 
 ul, lo {
     padding: 0;
-    margin: 0 0 10px 25px;
 }
 
 ul.unstyled, ol.unstyled {
@@ -330,7 +322,7 @@ ul.unstyled, ol.unstyled {
 	/*
 	background-repeat: no-repeat;
 	background-position: right;*/
-	background-image: url(../img/sector.png);
+	background-image: url(../images/sector.png);
 	/*border: solid 1px blue;*/
 	height: 190px;
 }

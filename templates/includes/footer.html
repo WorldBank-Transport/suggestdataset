@@ -1,16 +1,80 @@
 {% load i18n %}
+{% load static %}
 
-<div class="">
-    <div class="footer">
+{% get_current_language as LANGUAGE_CODE %}
+
+<!-- Start Footer -->
+<footer>
     <div class="container">
-        <div class="">
-            <div class="footer-size  ">
-                <a href="http://opendata.go.tz/pages/kanuni-na-masharti">{% trans "Terms &amp; Conditions " %}</a>  |
-                <a href="http://opendata.go.tz/pages/policy">{% trans "Privacy Policy" %}</a> |
-                <a href="http://opendata.go.tz/pages/hakimiliki">{% trans "Copyright Notice" %}</a> |
-                <a href="http://opendata.go.tz/pages/wasiliana-nasi">{% trans "Contact us" %}</a><br>
-                {% trans "Government Open Data Portal is designed, developed and hosted by e-Government Agency. Data are Managed by National Bureau of Statistics." %}
+        <div class="row footer-widgets">
+              <!-- Start Flickr Widget -->
+            <div class="col-md-4">
+                <div class="footer-widget flickr-widget">
+                    <h4>{% trans 'An Initiative of the' %}<span class="head-line"></span></h4>
+                    <ul class="flickr-list">
+                        <li><a href="http://nbs.go.tz"><img alt="" src="{% static 'images/nbs.png' %}"></a> {% trans 'National Bureau of Statistics' %}</li>
+                        <li><a href="http://ega.go.tz/"><img alt="" src="{% static 'images/ega.png' %}"></a> {% trans 'e-Government Agency' %}</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Flickr Widget -->
+
+            <!-- Start Contact Widget -->
+            <div class="col-md-4">
+                <div class="footer-widget contact-widget">
+                    <h4>Related links<span class="head-line"></span></h4>
+                    <ul>
+                        <li><a href="http://tanzania.go.tz/">{% trans 'Government Portal' %}</a></li>
+                        <li><a href="http://opengov.go.tz/">{% trans 'Open Government Partnership (OGP)' %}</a></li>
+                        <li><a href="http://nbs.go.tz/">{% trans 'National Bureau Of Statistics (NBS)' %}</a></li>
+                        <li><a href="http://maji.go.tz/">{% trans 'Ministry of Water' %}</a></li>
+                        <li><a href="http://moe.go.tz/">{% trans 'Ministry of Education and Vocational Training' %}</a></li>
+                        <li><a href="http://moh.go.tz/">{% trans 'Ministry of Health and Social Welfare' %}</a></li>
+                        <li><a href="http://nbs.go.tz/tnada/index.php/catalog">{% trans 'Tanzania National Data Archive' %}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Contact Widget -->
+
+            <!-- Start Subscribe & Social Links Widget -->
+            <div class="col-md-4">
+                <div class="footer-widget mail-subscribe-widget">
+                    <h4>{% trans 'Newsletter' %}<span class="head-line"></span></h4>
+                    <p>{% blocktrans %}Join our mailing list to stay up to date and get notices about our new releases!{% endblocktrans %}</p>
+                    <a href="{% url 'newsletter_list' %}" class="main-button">{% trans 'Subscribe' %}</a>
+                </div>
+                <div class="footer-widget social-widget">
+                    <h4>Follow Us<span class="head-line"></span></h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a class="facebook" href="#"><i class="icon-facebook-2"></i></a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="#"><i class="icon-twitter-2"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+
+        <!-- Start Copyright -->
+        <div class="copyright-section">
+            <div class="row">
+            <div class="col-md-4">
+                    <p>© 2017 - {% trans 'Government Open Data Portal' %}.</p>
+                </div>
+                <div class="col-md-8">
+                    <ul class="footer-nav">
+                        <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/pages/kanuni-na-masharti"> {% trans 'Terms & Conditions' %} </a></li>
+                        <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/pages/policy"> {% trans 'Privacy Policy' %} </a></li>
+                        <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/pages/hakimiliki"> {% trans 'Disclaimer' %} </a></li>
+                        <li><a href="http://opendata.go.tz/{{ LANGUAGE_CODE }}/pages/wasiliana-nasi"> {% trans 'Contact us' %} </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+
     </div>
-</div>
+</footer>
+<!-- End Footer -->
