@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 12:40+0300\n"
+"POT-Creation-Date: 2017-05-02 12:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,17 +74,17 @@ msgstr "Jina la taasisi"
 msgid "Organization"
 msgstr "Taasisi"
 
-#: datasets/models.py:40 templates/includes/header_nav.html:75
+#: datasets/models.py:40 templates/includes/header_nav.html:64
 msgid "Organizations"
 msgstr "Taasisi"
 
-#: datasets/models.py:55
-msgid "Approved"
-msgstr "Iliyothibitishwa"
+#: datasets/models.py:55 mrejesho/models.py:35
+msgid "Under review"
+msgstr "Inapitiwa"
 
 #: datasets/models.py:56
-msgid "Open"
-msgstr "Fungua"
+msgid "Approved"
+msgstr "Iliyothibitishwa"
 
 #: datasets/models.py:57
 msgid "Rejected"
@@ -119,7 +119,8 @@ msgid "Categories"
 msgstr "Makundi"
 
 #: datasets/models.py:77 datasets/templates/datasets/dataset_detail.html:51
-#: datasets/templates/datasets/dataset_suggestions.html:79
+#: datasets/templates/datasets/dataset_suggestions.html:37
+#: datasets/templates/datasets/dataset_suggestions.html:82
 #: mrejesho/models.py:47
 msgid "Status"
 msgstr "Hali/Hatua"
@@ -144,9 +145,9 @@ msgstr "Anaweza kupokea ujumbe wa data mpya zilizopendekezwa"
 #: datasets/templates/datasets/dataset_detail.html:15
 #: datasets/templates/datasets/dataset_suggest.html:10
 #: datasets/templates/datasets/dataset_suggestions.html:7
-#: templates/includes/header_nav.html:78
+#: templates/includes/header_nav.html:66
 msgid "Dataset Suggestions"
-msgstr "Mapendekezo ya seti za takwimu"
+msgstr "Mapendekezo ya Takwimu"
 
 #: datasets/templates/datasets/dataset_detail.html:58
 msgid "Created by"
@@ -190,8 +191,8 @@ msgstr ""
 "        "
 
 #: datasets/templates/datasets/dataset_suggest.html:30
-#: datasets/templates/datasets/dataset_suggestions.html:18
-#: datasets/templates/datasets/dataset_suggestions.html:100
+#: datasets/templates/datasets/dataset_suggestions.html:14
+#: datasets/templates/datasets/dataset_suggestions.html:104
 msgid "Suggest a dataset"
 msgstr "Pendekeza seti ya takwimu"
 
@@ -200,31 +201,47 @@ msgstr "Pendekeza seti ya takwimu"
 msgid "Cancel"
 msgstr "Sitisha"
 
-#: datasets/templates/datasets/dataset_suggestions.html:15
+#: datasets/templates/datasets/dataset_suggestions.html:10
 msgid "Dataset suggestions"
 msgstr "Mapendekezo ya seti za takwimu"
 
+#: datasets/templates/datasets/dataset_suggestions.html:24
+msgid "clear filters"
+msgstr ""
+
+#: datasets/templates/datasets/dataset_suggestions.html:24
+msgid "Refresh"
+msgstr ""
+
 #: datasets/templates/datasets/dataset_suggestions.html:29
-msgid "Sort by"
-msgstr "Chagua kwa"
+msgid "Start with"
+msgstr ""
+
+#: datasets/templates/datasets/dataset_suggestions.html:31
+msgid "Latest suggestions"
+msgstr "Mapendekezo ya karibuni"
 
 #: datasets/templates/datasets/dataset_suggestions.html:31
 msgid "Latest"
 msgstr "Mpya zaidi"
 
 #: datasets/templates/datasets/dataset_suggestions.html:32
+msgid "Suggestions with more likes"
+msgstr ""
+
+#: datasets/templates/datasets/dataset_suggestions.html:32
 msgid "Most liked"
 msgstr "Zilizopendwa zaidi"
 
-#: datasets/templates/datasets/dataset_suggestions.html:40
-msgid "Filter by status"
-msgstr "Chuja kwa hali/hatua"
+#: datasets/templates/datasets/dataset_suggestions.html:39
+msgid "All dataset suggestions"
+msgstr "Mapendekezo yote ya seti za takwimu"
 
-#: datasets/templates/datasets/dataset_suggestions.html:43
+#: datasets/templates/datasets/dataset_suggestions.html:39
 msgid "All"
 msgstr "Vyote"
 
-#: datasets/templates/datasets/dataset_suggestions.html:74
+#: datasets/templates/datasets/dataset_suggestions.html:77
 #, python-format
 msgid "%(time)s ago."
 msgstr "%(time)s zilizopita"
@@ -238,7 +255,7 @@ msgid ""
 "A new dataset suggestion from %(suggester_name)s has been received on "
 "%(site_name)s.\n"
 "\n"
-"%(site_domain)s/admin/datasets/dataset/%(suggestion_id)s\n"
+"%(site_url)s%(suggestion_admin_url)s\n"
 "\n"
 "=================================================\n"
 "%(dataset_name)s\n"
@@ -260,10 +277,10 @@ msgid "Hello %(suggester_name)s,"
 msgstr "Habari %(suggester_name)s,"
 
 #: datasets/templates/datasets/emails/suggestion_received.html:4
-#, python-format
 msgid ""
 "\n"
-"Thank you very much for your suggestion on %(site_name)s. We will respond "
+"Thank you very much for your suggestion on %(site_name)s. Your suggestion "
+"will be made public after being reviewed. Thereafter we will respond "
 "accordingly as soon as we can.\n"
 msgstr ""
 "\n"
@@ -275,31 +292,31 @@ msgstr ""
 msgid "Interested"
 msgstr "Umeipenda"
 
-#: datasets/views.py:71
-#, python-format
+#: datasets/views.py:72
 msgid ""
-"Thanks, we have already received your vote for this dataset: <a href='%s' "
-"class='alert-link'>%s</a>"
+"Thanks, we have already received your vote for this dataset: <a "
+"href='%(dataset_url)s' class='alert-link'>%(dataset_name)s</a>"
 msgstr ""
-"Asante, tumeshapokea kura yako kwa takwimu hii: <a href=\"%s\" class=\"alert-"
-"link\">%s</a>"
+"Asante, tumeshapokea kura yako kwa takwimu hii: <a href='%(dataset_url)s'"
+" class='alert-link'>%(dataset_name)s</a>"
 
-#: datasets/views.py:81
-#, python-format
-msgid "Thanks for your vote for <a class=\"alert-link\"href=\"%s\">%s</a>"
-msgstr "Asante kwa kura yako kwa <a class=\"alert-link\"href=\"%s\">%s</a>"
+#: datasets/views.py:84
+msgid ""
+"Thanks for your vote for <a class=\"alert-link\"href=\"%(dataset_url)s\">"
+"%(dataset_name)s</a>"
+msgstr "Asante kwa kura yako kwa <a class=\"alert-link\"href=\"%(dataset_url)s\">%(dataset_url)s</a>"
 
-#: datasets/views.py:101
+#: datasets/views.py:105
 #, python-format
 msgid "Thanks, we have received your suggestion for \"%(dataset_name)s\""
 msgstr "Asante, tumepokea mapendekezo yako kwa \"%(dataset_name)s\""
 
-#: datasets/views.py:120
+#: datasets/views.py:125
 #, python-format
 msgid "%(site_name)s: Dataset Suggestion"
 msgstr "%(site_name)s: Mapendekezo ya seti za takwimu"
 
-#: datasets/views.py:140
+#: datasets/views.py:145
 #, python-format
 msgid "%(site_name)s: New Dataset suggestion received#%(suggestion_id)s"
 msgstr ""
@@ -312,7 +329,7 @@ msgstr "Mtumaji"
 
 #: mrejesho/admin.py:30 mrejesho/models.py:61 mrejesho/models.py:62
 #: mrejesho/templates/mrejesho/feedback.html:6
-#: templates/includes/header_nav.html:79
+#: templates/includes/header_nav.html:67
 msgid "Feedback"
 msgstr "Mrejesho"
 
@@ -335,10 +352,6 @@ msgstr "Tafadhali toa Barua pepe au Namba ya simu iliyosahihi"
 #: mrejesho/models.py:34
 msgid "Received/Read"
 msgstr "Imepokelewa/Imesomwa"
-
-#: mrejesho/models.py:35
-msgid "Under review"
-msgstr "Inapitiwa"
 
 #: mrejesho/models.py:36
 msgid "Response sent"
@@ -426,19 +439,19 @@ msgstr "%(site_name)s: Mrejesho"
 msgid "%(site_name)s: New Feedback received #%(feedback_id)s"
 msgstr "%(site_name)s: Tumepokea Mrejesho mpya #%(feedback_id)s"
 
-#: suggestdataset/settings.py:146
+#: suggestdataset/settings.py:149
 msgid "Kiswahili"
 msgstr "Kiswahili"
 
-#: suggestdataset/settings.py:147
+#: suggestdataset/settings.py:150
 msgid "English"
 msgstr "English"
 
-#: suggestdataset/settings.py:187 suggestdataset/settings.py:189
+#: suggestdataset/settings.py:191 suggestdataset/settings.py:195
 msgid "Open Data Tanzania"
 msgstr "Takwimu Huria Tanzania"
 
-#: suggestdataset/settings.py:191
+#: suggestdataset/settings.py:197
 msgid "Management"
 msgstr "Utawala"
 
@@ -518,44 +531,51 @@ msgstr "Fanya mabadiliko au"
 msgid "Post your comment"
 msgstr "Tuma maoni yako"
 
-#: templates/home.html:5 templates/includes/header_nav.html:73
+#: templates/home.html:5 templates/includes/header_nav.html:61
 msgid "Home"
 msgstr "Mwanzo"
 
-#: templates/includes/footer.html:8
-msgid "Terms &amp; Conditions "
-msgstr "Kanuni &amp; Masharti"
-
-#: templates/includes/footer.html:9
-msgid "Privacy Policy"
-msgstr "Sera ya Faragha"
-
-#: templates/includes/footer.html:10
-msgid "Copyright Notice"
-msgstr "Hatimiliki"
-
-#: templates/includes/footer.html:11
-msgid "Contact us"
-msgstr "Wasiliana Nasi"
-
-#: templates/includes/footer.html:12
-msgid ""
-"Government Open Data Portal is designed, developed and hosted by e-"
-"Government Agency. Data are Managed by National Bureau of Statistics."
+#: templates/includes/footer.html:13
+msgid "An Initiative of the"
 msgstr ""
-"Tovuti Kuu ya Takwimu Huria imesanifiwa, imetengenezwa na imehifadhiwa "
-"naWakala ya Serikali Mtandao. Takwimu Zinaratibiwa na Ofisi ya Taifa ya "
-"Takwimu."
 
-#: templates/includes/header_nav.html:15
-msgid "Admin"
-msgstr "Utawala"
+#: templates/includes/footer.html:15
+msgid "National Bureau of Statistics"
+msgstr "Ofisi ya Taifa ya Takwimu"
 
-#: templates/includes/header_nav.html:16
-msgid "Login"
-msgstr "Ingia"
+#: templates/includes/footer.html:16
+msgid "e-Government Agency"
+msgstr "Wakala wa Serikali Mtandao"
 
-#: templates/includes/header_nav.html:17
+#: templates/includes/footer.html:27
+msgid "Government Portal"
+msgstr "Tovuti Kuu ya Serikali"
+
+#: templates/includes/footer.html:28
+msgid "Open Government Partnership (OGP)"
+msgstr ""
+
+#: templates/includes/footer.html:29
+msgid "National Bureau Of Statistics (NBS)"
+msgstr "Ofisi ya Taifa ya Takwimu (NBS)"
+
+#: templates/includes/footer.html:30
+msgid "Ministry of Water"
+msgstr "Wizara ya Maji"
+
+#: templates/includes/footer.html:31
+msgid "Ministry of Education and Vocational Training"
+msgstr "Wizara ya Elimu na mafunzo ya ufundi"
+
+#: templates/includes/footer.html:32
+msgid "Ministry of Health and Social Welfare"
+msgstr "Wizara ya Afya na Ustawi wa Jamii"
+
+#: templates/includes/footer.html:33
+msgid "Tanzania National Data Archive"
+msgstr ""
+
+#: templates/includes/footer.html:42 templates/includes/header_nav.html:28
 #: templates/newsletter/newsletter_detail.html:5
 #: templates/newsletter/newsletter_detail.html:9
 #: templates/newsletter/subscription_activate.html:6
@@ -568,44 +588,79 @@ msgstr "Ingia"
 msgid "Newsletter"
 msgstr "Jarida"
 
-#: templates/includes/header_nav.html:18
-msgid "FAQ"
-msgstr "MMM"
+#: templates/includes/footer.html:43
+msgid ""
+"Join our mailing list to stay up to date and get notices about our new "
+"releases!"
+msgstr ""
 
-#: templates/includes/header_nav.html:45
-msgid "Toggle navigation"
-msgstr "Togoa urambazaji"
+#: templates/includes/footer.html:44
+#: templates/newsletter/newsletter_detail.html:16
+#: templates/newsletter/newsletter_list.html:52
+#: templates/newsletter/subscription_subscribe.html:35
+#: templates/newsletter/subscription_subscribe_user.html:22
+msgid "Subscribe"
+msgstr "Jisajili"
 
-#: templates/includes/header_nav.html:59
+#: templates/includes/footer.html:64
 #: templates/includes/header_nav_light.html:20
 msgid "Government Open Data Portal"
 msgstr "Tovuti Kuu ya Takwimu Huria Tanzania"
 
-#: templates/includes/header_nav.html:74
+#: templates/includes/footer.html:68
+msgid "Terms & Conditions"
+msgstr "Kanuni & Masharti"
+
+#: templates/includes/footer.html:69
+msgid "Privacy Policy"
+msgstr "Sera ya Faragha"
+
+#: templates/includes/footer.html:70
+msgid "Disclaimer"
+msgstr "Kanusho"
+
+#: templates/includes/footer.html:71
+msgid "Contact us"
+msgstr "Wasiliana Nasi"
+
+#: templates/includes/header_nav.html:19
+msgid "The United Republic of Tanzania - Government Open Data Portal"
+msgstr "Jamhuri ya Muungano wa Tanzania - Tovuti Kuu ya Takwimu Huria Tanzania"
+
+#: templates/includes/header_nav.html:27
+msgid "Log In"
+msgstr "Ingia"
+
+#: templates/includes/header_nav.html:29
+msgid "FAQ"
+msgstr "MMM"
+
+#: templates/includes/header_nav.html:62
 msgid "Datasets"
 msgstr "Seti za Takwimu"
 
-#: templates/includes/header_nav.html:76
-msgid "Groups"
-msgstr "Makundi"
+#: templates/includes/header_nav.html:63
+msgid "Sectors"
+msgstr "Sekta"
 
-#: templates/includes/header_nav.html:77
-msgid "Visualization Gallery"
-msgstr "Maktaba ya Picha"
+#: templates/includes/header_nav.html:65
+msgid "Visualizations"
+msgstr "Vielelezo"
 
-#: templates/includes/header_nav.html:80
+#: templates/includes/header_nav.html:68
 msgid "About"
 msgstr "Kuhusu"
 
-#: templates/newsletter/message/message.html:32
+#: templates/newsletter/message/message.html:34
+#: templates/newsletter/newsletter_list.html:86
 msgid "Read more"
 msgstr "Soma zaidi"
 
-#: templates/newsletter/message/message.html:40
+#: templates/newsletter/message/message.html:42
 msgid "Read message online"
 msgstr "Soma ujumbe kwa Mtandao"
 
-#: templates/newsletter/message/message.html:42
+#: templates/newsletter/message/message.html:44
 #: templates/newsletter/newsletter_detail.html:20
 #: templates/newsletter/subscription_unsubscribe.html:27
 #: templates/newsletter/subscription_unsubscribe_user.html:26
@@ -709,43 +764,44 @@ msgstr ""
 msgid "Update information"
 msgstr ""
 
-#: templates/newsletter/newsletter_detail.html:16
-#: templates/newsletter/newsletter_list.html:50
-#: templates/newsletter/subscription_subscribe.html:35
-#: templates/newsletter/subscription_subscribe_user.html:22
-msgid "Subscribe"
-msgstr "Jisajili"
-
 #: templates/newsletter/newsletter_detail.html:21
 msgid "Archive"
-msgstr ""
+msgstr "Kumbukumbu"
 
 #: templates/newsletter/newsletter_detail.html:22
 msgid "Go Back"
 msgstr "Rudi"
 
-#: templates/newsletter/newsletter_list.html:5
+#: templates/newsletter/newsletter_list.html:6
 msgid "Newsletter list"
-msgstr ""
+msgstr "Orodha ya 'newsletter'"
 
-#: templates/newsletter/newsletter_list.html:9
+#: templates/newsletter/newsletter_list.html:10
 msgid "Subscribe to our Newsletters"
 msgstr "Jisajili kupata 'Newsletters'"
 
-#: templates/newsletter/newsletter_list.html:16
+#: templates/newsletter/newsletter_list.html:18
 msgid ""
 "Subscribe to get exciting news, events and updates about Tanzania Open Data "
 "Initiative."
 msgstr ""
 
-#: templates/newsletter/newsletter_list.html:40
+#: templates/newsletter/newsletter_list.html:41
 msgid "Update subscriptions"
 msgstr ""
+
+#: templates/newsletter/newsletter_list.html:53
+msgid "View archive"
+msgstr "Tazama kumbukumbu"
+
+#: templates/newsletter/newsletter_list.html:66
+msgid "Previous newsletters"
+msgstr "'Newsletters' zilizopita"
 
 #: templates/newsletter/submission_archive.html:5
 #: templates/newsletter/submission_archive.html:8
 msgid "Newsletter archive"
-msgstr ""
+msgstr "Kumbukumbu za newsletter"
 
 #: templates/newsletter/submission_archive.html:21
 msgid "Back"
@@ -794,7 +850,7 @@ msgstr ""
 
 #: templates/newsletter/subscription_subscribe.html:47
 msgid "Your Name (optional)"
-msgstr ""
+msgstr "Jina Lako (si lazima)"
 
 #: templates/newsletter/subscription_subscribe.html:48
 msgid "Your Email"
@@ -806,7 +862,7 @@ msgstr ""
 
 #: templates/newsletter/subscription_subscribe_activated.html:14
 msgid "Congratulations!"
-msgstr ""
+msgstr "Hongera!"
 
 #: templates/newsletter/subscription_subscribe_activated.html:15
 msgid "Your subscription has successfully been activated."
@@ -917,6 +973,38 @@ msgid ""
 "%(comment_message)s\n"
 "=================================================\n"
 msgstr ""
+
+#~ msgid "Open"
+#~ msgstr "Fungua"
+
+#~ msgid "Sort by"
+#~ msgstr "Chagua kwa"
+
+#~ msgid "Filter by status"
+#~ msgstr "Chuja kwa hali/hatua"
+
+#~ msgid "Copyright Notice"
+#~ msgstr "Hatimiliki"
+
+#~ msgid ""
+#~ "Government Open Data Portal is designed, developed and hosted by e-"
+#~ "Government Agency. Data are Managed by National Bureau of Statistics."
+#~ msgstr ""
+#~ "Tovuti Kuu ya Takwimu Huria imesanifiwa, imetengenezwa na imehifadhiwa "
+#~ "naWakala ya Serikali Mtandao. Takwimu Zinaratibiwa na Ofisi ya Taifa ya "
+#~ "Takwimu."
+
+#~ msgid "Admin"
+#~ msgstr "Utawala"
+
+#~ msgid "Login"
+#~ msgstr "Ingia"
+
+#~ msgid "Toggle navigation"
+#~ msgstr "Togoa urambazaji"
+
+#~ msgid "Groups"
+#~ msgstr "Makundi"
 
 #~ msgid "We would like to hear from you, please add your comments"
 #~ msgstr "Tunapenda kusikia mawazo yako, tafadhali tuma maoni yako"

@@ -562,7 +562,6 @@ ul.social-list li:last-child a i {
 }
 
 .navbar-default .navbar-nav {
-	margin-right: 10px!important;
 	position: relative;
 	transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;

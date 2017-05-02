@@ -70,8 +70,10 @@ class DatasetLikeCreate(UpdateView):
             messages.info(
                 self.request,
                 _("Thanks, we have already received your vote for "
-                "this dataset: <a href='%s' class='alert-link'>%s</a>"
-                %(form.instance.get_absolute_url(), form.instance.name)))
+                "this dataset: <a href='%(dataset_url)s' "
+                "class='alert-link'>%(dataset_name)s</a>"
+                %{'dataset_url': form.instance.get_absolute_url(),
+                'dataset_name': form.instance.name}))
         else:
             form.instance.likes += 1
             form.save()
@@ -80,8 +82,9 @@ class DatasetLikeCreate(UpdateView):
             messages.info(
                 self.request,
                 _('Thanks for your vote for <a class="alert-link"'
-                'href="%s">%s</a>'
-                %(form.instance.get_absolute_url(), form.instance.name)))
+                'href="%(dataset_url)s">%(dataset_name)s</a>'
+                %{'dataset_url': form.instance.get_absolute_url(),
+                'dataset_name': form.instance.name}))
         return super(DatasetLikeCreate, self).form_valid(form)
 
     def get_success_url(self):
