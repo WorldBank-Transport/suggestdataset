@@ -7,17 +7,19 @@
 <footer>
     <div class="container">
         <div class="row footer-widgets">
-              <!-- Start Flickr Widget -->
-            <div class="col-md-4">
-                <div class="footer-widget flickr-widget">
-                    <h4>{% trans 'An Initiative of the' %}<span class="head-line"></span></h4>
-                    <ul class="flickr-list">
-                        <li><a href="http://nbs.go.tz"><img alt="" src="{% static 'images/nbs.png' %}"></a> {% trans 'National Bureau of Statistics' %}</li>
-                        <li><a href="http://ega.go.tz/"><img alt="" src="{% static 'images/ega.png' %}"></a> {% trans 'e-Government Agency' %}</li>
-                    </ul>
+
+            <!-- Start twitter Widget -->
+            <div class="col-md-5"  >
+                <div class="footer-widget contact-widget">
+                    <h4>Tweets<span class="head-line"></span></h4>
+                    <div class="col-md-11"  >
+
+                    <a class="twitter-timeline" data-height="230" href="https://twitter.com/TzOpenData">Tweets by TzOpenData</a>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  </div>
                 </div>
             </div>
-            <!-- End Flickr Widget -->
+            <!-- End twitter Widget -->
 
             <!-- Start Contact Widget -->
             <div class="col-md-4">
@@ -37,7 +39,7 @@
             <!-- End Contact Widget -->
 
             <!-- Start Subscribe & Social Links Widget -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="footer-widget mail-subscribe-widget">
                     <h4>{% trans 'Newsletter' %}<span class="head-line"></span></h4>
                     <p>{% blocktrans %}Join our mailing list to stay up to date and get notices about our new releases!{% endblocktrans %}</p>
@@ -47,10 +49,7 @@
                     <h4>Follow Us<span class="head-line"></span></h4>
                     <ul class="social-icons">
                         <li>
-                            <a class="facebook" href="#"><i class="icon-facebook-2"></i></a>
-                        </li>
-                        <li>
-                            <a class="twitter" href="#"><i class="icon-twitter-2"></i></a>
+                            <a class="twitter" href="https://twitter.com/tzopendata" target="_blank"><i class="icon-twitter-2"></i></a>
                         </li>
                     </ul>
                 </div>
