@@ -36,7 +36,6 @@ body {
     line-height: 21px;
 	font-weight: 300;
 	color: #888;
-	background: url(../images/patterns/1.png) fixed repeat;
 }
 strong, b {
 	font-weight: 600;
@@ -176,6 +175,10 @@ a.main-button:hover, input[type="submit"]:hover {
 
 a.main-button i {
 	font-size: 1.2em;
+}
+
+a.main-button, input[type="submit"] {
+    background-color: #00afd1;
 }
 
 input[type="submit"] {
@@ -858,8 +861,7 @@ ul.breadcrumbs li a {
 
 label {
 	font-size: 13px;
-	color: #aaa;
-	font-weight: 300;
+	font-weight: 500;
 	cursor: pointer;
 }
 
